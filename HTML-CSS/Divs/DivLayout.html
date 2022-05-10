@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Div-Layout</title>
+    <style>
+      #header {
+        background-color: aqua;
+        color: red;
+        margin: 5px;
+        text-align: center;
+      }
+      strong {
+        color: red;
+        text-align: center;
+        font-size: 30px;
+      }
+      div#parent {
+        overflow: auto;
+      }
+      div#child1 {
+        width: 300px;
+        float: left;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        line-height: 1.5;
+      }
+      div#child2 {
+        width: 550px;
+        float: right;
+      }
+      div#footer {
+        background-color: aqua;
+        margin: 10px;
+      }
+      #footer p {
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" style="border: 1px solid">
+      <div id="header">
+        <strong>District details</strong>
+      </div>
+      <div id="parent">
+        <div id="child1">
+          <ul>
+            <li>Chittoor</li>
+            <li>Ananthapur</li>
+            <li>Kurnool</li>
+            <li>Nellore</li>
+            <li>Tirupati</li>
+          </ul>
+        </div>
+        <div id="child2">
+          <h3>Description</h3>
+          <p>
+            A state in the south-eastern coastal region of India. It is the
+            seventh-largest state by area covering an area of 162,975 km2
+            (62,925 sq mi)
+          </p>
+          <p>
+            and tenth-most populous state with 49,386,799 inhabitants. gov.in
+          </p>
+        </div>
+      </div>
+      <div id="footer">
+        <p>Copy Rights @Andhra Pradesh</p>
+      </div>
+    </div>
+  </body>
+</html>
