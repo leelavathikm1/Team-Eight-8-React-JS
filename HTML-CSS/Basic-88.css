@@ -1,0 +1,39 @@
+div#headSection {
+    background-color: #4c4646;
+    color: white;
+}
+header {
+    width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+}
+div#logo {
+    width: 250px;
+    float: left;
+    margin-top: 20px;
+}
+span {
+    font-size: 25px;
+}
+strong {
+    font-size: 10px;
+}
+nav {
+    background-color: gray;
+    width: 350px;
+    float: right;
+    margin: 20px 0 20px 20px;
+}
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+div#natureImage {
+    margin: 0 auto;
+    width: 700px;
+    margin-top: 10px;
+}
+#natureImage img {
+    width: 700px;
+    height: 300px;
+}
