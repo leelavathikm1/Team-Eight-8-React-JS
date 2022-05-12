@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      td {
+        padding: 5px;
+      }
+      img {
+    width: 30px;
+      }
+      table {
+          border-collapse: collapse;
+      }
+      /* th:nth-child(even),
+      td:nth-child(even) {
+        background-color: aqua;
+      } */
+      tr:nth-child(odd){
+        background-color: rgb(203, 108, 18);
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <caption>
+        Student Details
+      </caption>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>City</th>
+          <th>Mobile</th>
+          <th>Pincode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td ><img src="./th.jpg" alt=""></td>
+          <tdcolspan="2">Princella</td>
+          <td>22</td>
+          <td>Chittoor</td>
+          <td>876456468</td>
+          <td>98768</td>
+        </tr>
+        <tr>
+          <td><img src="./th.jpg" alt=""></td>
+          <td>Pavan</td>
+          <td>24</td>
+          <td>Vellore</td>
+          <td rowspan="2">87658998</td>
+          <td>658797</td>
+        </tr>
+        <tr>
+          <td><img src="./th.jpg" alt=""></td>
+          <td>Princella</td>
+          <td>22</td>
+          <td>Chittoor</td>
+          <td>876456468</td>
+          <td>98768</td>
+        </tr>
+        <tr>
+          <td><img src="./th.jpg" alt=""></td>
+          <td>Pavan</td>
+          <td>24</td>
+          <td>Vellore</td>
+          <td>87658998</td>
+          <td>658797</td>
+        </tr>
+        <tr>
+          <td><img src="./th.jpg" alt=""></td>
+          <td>Princella</td>
+          <td>22</td>
+          <td style="color: red; background-color: aqua">Chittoor</td>
+          <td>876456468</td>
+          <td>98768</td>
+        </tr>
+        <tr>
+          <td><img src="./th.jpg" alt=""></td>
+          <td>Pavan</td>
+          <td>24</td>
+          <td>Vellore</td>
+          <td>87658998</td>
+          <td>658797</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

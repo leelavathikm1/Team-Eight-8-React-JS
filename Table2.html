@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      thead {
+        background-color: aqua;
+        color: red;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      /* tr {
+        color: red;
+      }
+      td {
+        background-color: blueviolet;
+      } */
+      #firstRow {
+        color: red;
+      }
+      .pass {
+        background-color: blue;
+      }
+      td {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <caption>
+        Student Details
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Mobile</th>
+          <th>City</th>
+          <th>State</th>
+          <th>PinCode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="firstRow">
+          <td colspan="2">Sruthi</td>
+          <td>22</td>
+          <td>8760900657</td>
+          <td>Vellore</td>
+          <td>Tamilnadu</td>
+          <td>7867898</td>
+        </tr>
+        <tr>
+          <td>Gowthami</td>
+          <td>23</td>
+          <td rowspan="2">6578879890</td>
+          <td>Chittoor</td>
+          <td>AndhraPradesh</td>
+          <td>570072</td>
+        </tr>
+        <tr class="pass">
+          <td>Sruthi</td>
+          <td>22</td>
+          <td>8760900657</td>
+          <td>Vellore</td>
+          <td>Tamilnadu</td>
+          <td>7867898</td>
+        </tr>
+        <tr>
+          <td>Gowthami</td>
+          <td>23</td>
+          <td>6578879890</td>
+          <td>Chittoor</td>
+          <td>AndhraPradesh</td>
+          <td>570072</td>
+        </tr>
+        <tr class="pass">
+          <td>Sruthi</td>
+          <td>22</td>
+          <td>8760900657</td>
+          <td>Vellore</td>
+          <td>Tamilnadu</td>
+          <td>7867898</td>
+        </tr>
+        <tr>
+          <td>Gowthami</td>
+          <td>23</td>
+          <td>6578879890</td>
+          <td>Chittoor</td>
+          <td>AndhraPradesh</td>
+          <td>570072</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
