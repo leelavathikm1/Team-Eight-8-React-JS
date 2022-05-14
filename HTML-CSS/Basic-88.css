@@ -1,3 +1,8 @@
+*{
+    font-size: 13px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 div#headSection {
     background-color: #4c4646;
     color: white;
@@ -28,6 +33,9 @@ header nav ul li {
     display: inline;
     margin-right: 20px;
 }
+nav ul li:hover{
+color: orange;
+}
 div#natureImage {
     margin: 0 auto;
     width: 700px;
@@ -36,4 +44,116 @@ div#natureImage {
 #natureImage img {
     width: 700px;
     height: 300px;
+}
+div#parentDivs {
+    width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+}
+div#parentDivs {
+    width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+}
+.div1 {
+    width: 220px;
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+figure {
+    margin: 0px;
+    width: 200px;
+}
+figure img {
+    width: 200px;
+    border: 1px solid;
+    padding: 3px;
+}
+.div3 {
+    width: 230px;
+    float: right;
+    margin: 10px 0 10px 0;
+}
+.div2 {
+    width: 220px;
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+#figure3 img {
+    width: 200px;
+    border: 1px solid;
+    padding: 3px;
+}
+#figure3 {
+    margin-right: 0;
+    width: 200px;
+}
+figcaption p a {
+    font-size: 10px;
+    color: orange;
+    float: right;
+}
+div#parentFigSec {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: auto;
+}
+article {
+    width: 320px;
+    float: left;
+}
+aside {
+    width: 320px;
+    float: right;
+}
+aside img {
+    width: 315px;
+    border: 1px solid;
+    padding: 3px;
+}
+article p a {
+    font-size: 10px;
+    color: orange;
+    float: right;
+}
+div#sectionParent {
+    background-color: gray;
+}
+div#subSectionParent {
+    width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+}
+.sectionS {
+    width: 150px;
+    float: left;
+    margin-right: 23px;
+}
+.sectionS ul {
+    margin-left: -39px;
+    list-style-type: none;
+}
+.sectionS ul li {
+    line-height: 1.5;
+    border-bottom: 1px solid #873131;
+}
+.sectionS ul li a {
+    text-decoration: none;
+}
+footer {
+    background-color: #2f2a2a;
+    color: white;
+    overflow: auto;
+}
+div#subFooter {
+    width: 700px;
+    margin: 0 auto;
+    overflow: auto;
+}
+p#leftPara {
+    float: left;
+}
+p#rightPara {
+    float: right;
 }
