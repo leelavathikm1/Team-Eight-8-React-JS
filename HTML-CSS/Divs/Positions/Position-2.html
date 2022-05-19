@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 2px solid;
+        width: 800px;
+        margin: 0 auto;
+      }
+      div.static-Div {
+        position: static;
+        border: 2px solid;
+        height: 20px;
+        right: 30px;
+        margin: 10px;
+      }
+      .relativ-Div {
+        position: relative;
+        border: 2px solid;
+        left: 20px;
+      }
+      #fixed-Div {
+        position: fixed;
+        border: 2px solid;
+        width: 500px;
+        right: 0;
+        bottom: 0;
+      }
+      #absolute-Div {
+        position: absolute;
+        width: 300px;
+        height: 100px;
+        border: 2px solid;
+        top: 200px;
+        right: 200px;
+      }
+      .sticky-Div {
+        position: sticky;
+        border: 2px solid;
+        height: 40px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="static-Div">Static</div>
+      <div class="relativ-Div">relativ-Div</div>
+      <div id="fixed-Div">fixed-Div</div>
+      <div id="absolute-Div">absolute-Div</div>
+      <div class="sticky-Div">sticky-Div</div>
+    </div>
+  </body>
+</html>
