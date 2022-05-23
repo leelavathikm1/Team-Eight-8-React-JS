@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        counter-reset: section;
+      }
+      h3::before {
+        counter-increment: section;
+        content: counter(section) " - ";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Automatic Numbering With Counters
+        CSS counters are like "variables".
+        The variable values can be incremented by CSS rules 
+        (which will track how many times they are used). -->
+    <h1>CSS Counters</h1>
+
+    <h3>HTM</h3>
+    <h3>CSS</h3>
+    <h3>JavaScript</h3>
+    <h3>Angular</h3>
+    <h3>React-JS</h3>
+  </body>
+</html>
