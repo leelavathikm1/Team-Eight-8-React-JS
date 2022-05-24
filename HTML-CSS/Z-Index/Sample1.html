@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #parent-1 {
+        position: absolute;
+        width: 500px;
+        background: grey;
+        margin: 0 auto;
+        text-align: center;
+        height: 200px;
+        border: 1px solid grey;
+        z-index: -1;
+      }
+      #child {
+        width: 300px;
+        background: lightgreen;
+        height: 150px;
+        margin: 20px auto;
+        z-index: -1;
+      }
+      parent-2 {
+        position: absolute;
+        width: 300px;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <!--The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an element with a lower 
+stack order.
+
+Note: z-index only works on positioned elements
+ (position: absolute, position: relative, position: fixed, or position: sticky)
+  and flex items (elements that are direct children of display:flex elements).
+
+Note: If two positioned elements overlap without a z-index specified, 
+the element positioned last in the HTML code will be shown on top.  -->
+
+    <div id="parent-1">
+      <div id="firstChild">
+        <h2>Hello World From Z Index Topic</h2>
+      </div>
+    </div>
+    <div id="parent-2" style="background: red">
+      <h2>I am from Second Element</h2>
+    </div>
+  </body>
+</html>
