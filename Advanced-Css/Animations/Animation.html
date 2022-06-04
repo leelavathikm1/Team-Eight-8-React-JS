@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 1000px;
+        background-color: red;
+        animation-name: effect;
+        animation-duration: 5s;
+        height: 200px;
+      }
+      @keyframes effect {
+        10% {
+          background-color: blue;
+        }
+        30% {
+          background-image: url("../rose.jpg");
+        }
+        50% {
+          background-color: brown;
+        }
+        70% {
+          background-image: url(../lotus.jpg);
+        }
+        100% {
+          background-color: aqua;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Css Animations</h1>
+    <div>Iam From Animations</div>
+  </body>
+</html>
