@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+          width: 500px;
+          margin: 0 auto;
+          background-color: rgb(238, 7, 199);
+          border-radius: 10px;
+          border: 2px solid;
+        }
+      </style>
+</head>
+<body>
+    <form>
+        <h1 id="heading" style="text-align: center;color:blue;">Details</h1>
+        <script>
+            document.getElementById("heading").innerText = "Student Details";
+            window.alert("type you are Details")
+            prompt("PassWord")
+        </script>
+        <fieldset>
+          <label for="fName">First Name : </label>
+          <input type="text" placeholder="Enter Name" disabled /> <br /><br />
+          <label for="lName">Last Name :</label>
+          <input type="text" name="" id="" step="3" /> <br /><br />
+          <label for="number">Mobile Num.</label>
+          <input type="number" /><br />
+          <input type="email" />
+          <input type="password" /><br />
+          <input type="radio" /><br />
+          <input type="date" /><br />
+          <input type="button" /><br />
+          <input type="time" name="" id="" /><br />
+          <input type="range" /><br />
+          <input type="search" /><br />
+          <input type="checkbox" /><br />
+          <select name="" id="">
+            <option value="">Html</option>
+            <option value="">Css</option></select
+          ><br />
+  
+          <button>Submit</button><br />
+          <textarea name="" id="" cols="30" rows="10"></textarea><br />
+          <label for="pincode">Pincode</label>
+          <input type="number" value="pincode" autofocus />
+        </fieldset>
+      </form>
+</body>
+</html>
