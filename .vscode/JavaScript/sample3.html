@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online Shopping</title>
+</head>
+
+<body>
+    <style>
+        input {
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: aqua;
+            float: right;
+            width: 94px;
+            height: 24px;
+            text-align: center;
+        }
+
+        h3 {
+            color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+
+    </head>
+
+    <body>
+        <form style="width:600px;border: 2px solid;background-color: blueviolet;margin: 0 auto;margin: 0 auto;">
+            <h1 id="Heading1" style="text-align: center ;color: beige;">Amazon</h1>
+            <script>
+                document.getElementById("Heading1").innerText = "Amazon Prime Shopping";
+                window.alert("select Ok to Sign Up")
+                prompt("sign up")
+            </script>
+
+            <table>
+                <tr>
+                    <td><label for="">Enter Name</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Enter Age</label></td>
+                    <td><input type="number"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Gender</label></td>
+                    <td><input type="radio">Male</td>
+                    <td><input type="radio">Female</td>
+                </tr>
+                <tr>
+                    <td><label for="">DOB</label></td>
+                    <td><input type="date"></td>
+
+                </tr>
+                <tr>
+                    <td><label for="">Phone Number</label></td>
+                    <td><input type="number" placeholder="Enter your 10 digit number" name="id number" size="10" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="">Email</label>
+                    </td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Address</label></td>
+                    <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Pincode</label>
+                    </td>
+                    <td><input type="number"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="">State</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Declaration</label>
+                        <input type="checkbox">I hereby accept the terms & conditions
+                    </td>
+                </tr>
+                <tr>
+                    <td><button>Register</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+
+</html>
