@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMBINATORS</title>
+    <style>
+        div>p {
+            color: crimson;
+            font-size: 25px;
+        }
+
+        div+p {
+            color: darkmagenta;
+        }
+
+        div~p {
+            font-size: 20px;
+            color: seagreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="Heading1"></h1>
+    <div>
+        <script>
+            document.getElementById("Heading1").innerText = ("About CSS");
+        </script>
+        <p>A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a
+            combinator</p>
+        <p>A combinator is something that explains the relationship between the selectors. A CSS selector can contain
+            more than one simple selector. Between the simple selectors, we can include a combinator</p>
+    </div>
+    <p>The " " (space) combinator selects nodes that are descendants of the first element</p>
+    <p>Syntax: A B Example: div span will match all span elements that are inside a div element. The > combinator
+        selects nodes that are direct children of the first element</p>
+</body>
+
+</html>
