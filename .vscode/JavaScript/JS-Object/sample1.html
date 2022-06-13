@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Detail</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        background-color: aqua;
+    }
+</style>
+
+<body>
+    <h1 style=color:blueviolet;>
+        Vellore Institute Of Technology
+    </h1>
+    <h2 style="color: red;">Student Detail</h2>
+    <h3 id="studentDetail"></h3>
+    <script>
+        var person = {
+            name: "Priya",
+            Age: 19,
+            Department: "BCA",
+            Year: 2,
+            contact: 8888870111,
+            email: "priya1234@gmail.com",
+            city: "vellore",
+        };
+        window.alert("Select Ok to Login")
+        prompt("Student Id")
+        document.getElementById("studentDetail").innerHTML =
+            person.name +
+            "<br>" +
+            person.Age +
+            "<br>" +
+            person.Department +
+            "<br>" +
+            person.Year +
+            "<br>" +
+            person.contact +
+            "<br>" +
+            person.email +
+            "<br>" +
+            person.city;
+    </script>
+</body>
+
+</html>
