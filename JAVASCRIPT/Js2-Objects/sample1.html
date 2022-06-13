@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="myName"></h1>
+    <br />
+    <ul id="myUl"></ul>
+    <!--
+        1. Name - Shruti
+        2. Age -22
+        3. EMail -shruti@gmail.com
+        4. City - Vellore
+        5. PinCode -560076
+        6. Contact  - 78678980
+      -->
+
+    <script>
+      // Create an Object
+      var person = {
+        // {} it indicates an empty object
+        name: "Shruti", // its called a property name or key. shruti is called a property value
+        age: 22,
+        eMail: "shruti@gmail.com",
+      }; // curly braces is used to create an object
+
+      person.city = "Vellore"; // Adding a property with . Notation
+      person["PinCode"] = 560076; //  Adding a property with Array [] Notation
+
+      console.log(person);
+      document.write(person.name); //display single object property value
+      document.write(
+        person.name +
+          "<br>" +
+          person.age +
+          "<br>" +
+          person.eMail +
+          "<br>" +
+          person.city +
+          "<br>" +
+          person.PinCode
+      );
+      document.getElementById("myName").innerHTML =
+        person.name +
+        "<br>" +
+        person.age +
+        "<br>" +
+        person.eMail +
+        "<br>" +
+        person.city +
+        "<br>" +
+        person.PinCode;
+
+      document.getElementById("myUl").innerHTML =
+        person.name +
+        "<br>" +
+        person.age +
+        "<br>" +
+        person.eMail +
+        "<br>" +
+        person.city +
+        "<br>" +
+        person.PinCode;
+    </script>
+    <!-- 1.cinema
+    2.laptop
+    3.sports
+     -->
+  </body>
+</html>
