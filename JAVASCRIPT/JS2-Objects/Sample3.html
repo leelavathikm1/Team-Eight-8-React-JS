@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(159, 174, 103);">
+    <h1 style="text-decoration: underline; color:darkblue;">Travelling Places</h1>
+
+    <h4 id="PlaceDetails"></h4>
+    <script>
+        var place ={
+            name1:"Darjeelings",
+            name2:"Andaman & Nicobar Islands",
+            name3:"Kodaikanal",
+            name4:"Goa",
+        };
+        place.name5 = "Ladakh",
+        place ["name6"] ="Manali"
+        document.getElementById("PlaceDetails").innerHTML = place.name1 + "<br>" + place.name2 + "<br>" + place.name3 + "<br>" +
+        place.name4 + "<br>" + place.name5 + "<br>" + place.name6;
+    </script>
+</body>
+</html>
