@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+      <h3 id="heading"></h3>
+      <script>
+        
+         var Aadhar = {
+             name: "princella flarence",
+             dob : 1998,
+            };
+            Aadhar.gender ="female";
+            Aadhar["aadharno"] = 851412564561;
+           
+        console.log(Aadhar);
+
+        document.write("Aadhaar is for every Resident of India.");
+        document.getElementById("heading").innerHTML = 
+          Aadhar.name + 
+       "<br>" +
+       Aadhar .dob + 
+         "<br>" +
+       Aadhar.gender + 
+        "<br>" +
+        Aadhar.aadharno ;
+
+        
+     </script>
+  
+      
+</body>
+</html>

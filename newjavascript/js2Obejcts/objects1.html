@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1" style="color:rgb(73, 202, 73) ;">Car </h1>
+    <h3 id="heading2"></h3>
+    <script>
+        var  Car  = {
+            brand: "BMW X1",
+            engine: "1 Disel 1 petrol" ,
+            cyclinders :"4 cyclinders " ,
+            seatingCapacity:"5 seating Capacity" ,
+             fuelTank  :"51.0 fuel Tank Capacity  ",
+             };
+             Car.araiMileage = "19.62kmpl";
+            
+
+        
+    console.log(Car);
+        document.getElementById("heading2").innerHTML =
+        Car.brand +
+        "<br>" +
+        Car.engine +
+        "<br>" +
+        Car.cyclinders +
+        "<br>" +
+        Car.seatingCapacity +
+        "<br>" +
+        Car.fuelTank +
+        "<br>" +
+        Car.bodyType +
+        "<br>" +
+        Car.araiMileage ;
+    </script>
+</body>
+</html>
