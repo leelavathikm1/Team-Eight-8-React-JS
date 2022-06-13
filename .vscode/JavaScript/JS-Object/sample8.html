@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: darkred;
+            color: ghostwhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>An Apple</h1>
+    <p>Proverb-An Apple A Day Keeps Doctor Away</p>
+    <h2 id="Fruit"></h2>
+    <script>
+        var Fruit = {
+            fruitName: "Apple",
+        }
+        Fruit.noOfFruit = 1;
+        Fruit.benefit = "Nutritious";
+        document.getElementById("Fruit").innerHTML =
+            Fruit.fruitName +
+            "<br>" +
+            Fruit.noOfFruit +
+            "<br>" +
+            Fruit.benefit
+    </script>
+</body>
+
+</html>
