@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: orange; text-align:center;">
+    <h1 style=" color:rgb(223, 63, 5);">Favourite Fruits</h1>
+
+    <h4 id="Fruits"></h4>
+    <script>
+        var fruit ={
+            Name1:"JackFruit",
+            Name2:"Mango",
+            Name3:"KiwiFruit",
+            Name4:"Pineapple",
+        };
+
+        fruit ["Name5"] = "Dragon Fruit",
+        fruit ["Name6"] ="Cherry",
+        fruit.Name7 = "Apple"
+        document.getElementById("Fruits").innerHTML = fruit.Name1 + "<br>" + fruit.Name2 + "<br>" + fruit.Name3 + "<br>" +
+        fruit.Name4 + "<br>" + fruit.Name5 + "<br>" + fruit.Name6 + "<br>" + fruit.Name7;
+    </script>
+</body>
+</html>
