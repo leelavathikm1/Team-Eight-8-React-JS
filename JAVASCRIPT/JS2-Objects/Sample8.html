@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(151, 218, 172) ; text-align: center; text-transform: capitalize; padding: 30px;">
+    <h1 style=" color: rgb(25, 123, 8);">INDIAN ARMY</h1>
+    <p> The Indian Army is operationally and geographically divided into seven commands.</p>
+    <h4 id="Seven Commands"></h4>
+
+    <script>
+        var IndianArmy = {
+            Command1: "Central Command",
+            Command2: "Eastern Command",
+            Command3: "Northern Command",
+            Command4: "Southern Command",
+        };
+
+        IndianArmy.Command5 = "South Western Command",
+        IndianArmy.Command6 = "Western Command",
+        IndianArmy.Command7 = "Army Training Commanda",
+        document.getElementById("Seven Commands").innerHTML = IndianArmy.Command1 + "<br>" + IndianArmy.Command2 + "<br>" + 
+        IndianArmy.Command3 + "<br>" + IndianArmy.Command4 + "<br>" + IndianArmy.Command5 + "<br>" + IndianArmy.Command6 + "<br>" + IndianArmy.Command7;
+    </script>
+</body>
+
+</html>
