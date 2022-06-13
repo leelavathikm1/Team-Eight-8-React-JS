@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies-2022</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: lightslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Movies Released In 2022</h1>
+    <ul id="movies"></ul>
+    <script>
+        var movies = {
+            movie1: "DON",
+            movie2: "KGF",
+            movie3: "RRR",
+            movie4: "Beast",
+            movie5: "Vikram",
+
+        }
+        document.getElementById("movies").innerHTML =
+            movies.movie1 +
+            "<br>" +
+            movies.movie2 +
+            "<br>" +
+            movies.movie3 +
+            "<br>" +
+            movies.movie4 +
+            "<br>" +
+            movies.movie5;
+
+    </script>
+</body>
+
+</html>
