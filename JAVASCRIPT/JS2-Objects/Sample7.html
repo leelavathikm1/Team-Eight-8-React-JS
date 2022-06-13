@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: aqua ; text-align: center; text-transform: capitalize; padding: 30px;">
+    <h1 style=" color: red;">Vitamins</h1>
+    <p> Vitamins are organic compounds that are required in small amounts in our diet but their deficiency causes
+        specific diseases.</p>
+    <h4 id="VitaminsDEtails"></h4>
+    <script>
+        var Vitamins = {
+            VitaminA: "Night blindness",
+            VitaminB: "Beriberi",
+            VitaminC: "Scurvy & Swelling of Gums",
+            VitaminD: "Rickets & Osteomalacia",
+        };
+
+        Vitamins["VitaminE"] = "Less Fertility",
+        Vitamins["VitaminK"] = "Non-Clotting of Blood",
+        Vitamins.VitaminB6 = "Anemia"
+            document.getElementById("VitaminsDEtails").innerHTML = Vitamins.VitaminA + "<br>" + Vitamins.VitaminB + "<br>" + Vitamins.VitaminC + "<br>" +
+            Vitamins.VitaminD + "<br>" + Vitamins.VitaminE + "<br>" + Vitamins.VitaminK + "<br>" +  Vitamins.VitaminB6;
+    </script>
+</body>
+
+</html>
