@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>June</title>
+    <style>
+        body {
+            background-color: darkkhaki;
+            color: rebeccapurple;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>June Season Fruit</h1>
+    <ul id="juneSeason"></ul>
+
+    <script>
+        var Fruit = {
+            season: "June",
+            Fruit1: "Mango",
+            Fruit2: "Musk Millon",
+            Fruit3: "Blackberries",
+            Fruit4: "Plum",
+            Fruit5: "Watermelon"
+        }
+        Fruit.noOfFruit = 5;
+        document.getElementById("juneSeason").innerHTML =
+            Fruit.season +
+            "<br>" +
+            Fruit.Fruit1 +
+            "<br>" +
+            Fruit.Fruit2 +
+            "<br>" +
+            Fruit.Fruit3 +
+            "<br>" +
+            Fruit.Fruit4 +
+            "<br>" +
+            Fruit.Fruit5;
+
+    </script>
+</body>
+
+</html>
