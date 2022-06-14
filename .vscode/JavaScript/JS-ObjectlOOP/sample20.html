@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies</title>
+    <style>
+        body {
+            background-color: turquoise;
+            color: purple;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Top 10 Companies </h1>
+    <h2 id="companies"></h2>
+    <script>
+        var companies = {
+            company1: "Wipro",
+            company2: "TCS",
+            company3: "Infosys",
+            comapny4: "BHEL",
+            comapny5: "Hindustan Unilever",
+            comapny6: "Reliance Industries",
+            comapny7: "Walmart Inc",
+            comapny8: "Flipkart",
+            comapny9: "HCL",
+            comapny10: "Amazon",
+
+        }
+        var dispcompanies = "";
+        for (a in companies) {
+            dispcompanies = dispcompanies + a + ":" + companies[a] + "<br>";
+        }
+        document.getElementById("companies").innerHTML = dispcompanies;
+    </script>
+</body>
+
+</html>
