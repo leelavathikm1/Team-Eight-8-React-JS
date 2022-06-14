@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(188, 183, 236) ; text-align: center; text-transform:uppercase; padding: 20px; font-style: italic;">
+    <h1 style=" color: rgb(86, 26, 8);">Most Famous Festivals Of India</h1>
+    <br>
+    <h4 id="FestivalDetails"></h4>
+
+    <script>
+        var fes = {
+            object1: "1.Makar Sakranti or Pongal",
+            object2: "2.Holi",
+            object3: "3.Onam",
+            object4: "4.Ganesh Chaturthi",
+            object5: "5.Dussehra",
+        };
+
+        fes.object6 = "6.Diwali",
+        fes.object7 = "7.Christmas",
+        fes.object8 = "8.Ramadan",
+
+        document.getElementById("FestivalDetails").innerHTML = fes.object1 + "<br>" + fes.object2 + "<br>" + 
+        fes.object3 + "<br>" + fes.object4 + "<br>" + fes.object5 + "<br>" + fes.object6 + "<br>" + fes.object7 + "<br>" + 
+        fes.object8;
+    </script>
+</body>
+</html>
