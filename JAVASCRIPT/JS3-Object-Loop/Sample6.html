@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(215, 229, 147) ; text-align: center; padding: 30px;">
+    <h1 style="color:green ; "> Big Festivals in India</h1>
+    <ul id="Festivals"></ul>
+    <script>
+         var Festivals = {
+            Top1: "Pongal & Makara Sankranti",
+            Top2: "Holi",
+            Top3: "Onam",
+            Top4: "Ramadan",
+            Top5: "Ganesh Chaturthi",
+            Top6: "Dussehra",
+            Top7: "Diwali",
+            Top8: "Christmas",
+            Top9: "New Year",
+
+        }
+        var dispFestivals = "";
+        for (a in Festivals) {
+            dispFestivals = dispFestivals + a + " : " + Festivals[a] + "<br>";
+            document.getElementById("Festivals").innerHTML = dispFestivals;
+        }
+    </script>
+</html>
