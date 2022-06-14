@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV</title>
+    <style>
+        body {
+            background-color: darkorchid;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>New Arrival TV</h1>
+    <ul id="newArrivalTv"></ul>
+    <script>
+        var newArrivalTv = {
+            newArrivalTv1: "Xiaomi Mi ",
+            newArrivalTv2: "Samsung The Wall Luxury",
+            newArrivalTv3: "OnePlus ",
+            newArrivalTv4: "Sony Bravia ",
+            newArrivalTv5: "LG",
+        }
+        var dispnewArrivalTv = "";
+        for (tv in newArrivalTv) {
+            dispnewArrivalTv = dispnewArrivalTv + tv + ":" + newArrivalTv[tv] + "<br>";
+        }
+        document.getElementById("newArrivalTv").innerHTML = dispnewArrivalTv;
+
+    </script>
+</body>
+
+</html>
