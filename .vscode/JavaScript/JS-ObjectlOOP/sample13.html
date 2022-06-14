@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vellore Fort</title>
+    <style>
+        body {
+            background-color: brown;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Vellore Fort</h1>
+    <p>Vellore Fort is a large 16th-century fort situated in heart of the Vellore city, in the state of Tamil Nadu,
+        India built by Vijayanagara kings.</p>
+    <h2 id="velloreFort"></h2>
+    <script>
+        var velloreFort = {
+            builtBy: "Vijayanagara Kingdom",
+            builtAt: 1566,
+            years: 456,
+            materials: "Granite",
+
+        }
+        var dispvelloreFort = "";
+        for (a in velloreFort) {
+            dispvelloreFort = dispvelloreFort + a + ":" + velloreFort[a] + "<br>";
+        }
+        document.getElementById("velloreFort").innerHTML = dispvelloreFort;
+
+    </script>
+</body>
+
+</html>
