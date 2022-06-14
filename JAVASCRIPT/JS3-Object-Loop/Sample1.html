@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Best Watch Company</h1>
+    <ul id="watches"></ul>
+    <Script>
+        var watches = {
+            Brand1: "Jaeger-LeCoultre",
+            Brand2: "Titan",
+            Brand3: "Harry Winston",
+            Brand4: "Rolex",
+            Brand5: "Fasttrack",
+            Brand6: "MI Smart Watch",
+            Brand7: "Fossil",
+            Brand8: "WROGN",
+            Brand9: "Benyar Luxury",
+            Brand10: "G-Shock"
+
+        }
+        var dispwatches = "";
+        for (a in watches) {
+            dispwatches = dispwatches + a + " : " + watches[a] + "<br>";
+            document.getElementById("watches").innerHTML =dispwatches
+        } 
+    </Script>
+</body>
+</html>
