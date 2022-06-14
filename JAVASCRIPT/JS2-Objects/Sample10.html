@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(115, 102, 228) ; text-align: center; text-transform:uppercase; padding: 30px;">
+    <h1 style=" color: rgb(247, 63, 7);"> Best Tourist Places In Tamil Nadu</h1>
+    <p> There are numerous places in the state of Tamil Nadu. However, when looking for some of the best tourist places in Tamil Nadu.</p>
+    <h4 id="TouristPlaces"></h4>
+
+    <script>
+        var TouristSpot = {
+            place1: "1. Chennai - Cultural Centre",
+            place2: "2. Pondicherry - French Colony",
+            place3: "3. Mudumalai - Ancient Hills",
+            place4: "4. Hogenakkal - Gorgeous Waterfalls",
+            place5: "5. Tuticorin - Stunning Beaches",
+        };
+
+        TouristSpot.place6 = "6. Kanyakumari - Southernmost Tip Of India",
+        TouristSpot.place7 = "7. Trichy - Historical Temples",
+        TouristSpot.place8 = "8. Pollachi - Popular Tollywood Destination",
+        TouristSpot.place9 = "9. Madurai - Stunning Architecture",
+        TouristSpot.place10 = "10. Vellore - The Fort City",
+
+        document.getElementById("TouristPlaces").innerHTML = TouristSpot.place1 + "<br>" + TouristSpot.place2 + "<br>" + 
+        TouristSpot.place3 + "<br>" + TouristSpot.place4 + "<br>" + TouristSpot.place5 + "<br>" + TouristSpot.place6 + "<br>" + TouristSpot.place7 + "<br>" + 
+        TouristSpot.place8 + "<br>" + TouristSpot.place9 + "<br>" + TouristSpot.place10;
+    </script>
+</body>
+</html>
