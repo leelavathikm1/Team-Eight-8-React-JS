@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(143, 9, 227); color:rgb(102, 255, 7); text-align:center;">
+    <h1>Laptop Brands</h1>
+    <h2 id="Brands"></h2>
+    <script>
+        var Companies = {
+            Brand1:"Accer",
+            Brand2:"HP",
+            Brand3:"Lenavo",
+            Brand4:"sony",
+            Brand5:"LG"
+        };
+        console.log(Companies)
+        document.getElementById("Brands").style="color:orange";
+        document.getElementById("Brands").innerHTML =
+        Companies.Brand1 +
+        "<br>" +
+        Companies.Brand2 +
+        "<br>" +
+        Companies.Brand3 +
+        "<br>" +
+        Companies.Brand4 +
+        "<br>" +
+        Companies.Brand5;
+    </script>
+</body>
+</html>
