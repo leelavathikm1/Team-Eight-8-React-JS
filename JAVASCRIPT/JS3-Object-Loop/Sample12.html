@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:rgb(219, 107, 184); font-style: italic;">
+    <h1 style="color:rgb(234, 69, 9) ; text-decoration: underline; ">My Favourite Places:</h1>
+    <h2 id="FavouritePlace"></h2>
+    <script>
+        var places = {
+            A: "PONDICHERY",
+            B: "GOA",
+            C: "MANALI",
+            D: "JAMMU & KASHMIR",
+            E: "LADHAK",
+            F: "OOTI",
+            G: "TIRUPATHI",
+        }
+        var dispplaces = "";
+        for (a in places) {
+            dispplaces = dispplaces + a + " : " + places[a] + "<br>";
+            document.getElementById("FavouritePlace").innerHTML = dispplaces;
+        }
+    </script>
+</body>
+</html>
