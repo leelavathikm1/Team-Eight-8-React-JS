@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(115, 102, 228) ; text-align: center; text-transform:uppercase; padding: 30px;">
+    <h1> Best Mobiles in 2022</h1>
+    <ul id="mobiles"></ul>
+    <script>
+         var mobiles = {
+            Brand1: "APPLE",
+            Brand2: "RED MI",
+            Brand3: "REALME",
+            Brand4: "ONE PLUS",
+            Brand5: "SAMSUNG",
+            Brand6: "MOTOROLA",
+            Brand7: "OPPO",
+            Brand8: "VIVO",
+            Brand9: "IQ00 Z3",
+            Brand10: "POCO"
+
+        }
+        var dispmobiles = "";
+        for (a in mobiles) {
+            dispmobiles = dispmobiles + a + " : " + mobiles[a] + "<br>";
+            document.getElementById("mobiles").innerHTML = dispmobiles;
+        }
+    </script>
+  </body >
+</html >
