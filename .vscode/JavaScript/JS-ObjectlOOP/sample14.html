@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile</title>
+    <style>
+        body {
+            background-color: darkorchid;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>New Arrival Mobile</h1>
+    <h2 id="newmobile"></h2>
+    <script>
+        var newmobile = {
+            newmobile1: "Motorola Moto A10",
+            newmobile2: "Nokia 105 Plus",
+            newmobile3: "Apple iPhone 13 Pro",
+            newmobile4: " Galaxy S22 Ultra 5G",
+            newmobile5: "Samsung Galaxy M13",
+
+        }
+        var dispnewmobile = "";
+        for (c in newmobile) {
+            dispnewmobile = dispnewmobile + c + ":" + newmobile[c] + "<br>";
+        }
+        document.getElementById("newmobile").innerHTML = dispnewmobile;
+
+    </script>
+</body>
+
+</html>
