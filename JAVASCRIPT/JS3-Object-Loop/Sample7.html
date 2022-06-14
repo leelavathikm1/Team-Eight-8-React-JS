@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color:green ; "> My favourite Fruits</h1>
+    <h2 id="Fruits"> Fruits</h2>
+    <script>
+         var Fruits = {
+            1: "JackFruit",
+            2: "Mango",
+            3: "KiwiFruit",
+            4: "Pineapple",
+            5: "DragonFruit",
+            6: "Cherry",
+            7: "Apple",
+
+        }
+        var dispFruits = "";
+        for (a in Fruits) {
+            dispFruits = dispFruits + a + " : " + Fruits[a] + "<br>";
+            document.getElementById("Fruits").innerHTML = dispFruits;
+        }
+    </script>
+</body>
+</html>
