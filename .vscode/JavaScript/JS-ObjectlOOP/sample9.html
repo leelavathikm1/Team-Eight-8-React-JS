@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <style>
+        body {
+            background-color: lavender;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Best Music Director in TN</h1>
+    <ul id="musicDirector"></ul>
+    <script>
+        var musicDirector = {
+            musicDirector1: "A R Rahman",
+            musicDirector2: "Illayaraja",
+            musicDirector3: "Yuvan",
+        }
+        var dispmusicDirector = "";
+        for (a in musicDirector) {
+            dispmusicDirector = dispmusicDirector + a + ":" + musicDirector[a] + "<br>";
+        }
+        document.getElementById("musicDirector").innerHTML = dispmusicDirector;
+    </script>
+</body>
+
+</html>
