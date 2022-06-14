@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1" style="color:rgb(127, 105, 223);">National Symbols of India  </h1>
+    <h3 id="heading2"></h3>
+    <script>
+        var NationalSymbols   = {
+            Anthem  :"Jana Gana Mana ",
+            Song : "Vande Mataram",
+            Sport  : "Hockey" ,
+            Bird : "peacock",
+            Animal :" Royal Bengal Tiger",
+            Flower :"Lotus ",
+            Fruit : "Mangoes ",
+        
+        };
+        console.log(NationalSymbols );
+        document.getElementById("heading2").innerHTML = 
+        NationalSymbols.Anthem +
+         "<br>" +
+         NationalSymbols.Song+
+         "<br>" +
+         NationalSymbols.Sport+
+         "<br>" +
+         NationalSymbols.Bird+
+         "<br>" +
+         NationalSymbols.Animal+
+         "<br>" +
+         NationalSymbols.Flower +
+         "<br>" +
+         NationalSymbols.Fruit;
+
+        
+    </script>
+</body>
+</html>

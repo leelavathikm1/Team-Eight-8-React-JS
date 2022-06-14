@@ -1,0 +1,44 @@
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="heading1" style="color:rgb(105, 156, 28);">planets  </h1>
+        <h3 id="heading2"></h3>
+        <script>
+            var planets   = {
+                planet1 :"Mercury",
+                planet2 : "Venus" ,
+                planet3 : "Earth",
+                planet4 :"Mars",
+                planet5 : "Jupiter",
+                planet6 :"Saturn",
+                planet7:"Uranus",
+                planet8:"Neptune",
+            
+            };
+            console.log(planets );
+            document.getElementById("heading2").innerHTML = 
+            planets.planet1 +
+             "<br>" +
+             planets.planet2 +
+             "<br>" +
+             planets.planet3 +
+             "<br>" +
+             planets.planet4 +
+             "<br>" +
+             planets.planet5 +
+             "<br>" +
+             planets.planet6 +
+             "<br>" +
+             planets.planet7 +
+             "<br>" +
+             planets.planet8 ;
+    
+            
+        </script>
+    </body>
+    </html>
