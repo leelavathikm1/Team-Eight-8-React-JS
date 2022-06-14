@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            color: whitesmoke;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WOMEN IN SPORTS</h1>
+    <ul id="sportsWomen"></ul>
+    <script>
+        var women = {
+            women1: "PV Sindhu-Badminton",
+            women2: "Saina Nehwal-Badminton",
+            women3: "Saina Mirza-Tennis",
+            women4: "Mary Kom-Boxing",
+            women5: "Mithali Raj-Cricket",
+        }
+        document.getElementById("sportsWomen").innerHTML =
+            women.women1 +
+            "<br>" +
+            women.women2 +
+            "<br>" +
+            women.women3 +
+            "<br>" +
+            women.women4 +
+            "<br>" +
+            women.women5;
+
+    </script>
+</body>
+
+</html>
