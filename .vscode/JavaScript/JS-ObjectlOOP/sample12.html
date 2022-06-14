@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hospital</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pride Of Vellore</h1>
+    <h2 id="hospital"></h2>
+    <script>
+        var hospital = {
+            name: "CMC-Christian Medical College",
+            established: 1900,
+
+        }
+        var disphospital = "";
+        for (b in hospital) {
+            disphospital = disphospital + b + ":" + hospital[b] + "<br>";
+        }
+        document.getElementById("hospital").innerHTML = disphospital;
+    </script>
+</body>
+
+</html>
