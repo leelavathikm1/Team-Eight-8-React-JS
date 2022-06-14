@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(244, 145, 240) ; text-align: center; padding: 30px;">
+    <h1 style="color:rgb(98, 6, 6) ; "> Best Bikes in 2022</h1>
+    <ul id="Bikes"></ul>
+    <script>
+         var Bikes = {
+            Brand1: "RoyalEnfield",
+            Brand2: "YAMAHA MT15",
+            Brand3: "YAMAHA FZ x",
+            Brand4: "YAMAHA R15",
+            Brand5: "SUZUKI GIXXER SF 150",
+            Brand6: "Pulsar 220",
+            Brand7: "Pulsar NS200",
+            Brand8: "Apache RTR 180",
+            Brand9: "RX 100",
+            Brand10: "JAWA"
+
+        }
+        var dispBikes = "";
+        for (a in Bikes) {
+            dispBikes = dispBikes + a + " : " + Bikes[a] + "<br>";
+            document.getElementById("Bikes").innerHTML = dispBikes;
+        }
+    </script>
+  </body >
+</html>
