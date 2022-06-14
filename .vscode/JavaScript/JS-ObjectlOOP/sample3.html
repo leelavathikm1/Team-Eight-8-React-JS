@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+</head>
+
+<body>
+    <h1>Movies Released In 2022</h1>
+    <ul id="movies"></ul>
+    <script>
+        var movies = {
+            movie1: "DON",
+            movie2: "KGF",
+            movie3: "RRR",
+            movie4: "Beast",
+            movie5: "Vikram",
+
+        }
+        var dispmovies = "";
+        for (a in movies) {
+            dispmovies = dispmovies + a + ":" + movies[a] + "<br>";
+        }
+        document.getElementById("movies").innerHTML = dispmovies;
+
+    </script>
+</body>
+
+</html>
