@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="myUl"></ul>
+    <script>
+      var mobiles = {
+        mob1: "Moto",
+        mob2: "LG",
+        mob3: "Samsung",
+        mob4: "Oppo",
+        mob5: "MI",
+        mob6: "Nokia",
+        mob7: "Apple",
+        mob8: "OnePlus",
+      };
+      console.log(mobiles);
+      document.write(mobiles.mob1);
+      //   For in loop
+      var dispMobiles = "";
+      for (a in mobiles) {
+        dispMobiles = dispMobiles + a + " : " + mobiles[a] + "<br>";
+        // console.log(a + " : " + mobiles[a]);
+        // document.getElementById("myUl").innerHTML = mobiles[a];
+      }
+      document.getElementById("myUl").innerHTML = dispMobiles;
+      document.write(dispMobiles);
+    </script>
+  </body>
+</html>
