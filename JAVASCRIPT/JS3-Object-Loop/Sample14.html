@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:rgb(223, 147, 147); font-style: italic; color: white; width: 50%;border: 1px solid red;">
+    <h1 style="color:rgb(9, 9, 9); text-decoration: underline; ">My Details:</h1>
+    <h2 id="MyDetails"></h2>
+    <script>
+        var details = {
+            Name: "Pavan Kumar PS",
+            BornDate: "Feb 5",
+            Age: "23",
+            Height: "6.1",
+            Weight: "76kg",
+            Qualification: "UG",
+            Group: "BSC (Electronics)",
+            College: "VignanaSudha Degree College ",
+            BloodGroup: "O+",
+            MobileNo:"8248916641"
+
+        }
+        var dispdetails = "";
+        for (a in details) {
+            dispdetails = dispdetails + a + " : " + details[a] + "<br>";
+            document.getElementById("MyDetails").innerHTML = dispdetails;
+        }
+    </script>
+</body>
+</html>
