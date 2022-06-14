@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Detail</title>
+    <style>
+        body {
+            background-color: lemonchiffon;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style=color:blueviolet;>
+        Vellore Institute Of Technology
+    </h1>
+    <h2 style="color: red;">Student Detail</h2>
+    <h3 id="studentDetail"></h3>
+    <script>
+        var studentDetail = {
+            name: "Priya",
+            Age: 19,
+            Department: "BCA",
+            Year: 2,
+            contact: 8888870111,
+            email: "priya1234@gmail.com",
+            city: "vellore",
+        }
+        var dispstudentDetail = "";
+        for (a in studentDetail) {
+            dispstudentDetail = dispstudentDetail + a + ":" + studentDetail[a] + "<br>";
+        }
+        document.getElementById("studentDetail").innerHTML = dispstudentDetail;
+
+
+    </script>
+
+</body>
+
+</html>
