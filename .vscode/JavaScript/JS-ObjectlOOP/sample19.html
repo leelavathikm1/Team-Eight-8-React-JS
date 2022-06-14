@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director</title>
+    <style>
+        body {
+            background-color: teal;
+            color: seashell;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Best Movie Director in TN</h1>
+    <ul id="director"></ul>
+    <script>
+        var director = {
+            director1: "Shankar",
+            director2: "Atlee",
+            director3: "Kamal Hasan",
+            director4: "Vignesh Shivan",
+            director5: "A R Murugadas",
+        }
+        var dispdirector = "";
+
+        for (d in director) {
+            dispdirector = dispdirector + d + ":" + director[d] + "<br>";
+        }
+        document.getElementById("director").innerHTML = dispdirector;
+    </script>
+</body>
+
+</html>
