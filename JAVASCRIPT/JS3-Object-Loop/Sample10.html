@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:darkkhaki">
+    <h1 style="color:rgb(4, 240, 63) ; text-decoration: underline; ">Top 10 banks in India:</h1>
+    <h2 id="BankDetails"></h2>
+    <script>
+         var Banks = {
+            1: "Indian Bank",
+            2: "State Bank",
+            3: "ICICI Bank",
+            4: "Cenara Bank",
+            5: "HDFC Bank",
+            6: "Axis Bank",
+            7: "Bank of Boroda",
+            8: "Union Bank",
+            9: "Andhra Bank",
+            10: "IDBI Bank",
+
+        }
+        var dispBanks = "";
+        for (a in Banks) {
+            dispBanks = dispBanks + a + " : " + Banks[a] + "<br>";
+            document.getElementById("BankDetails").innerHTML = dispBanks;
+        }
+    </script> 
+</body>
+</html>
