@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TN Tourist</title>
+</head>
+
+<body>
+    <h1>Best Spot to visit in TN</h1>
+    <ul id="Spot"> </ul>
+    <script>
+        var Spot = {
+            spot1: "chennai",
+            spot2: "Madhurai",
+            spot3: "Ooty",
+            spot4: "Kodaikanal",
+            spot5: "Kanniyakumari",
+        }
+        var dispSpot = "";
+        for (a in Spot) {
+            dispSpot = dispSpot + a + " : " + Spot[a] + "<br>";
+        }
+        document.getElementById("Spot").innerHTML = dispSpot;
+
+    </script>
+
+</body>
+
+</html>
