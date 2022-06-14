@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(203, 227, 83) ; text-align: center; text-transform:uppercase; padding: 30px;">
+    <h1 style=" color: rgb(25, 123, 8);">The 5 Countries That Produce the Most Sugar</h1>
+    <p> Brazil was the single largest producer, with 29.93 million metric tons of sugar produced in 2019 to 2020.</p>
+    <h4 id="SugarDetails"></h4>
+
+    <script>
+        var Sugar = {
+            country1: "1. Brazil",
+            country2: "2. India",
+            country3: "3. The European Union (EU)",
+        };
+
+        Sugar.country4 = "4. China",
+        Sugar.country5 = "5. Thailand",
+        document.getElementById("SugarDetails").innerHTML = Sugar.country1 + "<br>" + Sugar.country2 + "<br>" + 
+        Sugar.country3 + "<br>" + Sugar.country4 + "<br>" + Sugar.country5;
+    </script>
+</body>
+</html>
