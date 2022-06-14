@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TYpes of Mobiles</h1>
+
+    <h2 id="MobileDetails"></h2>
+    <script>
+        var mobile = {
+            model1: "Realme X7",
+            model2: "Redmi note 7 pro",
+            model3: "oppo",
+        };
+        mobile.model4 = "vivo",
+            mobile.model5 = "one plus"
+            mobile ["model6"] ="Samsung"
+
+        document.getElementById("MobileDetails").innerHTML = mobile.model1 + "<br>" + mobile.model2 + "<br>" +
+            mobile.model3 + "<br>" + mobile.model4 + "<br>" + mobile.model5 + "<br>" + mobile.model6;
+    </script>
+</body>
+
+</html>
