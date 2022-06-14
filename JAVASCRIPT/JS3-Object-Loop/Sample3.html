@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(206, 221, 163) ; text-align: center; padding: 30px;">
+    <h1 style="color: red; font-style: italic;"> TATA IPL 2022</h1>
+    <ul id="teams"></ul>
+    <script>
+         var teams = {
+            team1: "CHENNAI SUPER KING",
+            team2: "DELHI CAPITALS",
+            team3: "GUJRAT TITANS",
+            team4: "KOLKATA KNIGHT RIDERS",
+            team5: "LUCKNOW SUPER GIANTS",
+            team6: "MUMBAI INDIANS",
+            team7: "PUNJAB KINGS",
+            team8: "RAJASTHAN ROYALS",
+            team9: "ROYAL CHALLENGERS BANGALORE",
+            team10: "SUNRISERS HYDERABAD"
+
+        }
+        var dispteams = "";
+        for (a in teams) {
+            dispteams = dispteams + a + " : " + teams[a] + "<br>";
+            document.getElementById("teams").innerHTML = dispteams;
+        }
+    </script>
+</body>
+</html>
