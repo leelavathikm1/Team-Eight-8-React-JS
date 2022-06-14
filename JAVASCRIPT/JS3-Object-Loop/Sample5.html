@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(163, 143, 163) ; text-align: center; padding: 30px;">
+    <h1 style="color:rgb(1, 30, 98) ; "> Top 10 MNC Companies in India</h1>
+    <ul id="MNC Companies"></ul>
+    <script>
+         var Companies = {
+            Top1: "Apple India Pvt. Ltd.",
+            Top2: "Amazon Development Centre India Pvt. Ltd.",
+            Top3: "Citibank India.",
+            Top4: "Coca-Cola India Pvt. Ltd.",
+            Top5: "Google India Pvt. Ltd.",
+            Top6: "Hewlett-Packard India Sales Pvt. Ltd.",
+            Top7: "IBM India Pvt. Ltd.",
+            Top8: "Microsoft India Corporation India Pvt. Ltd. x",
+            Top9: "PepsiCo India Holdings Pvt. Ltd.",
+            Top10: "Sony India Pvt. Ltd.",
+
+        }
+        var dispCompanies = "";
+        for (a in Companies) {
+            dispCompanies = dispCompanies + a + " : " + Companies[a] + "<br>";
+            document.getElementById("MNC Companies").innerHTML = dispCompanies;
+        }
+    </script>
+</html>
