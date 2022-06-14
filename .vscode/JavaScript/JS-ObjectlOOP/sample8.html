@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestiveIndia</title>
+    <style>
+        body {
+            background-color: lightskyblue;
+            text-align: center;
+            color: oldlace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-style:italic ;">Types Of Festival Celebrated In India </h1>
+    <p>The culturally rich land of India, produces various festivals on its soil. To experience each of them is like
+        living a hundred lives in one, they are that diverse in their essences. Nevertheless, the beautify of India is
+        magnified by these festivals</p>
+    <h2 id="festiveIndia"></h2>
+    <script>
+        var festiveIndia = {
+            festive1: "Diwali-Festival of Lights",
+            festive2: "Holi-Festival of Colors",
+            festive3: "Christmas-Birth of Jesus Christ",
+            festive4: "Dussehra-Vijayadasami",
+            festive5: "Durga Puja-Durgotsava or Navaratri",
+            festive6: "Janmashtmi-Birth of Lord Krishna",
+            festive7: "Ganesh Chaturthi-Vinayaka Chathurti",
+            festive8: "Eid-Ul-Fitr-Marks the End of Ramadan",
+            festive9: "Onam-Harvest Festival of Kerala",
+            festive10: "Raksha Bandhan-Rakhi",
+            festive11: "Pongal-Tamil Harvest Festival",
+            festive12: "Gurupurab-Anniversary of A Guru's Birth or Death",
+            festive13: "Maha Shivratri-The Great Night of Shiva",
+            festive14: "Hemis-Birth of Padmasambhava",
+            festive15: "Lodhi-Punjabi Folk Festival",
+        }
+        var dispfestiveIndia = "";
+        for (a in festiveIndia) {
+            dispfestiveIndia = dispfestiveIndia + a + ":" + festiveIndia[a] + "<br>";
+        }
+        document.getElementById("festiveIndia").innerHTML = dispfestiveIndia;
+
+
+
+    </script>
+</body>
+
+</html>
