@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Team</title>
+    <style>
+        body {
+            background-color: indigo;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Indian cricket Team</h1>
+    <ul id="teamIndia"></ul>
+    <script>
+        var teamIndia = {
+            player1: "Rohit Sharma",
+            player2: "Isha Kisan",
+            player3: "Hardik Pandiya",
+            player4: "Rishab Pant",
+            player5: "Virat Kholi",
+            player6: "Bhuvaneshwar Kumar",
+            player7: "Umran Malik",
+            player8: "Yuzvenvar Chahal",
+            player9: "Jasprit Bumrah",
+            player10: "Ravichandran Ashwin",
+            player11: "Dinesh Karthik",
+
+        }
+        var dispteamIndia = "";
+        for (team in teamIndia) {
+            dispteamIndia = dispteamIndia + team + ":" + teamIndia[team] + "<br>";
+
+        }
+        document.getElementById("teamIndia").innerHTML = dispteamIndia;
+    </script>
+</body>
+
+</html>
