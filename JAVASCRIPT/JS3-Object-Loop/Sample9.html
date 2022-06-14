@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color:rgb(14, 197, 213) ; text-decoration: underline; ">Social Media:</h1>
+    <h2 id="socialmedia"></h2>
+    <script>
+         var socialmedia = {
+            1: "WhatsApp",
+            2: "Instagram",
+            3: "Youtube",
+            4: "FaceBook",
+            5: "Snapchat",
+            6: "LinkedIN",
+            7: "Naukri",
+            8: "Twitter",
+            9: "Telegram",
+            10: "Hike",
+
+        }
+        var dispsocialmedia = "";
+        for (a in socialmedia) {
+            dispsocialmedia = dispsocialmedia + a + " : " + socialmedia[a] + "<br>";
+            document.getElementById("socialmedia").innerHTML = dispsocialmedia;
+        }
+    </script> 
+</body>
+</html>
