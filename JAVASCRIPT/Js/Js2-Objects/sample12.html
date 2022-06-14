@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head >
+<body style="background-color: rgb(249, 233, 8); color:rgb(239, 87, 40); text-align:center;">
+    <h1>Electronics</h1>
+    <h2 id="Items"></h2>
+    <script>
+        var discover = {
+            guide1:"Laptops",
+            guide2:"Headphones",
+            guide3:"Smart watches",
+            guide4:"printers",
+            guide5:"Monitor"
+        };
+        console.log(discover)
+        document.getElementById("Items").style= "color:blue";
+        document.getElementById("Items").innerHTML =
+    discover.guide1 +
+    "<br>" +
+    discover.guide2 +
+    "<br>" +
+    discover.guide3 +
+    "<br>" +
+    discover.guide4 +
+    "<br>" +
+    discover.guide5;
+    </script>
+</body>
+</html>

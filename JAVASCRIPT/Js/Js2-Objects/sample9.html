@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(24, 52, 20); color:rgb(6, 241, 245); text-align:center;">
+    <h1> TYPES OF WOMEN'S SHOES</h1>
+    <h2 id="heading1"></h2>
+    <script>
+     var WOMENSSHOES = {
+        Type1:"home Slippers",
+        Type2:"Fashion slippers",
+        Type3:"Heels",
+        Type4:"Bellies",
+        Type5:"Casual Shoes",
+        Type6:"Sports Shoes"
+     };
+     console.log(WOMENSSHOES)
+     document.getElementById("heading1").style= "color:red"; 
+     document.getElementById("heading1").innerHTML =
+     WOMENSSHOES.Type1 +
+     "<br>" +
+     WOMENSSHOES.Type2 +
+     "<br>" +
+     WOMENSSHOES.Type3 +
+     "<br>" +
+     WOMENSSHOES.Type4 +
+     "<br>" +
+     WOMENSSHOES.Type5 +
+     "<br>" +
+     WOMENSSHOES.Type6;
+    </script>
+</body>
+</html>

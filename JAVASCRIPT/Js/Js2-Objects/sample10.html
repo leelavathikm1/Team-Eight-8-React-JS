@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head >
+<body style="background-color: rgb(223, 136, 119); color:rgb(144, 7, 202); text-align:center;">
+ <h1>Trendy Fashion accessories</h1>
+ <h2 id="heading"></h2>
+    <script>
+        var Fashion = {
+            Item1:"Watches",
+            Item2:"SunGlasses",
+            Item3:"Silver Jewellery",
+            Item4:"Backpacks&Wallets",
+            Item5:"Handbags",
+            Item6:"Luggege"
+        };
+        console.log(Fashion)
+        document.getElementById("heading").style= "color: green";
+        document.getElementById("heading").innerHTML =
+        Fashion.Item1 +
+        "<br>" +
+        Fashion.Item2 +
+        "<br>" +
+        Fashion.Item3 +
+        "<br>" +
+        Fashion.Item4 +
+        "<br>" +
+        Fashion.Item5 +
+        "<br>" +
+        Fashion.Item6;
+    </script>
+</body>
+</html>

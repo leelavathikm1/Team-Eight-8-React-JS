@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head >
+<body style="background-color: rgb(215, 237, 10); color:rgb(251, 48, 7); text-align:center;">
+    <h1>BEAUTY & GROOMING</h1>
+    <h2 id="pICKS"></h2>
+    <script>
+    var BEAUTY = {
+        product1 :"Facewashes",
+        product2:"Shsmpoos & Conditioners",
+        product3:"Creams & Moisturizers",
+        product4:"Eye Makeup",
+        product5:"Body lotions"
+    };
+    console.log(BEAUTY)
+    document.getElementById("pICKS").style="color: blue";
+    document.getElementById("pICKS").innerHTML =
+    BEAUTY.product1 +
+    "<br>" +
+    BEAUTY.product2 +
+    "<br>" +
+    BEAUTY.product3 +
+    "<br>" +
+    BEAUTY.product4 +
+    "<br>" +
+    BEAUTY.product5;
+    </script>
+</body>
+</html>

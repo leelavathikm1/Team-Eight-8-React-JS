@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <h1 style="color: blue;">The Family</h1>
+    <h2 id="Headings">The Family</h2>
+<script>
+    var keywods = {
+      Head1:"Father",
+      Head2:"Mother",
+      Head3:"Grand Mother",
+      Head4:"Grand Fother",
+      Head5:"Childrens"
+    };
+    window.alert("open")
+    prompt("Enter Name")
+    console.log(keywods)
+    document.getElementById("Headings").innerHTML =
+    keywods.Head1 +
+    "<br>" +
+    keywods.Head2 +
+    "<br>" +
+    keywods.Head3 +
+    "<br>" +
+    keywods.Head4 +
+    "<br>" +
+    keywods.Head5;
+    </script>
+</body>
+</html>

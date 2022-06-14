@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(234, 27, 127); color:rgb(12, 232, 225); text-align:center;">
+    <h1>WOMEN'S CLOTHING</h1>
+    <h2 id="trending"></h2>
+    <script>
+   var WOMENSWEAR = {
+    Cloths1:"Sarees",
+    Cloths2:"Tops&T-Shirts",
+    Cloths3:"Kurtis",
+    Cloths4:"Jeans",
+    Cloths5:"Dresses"
+  };
+  console.log(WOMENSWEAR)
+  document.getElementById("trending").innerHTML =
+  WOMENSWEAR.Cloths1 +
+  "<br>" +
+  WOMENSWEAR.Cloths2 +
+  "<br>" +
+  WOMENSWEAR.Cloths3 +
+  "<br>" +
+  WOMENSWEAR.Cloths4 +
+  "<br>" +
+  WOMENSWEAR.Cloths5;
+    </script>
+</body>
+</html>
