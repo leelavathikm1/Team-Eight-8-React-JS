@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:rgb(78, 2, 44); font-style: italic; color: white; ">
+    <h1 style="color:rgb(9, 9, 9); text-decoration: underline; ">Degree & BE Colleges in Chittoor:</h1>
+    <h2 id="collegeDetails"></h2>
+    <script>
+        var details = {
+            1: "VignanaSudha Degree College",
+            2: "Vijayam Degree College",
+            3: "SV Arts Degree College",
+            4: "PVKN Degree College",
+            5: "Vejetha Degree College",
+            6: "VCR Degree College",
+            7: "SITAMS",
+            8: "SVCET ",
+            9: "VEMU",
+            10:"Smt. N.P. Savithramma Govt. College"
+
+        }
+        var dispdetails = "";
+        for (a in details) {
+            dispdetails = dispdetails + a + " : " + details[a] + "<br>";
+            document.getElementById("collegeDetails").innerHTML = dispdetails;
+        }
+    </script>
+</body>
+</html>
