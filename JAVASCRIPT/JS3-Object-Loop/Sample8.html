@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="width: 55%; border:2px solid; margin-left:30%;">
+    <h1 style="color:rgb(14, 197, 213) ; text-decoration: underline; ">Different Types Of Dog Breeds :</h1>
+    <h2 id="Breeds"></h2>
+    <script>
+         var Breeds = {
+            1: "Labrador Retriever",
+            2: "German Shepherd",
+            3: "Golden Retriever",
+            4: "Pug",
+            5: "Doberman",
+            6: "Indian Spitz",
+            7: "Beagle",
+            8: "Pomeranian",
+            9: "Himalayan Sheepdog",
+            10: "Rajapalayam",
+
+        }
+        var dispBreeds = "";
+        for (a in Breeds) {
+            dispBreeds = dispBreeds + a + " : " + Breeds[a] + "<br>";
+            document.getElementById("Breeds").innerHTML = dispBreeds;
+        }
+    </script>
+</body>
+</html>
