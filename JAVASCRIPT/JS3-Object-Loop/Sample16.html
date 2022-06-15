@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:rgb(230, 130, 185); font-style: italic; color: rgb(3, 205, 33); ">
+    <h1 style="color:rgb(6, 119, 151); text-decoration: underline; ">List Of Domestic Animals:</h1>
+    <h2 id="DomesticAnimal"></h2>
+    <script>
+        var Animals = {
+            1: "Dog",
+            2: "Cat",
+            3: "Horse",
+            4: "Goat",
+            5: "Sheep",
+            6: "Pig",
+            7: "Cow",
+            8: "Donkey",
+            9: "Rabbit",
+            10:"Buffalo"
+
+        }
+        var dispAnimals = "";
+        for (a in Animals) {
+            dispAnimals = dispAnimals + a + " : " + Animals[a] + "<br>";
+            document.getElementById("DomesticAnimal").innerHTML = dispAnimals;
+        }
+    </script>
+</body>
+</html>
