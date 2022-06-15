@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:rgb(167, 106, 106); color: rgb(4, 3, 6); width: 50%; margin-left: 30%; ">
+    <h1 style="color:rgb(170, 5, 115); text-decoration: underline; ">BlockBuster Movies In 2022:</h1>
+    <h2 id="Movies"></h2>
+    <script>
+        var BlockBusterMovies = {
+            Movie1: "K.G.F - Chapter 2",
+            Movie2: "RRR",
+            Movie3: "Vikram",
+            Movie4: "Don",
+            Movie5: "#777 Charle",
+            Movie6: "Kaatu Vaakula Rendu Kadhal",
+            NMovie7: "Acharya",
+            Movie8: "Pushpa",
+        }
+        var dispBlockBusterMovies = "";
+        for (a in BlockBusterMovies) {
+            dispBlockBusterMovies = dispBlockBusterMovies + a + " : " + BlockBusterMovies[a] + "<br>";
+            document.getElementById("Movies").innerHTML = dispBlockBusterMovies;
+        }
+    </script>
+</body>
+</html>
