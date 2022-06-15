@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(115, 151, 209);font-style: inherit; color:rgb(126, 242, 9); text-align: center;">
+    <h1 style="color: rgb(242, 13, 208); text-decoration:underline;">Visit To Thirumala</h1>
+    <h2 id="heading"></h2>
+    <script>
+        var famousplaces  = {
+            place1:"Silathoranam",
+            place2:"varahaswamy temple",
+            place3:"Dwaraka Thirumala",
+            place4:"Chakra Theertham",
+            place4:"Talakona waterfalls",
+            place5:"Kumaradhara Theertham"
+         }
+         var dispfamousplaces = "";
+         for (a in famousplaces) {
+            dispfamousplaces = dispfamousplaces + a + " : " + famousplaces[a] + "<br>";
+            document.getElementById("heading").innerHTML = dispfamousplaces;
+         }
+    </script> 
+</body>
+</html>
