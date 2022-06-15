@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:rgb(237, 239, 160); font-style: italic; color: rgb(205, 3, 118); width: 50%; border: 2px solid gold; ">
+    <h1 style="color:rgb(8, 235, 19); text-decoration: underline; ">List Of Wild Animals:</h1>
+    <h2 id="WildAnimal"></h2>
+    <script>
+        var Animals = {
+            Animal1: "Tiger",
+            Animal2: "Lion",
+            Animal3: "Elephant",
+            Animal4: "Bears",
+            Animal5: "Monkey",
+            Animal6: "Wolf",
+            Animal7: "Giraffe",
+            Animal8: "Deer",
+            Animal9: "Cheetah",
+            Animal10:"Leopard"
+
+        }
+        var dispAnimals = "";
+        for (a in Animals) {
+            dispAnimals = dispAnimals + a + " : " + Animals[a] + "<br>";
+            document.getElementById("WildAnimal").innerHTML = dispAnimals;
+        }
+    </script>
+</body>
+</html>
