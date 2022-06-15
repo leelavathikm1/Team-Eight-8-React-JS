@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(153, 25, 47);font-style: inherit; color:aqua; text-align: center;">
+    <h1 style="color: orange; text-decoration:underline;">List of Fruits</h1>
+    <h2 id="Fruits for sale"></h2>
+    <script>
+        var Fruits = {
+            Fru1:"Apple",
+            Fru2:"Mango",
+            Fru3:"Orange",
+            Fru4:"Banana",
+            Fru4:"Papaya"
+         }
+         var dispFruits = "";
+         for (a in Fruits) {
+            dispFruits = dispFruits + a + " : " + Fruits[a] + "<br>";
+            document.getElementById("Fruits for sale").innerHTML = dispFruits;
+         }
+    </script>
+</body>
+</html>
