@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:rgb(180, 240, 185); color: rgb(142, 109, 208); width: 50%; border: 2px solid rgb(255, 85, 0); margin-left: 30%; ">
+    <h1 style="color:rgb(3, 10, 4); text-decoration: underline; ">KollyWood Actors Names:</h1>
+    <h2 id="KollyWoodActors"></h2>
+    <script>
+        var Actors = {
+            Name1: "Tiger",
+            Name2: "Lion",
+            Name3: "Elephant",
+            Name4: "Bears",
+            Name5: "Monkey",
+            Name6: "Wolf",
+            Name7: "Giraffe",
+            Name8: "Deer",
+            Name9: "Cheetah",
+            Name10:"Leopard"
+
+        }
+        var dispActors = "";
+        for (a in Actors) {
+            dispActors = dispActors + a + " : " + Actors[a] + "<br>";
+            document.getElementById("KollyWoodActors").innerHTML = dispActors;
+        }
+    </script>
+</body>
+</html>
