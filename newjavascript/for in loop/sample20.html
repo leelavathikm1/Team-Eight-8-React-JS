@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Doctors</h1>
+    <ul id="myul"></ul>
+    <script>
+        var doctors = {
+            type1  : "Cardiologist",
+            type2  : "Audiologist",
+            type3  : "Dentist",
+            type4  : "ENT ",
+            type5  : "Gynaecologist",
+            type6  : "Orthopaedic surgeon",
+            type7  : "Psychiatrists",
+            tyep8  : "Paediatrician",
+            tyep9  : "Pulmonologist",
+            type10 : "Radiologist",
+        };
+
+        console.log(doctors);
+
+        var dispDoctors = "";
+
+        for (a in doctors){
+            dispDoctors = dispDoctors + a + ":" + doctors[a] + "<br>";
+
+        }
+
+        document.getElementById("myul").innerHTML = dispDoctors;
+
+    </script>
+</body>
+</html>

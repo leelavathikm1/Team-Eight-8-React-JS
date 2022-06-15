@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">professions</h1>
+    <ul id="myul"></ul>
+    <script>
+        var professions = {
+            profession1 : "Accountant",
+            profession2 : "Teacher",
+            profession3 : "Doctor",
+            profession4 : "Lawyer",
+            profession5 : "Engineer",
+            profession6 : "Commercial Banker",
+            
+        };
+
+        console.log (professions);
+
+        var dispProfessions= "";
+        for (a in professions ){
+        dispProfessions = dispProfessions + a + ":" + professions [a] + "<br>";
+        }
+
+        document.getElementById("myul").innerHTML = dispProfessions ;
+    </script>
+</body>
+</html>

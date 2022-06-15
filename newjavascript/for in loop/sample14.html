@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">south India</h1>
+    <ul id="myul"></ul>
+    <script>
+        var states = {
+            state1:"Andhara Pradesh",
+            state2:"Tamil Nadu",
+            state3 :"Karnataka ",
+            state4 :"Kerala",
+            state5 :"Telangana",
+        };
+        console.log(states);
+         
+        var  dispStates = "";
+
+        for (a in states) {
+            dispStates = dispStates + a + ":" + states[a ] + "<br>";
+            
+
+        }
+        document.getElementById("myul") . innerHTML = dispStates;
+        
+    </script>
+</body>
+</html>

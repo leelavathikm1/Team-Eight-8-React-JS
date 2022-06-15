@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1">Apple iphone 13 pro </h1>
+    <ul id="myUl"></ul>
+    <script>
+   var appleIphone = {
+             brand: "Apple",
+            memoryStorage: "128 GB" ,
+            size:"15 cm(6.1 inch)" ,
+            display:"super Retina XDE display",
+             waterResistant :"TP",
+             battery:"3000mah",
+
+
+        };
+        console.log(appleIphone);
+     
+      
+      var dispAppleIphone= "";
+      for (a in appleIphone) {
+        dispAppleIphone = dispAppleIphone + a + " : " + appleIphone[a] + "<br>";
+        
+      }
+      document.getElementById("myUl").innerHTML = dispAppleIphone;
+   
+    </script>
+</body>
+</html>

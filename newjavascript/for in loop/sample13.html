@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Laptop</h1>  
+    <ul id="myul"></ul>
+    <script>
+        var laptop ={
+         barnd:"dell",
+         modelname: "Inspiron 3511",
+         type: "thin and light laptop",
+         batterybackup:"upto 8",
+        };
+        console.log(laptop);
+
+        var dispLaptop= "";
+
+        for (a in laptop ){
+           
+            dispLaptop = dispLaptop + a + ":" + laptop[a] + "<br>";
+
+        }
+        document.getElementById("myul").innerHTML =dispLaptop;
+
+    </script>
+</body>
+</html>

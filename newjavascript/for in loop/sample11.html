@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Omnivorous </h1>
+    <ul id="myul"></ul>
+    <script>
+        var omnivorous  = {
+           Animal1:"Badgers",
+           Animal2:"Civets",
+           Animal3:"Catfish",
+           Animal4:"Piranhas",
+           Animal5:"Chimpanzees",
+           Animal6:"Squirrels",
+
+        };
+        console.log(omnivorous);
+
+        var dispOmnivorous="";
+
+        for (a in omnivorous){
+            dispOmnivorous = dispOmnivorous + a + ":" + omnivorous[a] + "<br>";
+
+        }
+        document.getElementById("myul"). innerHTML = dispOmnivorous;
+    </script>
+
+</body>
+</html>

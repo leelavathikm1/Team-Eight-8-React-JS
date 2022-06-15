@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 id="heading">states in India</h1> 
+   <ul id="myul"></ul>
+   <script>
+       var states = {
+           state1:"Uttar pradesh",
+           state2:"Andhara pradesh",
+           state3:"punjab",
+           state4:"karnataka",
+           state5:"Asam",
+           state6:"Rajasthan",
+           state7:"Gujarat",
+           state8:"Kerala",
+           state9:"Tamil Nadu",
+           state10:"Maharashtra",
+       };
+
+     console.log(states);
+
+     var dispStates = "";
+     for(a in states){
+         dispStates=dispStates + a + ":" + states[a] + "<br>";
+    
+     }
+     document.getElementById("myul").innerHTML = dispStates;
+
+
+   </script>
+   
+</body>
+</html>

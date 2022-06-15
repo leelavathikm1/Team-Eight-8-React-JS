@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1">OLED TV</h1>
+    <ul id="myUl"></ul>
+    <script>
+   var oledtv = {
+          brand:"SONY BRAVIA",
+          screenType: "OLED",
+          displaySize: "163.9 cm(65 inch)",
+          wifiType:" Wi-Fi Certified",
+          widthHeightDepth: "1447mm *836mm *55 mm",
+
+        };
+        console.log(oledtv);
+     
+      
+      var dispOledtv= "";
+      for (a in oledtv) {
+        dispOledtv = dispOledtv + a + " : " + oledtv[a] + "<br>";
+        
+      }
+      document.getElementById("myUl").innerHTML = dispOledtv;
+   
+    </script>
+</body>
+</html>

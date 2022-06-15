@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="heading1">Outdoor Game</h1>
+  <ul id="myul"></ul>
+  <script>
+    var outdoorgame = {
+      game1 :"Cricket",
+      game2 :"Volleyball",
+      game3 : "Basketball",
+      game4 :"Skating",
+      game5 :"Athletics",
+
+    };
+     console.log(outdoorgame);
+
+     var  dispOutdoor = "";
+
+     for( a in outdoorgame ){
+     dispOutdoor = dispOutdoor + a + ":" + outdoorgame[a] + "<br>";
+  }
+  document.getElementById("myul").innerHTML = dispOutdoor;
+
+  </script>
+</body>
+</html>

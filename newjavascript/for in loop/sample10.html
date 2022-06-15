@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1">Herbivores </h1>
+    <ul id="myUl"></ul>
+    <script>
+     var herbivores   = {
+            Herbivores1 :"Cow",
+            Herbivores2 : "goat" ,
+            Herbivores3: "giraffe",
+            Herbivores4:"sheep",
+            Herbivores5:"zebra ",
+        
+        };
+        console.log(herbivores);
+     
+      
+      var dispHerbivores= "";
+      for (a in herbivores) {
+        dispHerbivores = dispHerbivores + a + " : " + herbivores[a] + "<br>";
+        
+      }
+      document.getElementById("myUl").innerHTML = dispHerbivores;
+   
+    </script>
+</body>
+</html>

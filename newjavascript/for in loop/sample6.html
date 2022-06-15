@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1">Indoor Game</h1>
+    <ul id="myUl"></ul>
+    <script>
+      var indoorGame  = {
+          game1:"Chess",
+          game2: " 	Croom -Board" ,
+          game3: "Table tennis",
+          game4:"Ludo",
+          game5: "Card Game",
+          game5:"Pictionary Game",
+
+        };
+        console.log(indoorGame);
+     
+      
+      var dispIndoorgame= "";
+      for (a in indoorGame) {
+        dispIndoorgame = dispIndoorgame + a + " : " + indoorGame[a] + "<br>";
+        
+      }
+      document.getElementById("myUl").innerHTML = dispIndoorgame;
+   
+    </script>
+</body>
+</html>

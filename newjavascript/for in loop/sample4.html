@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1">Front End Developer  </h1>
+    <ul id="myUl"></ul>
+    <script>
+       var frontEnd   = {
+            subject1 :"HTML ",
+            subject2 : "CSS ",
+            subject3  : "JavaScript" ,
+            subject4 : "ReactJS",
+            subject5:" AngularJS",
+         };
+      console.log(frontEnd);
+     
+      
+      var dispFrontend= "";
+      for (a in frontEnd) {
+        dispFrontend = dispFrontend + a + " : " + frontEnd[a] + "<br>";
+        
+      }
+      document.getElementById("myUl").innerHTML = dispFrontend;
+   
+    </script>
+</body>
+</html>

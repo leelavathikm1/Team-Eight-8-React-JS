@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 id="heading">Groups in Intermediate</h1> 
+  <ul id="myul"></ul>
+   <script>
+       var groups = {
+           group1:"MEC( maths,economics, commerce )",
+           group2 :"CEC( civics ,economics, commerce )",
+           group3:"HEC( history,economics ,civics )",
+           group4:"MPC(Maths, Physics, and Chemistry)",
+           group5:"BiPC(Biology, Physics, and Chemistry)",
+       };
+
+       console.log(groups);
+       var dispGroups = "";
+
+       for(a in groups){
+           dispGroups=dispGroups + a + ":"  + groups[a] + "<br>";
+
+       }
+       document.getElementById("myul").innerHTML = dispGroups;
+   </script>
+</body>
+</html>

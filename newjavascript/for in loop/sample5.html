@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1">Induction Stove</h1>
+    <ul id="myUl"></ul>
+    <script>
+      var induction = {
+          brand:"Prestige",
+          type: "Induction Cooktop",
+          height  : "40.2 cm ",
+          width :" 8.8 cm ",
+          weight: "1.5kg",
+
+        };
+      console.log(induction);
+     
+      
+      var dispInduction= "";
+      for (a in induction) {
+        dispInduction = dispInduction + a + " : " + induction[a] + "<br>";
+        
+      }
+      document.getElementById("myUl").innerHTML = dispInduction;
+   
+    </script>
+</body>
+</html>
