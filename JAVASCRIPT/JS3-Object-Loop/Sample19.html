@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color:rgb(233, 57, 57); color: rgb(4, 3, 6); width: 50%; margin-left: 30%; ">
+    <h1 style="color:rgb(248, 250, 248); text-decoration: underline; ">Music Directors:</h1>
+    <h2 id="MusicDirectors"></h2>
+    <script>
+        var Director = {
+            Name1: "Yuvan Shankar Raja (U1)",
+            Name2: "IllayaRaja",
+            Name3: "A. R. Rahman",
+            Name4: "Anirudh Ravichander",
+            Name5: "D. Imman",
+            Name6: "Devi Sri Prasad",
+            Name7: "G. V. Prakash Kumar",
+            Name8: "Harris Jayaraj",
+            Name9: "Jai",
+            Name10:"Hiphop Tamizha"
+
+        }
+        var dispDirector = "";
+        for (a in Director) {
+            dispDirector = dispDirector + a + " : " + Director[a] + "<br>";
+            document.getElementById("MusicDirectors").innerHTML = dispDirector;
+        }
+    </script>
+</body>
+</html>
