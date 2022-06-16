@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var IPL2022 = {
+          Team1: "Chennai super kings",
+          Team2: "Mumbai Indians",
+          Team3: "Royal Challengers Bangalore",
+
+          Captains: {
+            Captain1: "MsDhoni",
+            Captain2: "RohitSharma",
+            Captain3: "ViratKohli",
+          },
+          
+          AllDetails: function () {
+            
+            console.log(
+              this.Team1 , this.Team2 , this.Team3 ,
+              this.Captains.Captain1,
+              this.Captains.Captain2, 
+              this.Captains.Captain3,
+            );
+
+            console.log(this);
+          },
+        };
+        IPL2022.AllDetails();
+      </script>
+</body>
+</html>
