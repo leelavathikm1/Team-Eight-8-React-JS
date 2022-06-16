@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mydetails1</title>
+</head>
+
+<body>
+    <script>
+        var Mydetails = {
+            name: "SruthiGnanasekkar",
+            age: 24,
+            email: "sruthi927@gmail.com",
+
+
+            Address: {
+                State: "Tamil Nadu",
+                District: "Vellore",
+
+
+            },
+            Mydetails1: function () {
+                console.log(
+                    this.name, this.age, this.email, this.Address.State, this.Address.District,
+                );
+                console.log(this);
+            }
+        };
+        Mydetails.Mydetails1();
+    </script>
+</body>
+
+</html>
