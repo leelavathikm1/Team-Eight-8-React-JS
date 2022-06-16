@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var Instagram= {
+          Name: "Instagram",
+          Developer: "Meta Platforms",
+          ReleaseYear: 2010,
+
+          Ditails: {
+            Size: 196.6,
+            OperatingSystem: "Microsoft Windows",
+            Website: "www.instagram.com",
+          },
+          
+          InstagramDetails: function () {
+            
+            console.log(
+              this.Name , this.Developer , this.ReleaseYear ,
+              this.Ditails.Size,
+              this.Ditails.OperatingSystem, 
+              this.Ditails.Website,
+            );
+
+            console.log(this);
+          },
+        };
+        Instagram.InstagramDetails();
+      </script>
+</body>
+</html>
