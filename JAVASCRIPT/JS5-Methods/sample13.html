@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var JAVA= {
+          Name: "Java",
+          DesignedBy: "James Gosling",
+          Developerr: "Oracle Corporation",
+
+          Ditails: {
+            FirstAppeared: 1995,
+            TypingDisipline: "Static,Strong,Safe,Nominative,Manifest",
+            Website: "oracle.com/java/www.java.com",
+          },
+          
+          javaDetails: function () {
+            
+            console.log(
+              this.Name , this.DesignedBy , this.Developerr ,
+              this.Ditails.FirstAppeared,
+              this.Ditails.TypingDisipline, 
+              this.Ditails.Website,
+            );
+
+            console.log(this);
+          },
+        };
+        JAVA.javaDetails();
+      </script>
+</body>
+</html>
