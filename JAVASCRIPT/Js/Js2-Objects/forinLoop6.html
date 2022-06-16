@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(184, 184, 37);font-style: italic ; color:rgb(255, 60, 0); text-align: center;">
+    <h1 style="color: rgb(123, 0, 255);"> aquarium accessories</h1>
+    <h2 id="style"></h2>
+    <script>
+        var  accessories = {
+            Decorative1 :"Shirlip Fish Aquarium",
+            Decorative2:"PetMaster Aquarium",
+            Decorative3:"Jainsons Pet Products Aquarium",
+            Decorative4:"Petzlifeworld Aquarium",
+            Decorative5:"Natural Environment Your Aquarium",
+            Decorative6:"Salt Water Coral Fish Tank"
+        };
+        dispaccessories = " " ;
+        for (a in accessories) {
+        dispaccessories = dispaccessories + a + " : " + accessories [a] + "<br>";
+            document.getElementById("style").innerHTML = dispaccessories;
+        }
+
+        dispmobilephone = "" ;
+       for (a in mobilephone) {
+        dispmobilephone = dispmobilephone + a + " : " + mobilephone [a] + "<br>";
+        document.getElementById("style").innerHTML = dispmobilephone;
+       }
+    </script>
+</body>
+</html>

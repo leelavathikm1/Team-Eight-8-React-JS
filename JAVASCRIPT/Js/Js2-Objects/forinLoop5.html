@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(189, 6, 244);font-style: italic ; color:rgb(157, 255, 0); text-align: center;">
+    <h1 style="color: red;">To mobile phone brands in india</h1>
+    <h2 id="style"></h2>
+    <script>
+        var mobilephone = {
+            brand1:"Samsung",
+            brand2:"Nokia",
+            brand3:"Moto E",
+            brand4:"Redmi",
+            brand5:"Oppo",
+            brand6:"Apple"
+        };
+        dispmobilephone = "" ;
+       for (a in mobilephone) {
+        dispmobilephone = dispmobilephone + a + " : " + mobilephone [a] + "<br>";
+        document.getElementById("style").innerHTML = dispmobilephone;
+       }
+</script>
+</body>
+</html>
