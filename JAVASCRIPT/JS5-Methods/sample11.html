@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var WhatsApp= {
+          Name: "WhatsApp",
+          Developer: "Meta Platforms",
+          ReleaseYear: 2009,
+
+          Ditails: {
+            Type: "Instant Messaging & Volp",
+            location: "Mountain View,California",
+            Website: "www.Whatsapp.com",
+          },
+          
+          WhatsappDetails: function () {
+            
+            console.log(
+              this.Name , this.Developer , this.ReleaseYear ,
+              this.Ditails.Type,
+              this.Ditails.location, 
+              this.Ditails.Website,
+            );
+
+            console.log(this);
+          },
+        };
+        WhatsApp.WhatsappDetails();
+      </script>
+</body>
+</html>
