@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var MovieName = {
+          fName: "Roudram",
+          mName: "Ranam",
+          lName: "Rudhiram",
+
+          MovieDetails: {
+            Hero1: "RamCharan",
+            Hero2: "Junior NTR",
+            Director: "SS Rajamouli"
+          },
+          
+          fullDetails: function () {
+            
+            console.log(
+              this.fName , this.mName , this.lName ,
+              this.MovieDetails.Hero1,
+              this.MovieDetails.Hero2, 
+              this.MovieDetails.Director,
+            );
+
+            console.log(this);
+          },
+        };
+        MovieName.fullDetails();
+      </script>
+</body>
+</html>
