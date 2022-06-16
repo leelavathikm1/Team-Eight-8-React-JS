@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var MITeam = {
+          Captain: "Rohit Sharma",
+          WicketKeeper: "Ishan Kishan",
+          Allrounder: "Daniel Sams",
+
+          StarPlayers: {
+            No1: "Kieron Pollard",
+            No2: "Jasprit Bumrah",
+            No3: "SuryaKumar Yadav",
+          },
+          
+          TeamDetails: function () {
+            
+            console.log(
+              this.Captain , this.WicketKeeper , this.Allrounder ,
+              this.StarPlayers.No1,
+              this.StarPlayers.No2, 
+              this.StarPlayers.No3,
+            );
+
+            console.log(this);
+          },
+        };
+        MITeam.TeamDetails();
+      </script>
+</body>
+</html>
