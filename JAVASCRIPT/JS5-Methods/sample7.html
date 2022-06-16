@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var TamilNadu= {
+          Capital: "Chennai",
+          Language: "Tamil",
+          NoOfDistrict: 38,
+
+          Ditails: {
+            ChiefMinister: "M.K.Stalin",
+            Governor: "R.N.Ravi",
+            PopulationRank: 6,
+          },
+          
+          DistrictDetails: function () {
+            
+            console.log(
+              this.Capital , this.Language , this.NoOfDistrict ,
+              this.Ditails.ChiefMinister,
+              this.Ditails.Governor, 
+              this.Ditails.PopulationRank,
+            );
+
+            console.log(this);
+          },
+        };
+        TamilNadu.DistrictDetails();
+      </script>
+</body>
+</html>
