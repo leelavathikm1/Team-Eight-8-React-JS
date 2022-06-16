@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var FilmIndustry= {
+          Type1: "FilmMaking",
+          Type2: "Production",
+          Type3: "Companies",
+          Type4: "Film Studios",
+          Type5: "Cinematography",
+
+          Departments: {
+            Type6: "Animation",
+            Type7: "Film Production",
+            Type8: "Screen Writing",
+            Type9: "Pre-Production",
+            Type10: "Post Production",
+            Type11: "Film Festivals",
+            Type12: "Distribution"
+          },
+          
+          DepartmentDetails: function () {
+            
+            console.log(
+              this.Type1 , this.Type2 , this.Type3 , this.Type4 , this.Type5 ,
+              this.Departments.Type6,
+              this.Departments.Type7, 
+              this.Departments.Type8,
+              this.Departments.Type9,
+              this.Departments.Type10,
+              this.Departments.Type11,
+              this.Departments.Type12,
+            );
+
+            console.log(this);
+          },
+        };
+        FilmIndustry.DepartmentDetails();
+      </script>
+</body>
+</html>
