@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function soldier(soldierName) {
+       this.Name = "IndianArmy";
+       this.ARO = "Chennai";
+       this.soldierName = soldierName;
+       this.GroupDetails = function () {
+         return this.Name + " " + this.ARO + this.IndianArmy;
+       };
+     }
+
+     soldier.prototype.addSubject = "IndianArmySoldiers";
+
+     var soldier1 = new soldier("Kiran");
+     var soldier2 = new soldier("Sharma");
+     var soldier3 = new soldier("Suresh");
+
+      
+     console.log(soldier1,soldier2,soldier3);
+     console.log(soldier1.addSubject);
+   </script> 
+</body>
+</html>
