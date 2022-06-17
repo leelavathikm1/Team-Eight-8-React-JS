@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Mobiles(Price) {
+       this.Name = "Realme X7 5G";
+       this.RAM = "6GB";
+       this.ROM = "128GB"
+       this.Price = Price;
+       this.GroupDetails = function () {
+         return this.Name + " " + this.RAM + " " + this.ROM + " " + this.Price;
+       };
+     }
+
+     Mobiles.prototype.addSubject = "MobilePrices";
+
+     var Price1 = new Mobiles(19000);
+     var Price2 = new Mobiles(20000);
+     var Price3 = new Mobiles(21000);
+
+      
+     console.log(Price1,Price2,Price3);
+     console.log(Price1.addSubject);
+   </script> 
+</body>
+</html>
