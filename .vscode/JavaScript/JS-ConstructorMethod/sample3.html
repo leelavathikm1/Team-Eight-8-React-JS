@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+
+</head>
+
+<body>
+    <script>
+        function TCS(EmployeeName) {
+            this.EmployeeName = EmployeeName;
+            this.Team = "Elite";
+            this.Project = 6;
+
+            this.EmployeeDetails = function () {
+                return this.EmployeeName + "" + this.Team + "" + this.Project;
+            };
+
+        }
+        var Employee1 = new TCS("Magi");
+        var Employee2 = new TCS("Sruthi");
+        var Employee3 = new TCS("Praveen");
+        console.log(Employee1, Employee2, Employee3);
+    </script>
+</body>
+
+</html>
