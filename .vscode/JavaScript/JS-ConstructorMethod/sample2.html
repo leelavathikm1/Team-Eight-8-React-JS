@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group</title>
+</head>
+
+<body>
+    <script>
+        function Group(PersonName) {
+            this.PersonName = PersonName;
+            this.course = "MBA";
+            this.Branch = "HR";
+            this.BloodGroup = "B+";
+
+            this.StudentDetails = function () {
+                return this.PersonName + "" + this.course + "" + this.Branch + "" + this.BloodGroup;
+            };
+
+        }
+        Group.prototype.addYear = 2;
+        var Student1 = new Group("Sruthi");
+        var Student2 = new Group("Magi");
+        var Student3 = new Group("Priya");
+        console.log(Student1, Student2, Student3);
+        console.log(Student1.addYear);
+    </script>
+</body>
+
+</html>
