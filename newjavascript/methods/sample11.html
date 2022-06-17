@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var companyDetails = {
+            companyName : "Tata Consultancy service",
+            revenue : "Rs 1,67,311 Cr",
+            salesGrowth :"10.47per",
+
+            employeeDetails : {
+                noofEmployees :420000,
+            },
+
+            employeeDetails: function () {
+        
+          console.log(
+            this.companyName + this.revenue,
+            this.salesGrowth,
+            this.noofemployees
+          );
+          console.log(this);
+        },
+      };
+      companyDetails.employeeDetails();
+    </script>
+</body>
+</html>

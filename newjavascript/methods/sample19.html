@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    var planetDetails = {
+      planet1 : "Mercury",
+      planet2 : "Venus",
+      planet3 :"Earth",
+      planet4 : "Mars",
+     
+
+        fewmorePlanets : {
+          planet5 : "Jupiter",
+          planet6 : "Saturn",
+          planet7 : "Uranus",
+          planet8 : "Neptune",
+        },
+
+        fewmorePlanets: function () {
+    
+      console.log(
+        this.planet1 + this.planet2,
+        this.planet3, this .planet4, this .planet5,
+        this.planet6 ,this. planet7,this.planet8 
+      );
+      console.log(this);
+    },
+  };
+  planetDetails.fewmorePlanets();
+</script>
+</body>
+</html>

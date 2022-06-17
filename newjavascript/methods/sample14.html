@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    var companyDetails = {
+        companyName : "Wipro",
+        revenue : "Rs 47,996 Cr",
+        salesGrowth :" 9.50 per",
+
+        employeeDetails : {
+            noofEmployees :160000,
+
+        },
+
+        employeeDetails: function () {
+    
+      console.log(
+        this.companyName + this.revenue,
+        this.salesGrowth,
+        this.noofemployees
+      );
+      console.log(this);
+    },
+  };
+  companyDetails.employeeDetails();
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    var companyDetails = {
+        companyName : "HCL Technologies",
+        revenue : "Rs 76,306 Cr",
+        salesGrowth :"24.74 per",
+
+        employeeDetails : {
+            noofEmployees :208877,
+
+        },
+
+        employeeDetails: function () {
+    
+      console.log(
+        this.companyName + this.revenue,
+        this.salesGrowth,
+        this.noofemployees
+      );
+      console.log(this);
+    },
+  };
+  companyDetails.employeeDetails();
+</script>
+</body>
+</html>

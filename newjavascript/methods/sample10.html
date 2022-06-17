@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var personDetails = {
+            firstName : "Savitri",
+            Spouse : "Gemini Ganesan",
+            born : "6 December 1935",
+
+            professionalDetails : {
+                occupation :"Actress, singer and director ",
+            },
+
+            professionalDetails: function () {
+        
+          console.log(
+            this.firstName + this.Spouse,
+            this.born,
+            this.occupation
+          );
+          console.log(this);
+        },
+      };
+      personDetails.professionalDetails();
+
+    </script>
+</body>
+</html>
