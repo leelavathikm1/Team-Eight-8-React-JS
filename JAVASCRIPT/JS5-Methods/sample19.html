@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var ViratKohli= {
+          Name: "ViratKohli",
+          Born: "New Delhi",
+
+          Ditails: {
+            Batting: "Right-Handed",
+            Role: "Top-order Batsman",
+            Wife: "Anushka Sharma"
+          },
+          
+          objects: function () {
+            
+            console.log(
+              this.Name , this.Born ,
+              this.Ditails.Batting,
+              this.Ditails.Role, 
+              this.Ditails.Wife
+            );
+
+            console.log(this);
+          },
+        };
+        ViratKohli.objects();
+      </script>
+</body>
+</html>
