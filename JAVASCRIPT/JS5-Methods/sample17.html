@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var Photography= {
+          Name: "PHOTOGRAPHY",
+          OtherName: "Science or art of Creating Durable Images",
+
+          Ditails: {
+            Inventor: "Louis Daguerre,Henry Fox Talbot",
+            Related: "Stereoscopic,Full-Spectrum,LightField,Electrophotography,Photograms,Scanner",
+          },
+          
+          objects: function () {
+            
+            console.log(
+              this.Name , this.OtherName ,
+              this.Ditails.Inventor,
+              this.Ditails.Related, 
+            );
+
+            console.log(this);
+          },
+        };
+        Photography.objects();
+      </script>
+</body>
+</html>
