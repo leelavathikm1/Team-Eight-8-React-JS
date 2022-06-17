@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var employeDetails = {
+        fName:"Priya",
+        lName:"Dharshini",
+
+        Details: {
+         Email:"priya123@gmail.com",
+         userName:"priya123",
+         password:459755,
+        },
+        employeDetails1: function () {
+            console.log (
+                this.fName + this.lName,
+                this.Details.Email,
+                this.Details.userName,
+                this.Details.password,
+            );
+            console.log(this);
+        },
+    };
+        employeDetails.employeDetails1  ();
+</script>
+</body>
+</html>

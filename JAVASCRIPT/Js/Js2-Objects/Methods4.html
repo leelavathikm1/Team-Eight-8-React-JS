@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var moviesDetails = {
+        movie:"RRR",
+        Heros:"Ram Charan Tej and jr. NTR",
+
+        Details: {
+         Movie1:"Sarkaru Varipata",
+         Hero:"Mahesh Babu",
+         Heroin:"Kerthisetty",
+        },
+        moviesDetails1: function () {
+            console.log (
+                this.movie + this.Heros,
+                this.Details.movie1,
+                this.Details.Hero,
+                this.Details.Heroin,
+            );
+            console.log(this);
+        },
+    };
+    moviesDetails.moviesDetails1  ();
+    </script>
+</body>
+</html>
