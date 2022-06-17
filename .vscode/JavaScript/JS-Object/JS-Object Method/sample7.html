@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Brand</title>
+</head>
+
+<body>
+    <script>
+        var Laptop = {
+            Laptop1: "Apple",
+            Laptop2: "Lenovo",
+            Laptop3: "HP",
+
+            CostDetails: {
+                Apple: "One Lack Above",
+                Lenovo: "Thirty Thousand Above",
+                Hp: "Thirty Thousand Above"
+
+
+            },
+            LaptopCostDetails: function () {
+                console.log(this.Laptop1, this.Laptop2, this.Laptop3, this.CostDetails.Apple, this.CostDetails.Hp, this.CostDetails.Lenovo,
+
+                );
+                console.log(this);
+
+            }
+
+        };
+        Laptop.LaptopCostDetails();
+    </script>
+</body>
+
+</html>
