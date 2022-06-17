@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var  accessories = {
+            Decorative1 :"Shirlip Fish Aquarium",
+            Decorative2:"PetMaster Aquarium",
+            Decorative3:"Jainsons Pet Products Aquarium",
+            Decorative4:"Petzlifeworld Aquarium",
+
+            Party : {
+            Decorative5:"Natural Environment Your Aquarium",
+            Decorative6:"Salt Water Coral Fish Tank",
+            },
+
+            accessories1 : function () {
+            console.log(
+              this.Decorative1 + this.Decorative2 + this.Decorative3 + this.Decorative4 ,
+               this.Party.Decorative5,
+               this.Party.Decorative6,
+            ),
+            console.log(this);
+         },
+        };
+        accessories . accessories1 ();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var animalsnames = {
+            anim1 : "Parrot",
+            anim2 : "Puppy",
+            anim3 : "Rabbit",
+
+        morethan : {
+            anim4 : "Peacock",
+            anim5 : "cat",
+            },
+            animalsnames1 : function () {
+                console.log(this.anim1 + this.anim2 + this.anim3,
+                this.morethan.anim4,
+                this.morethan.anim5,
+            ),
+            console.log(this);
+            },
+        };
+        animalsnames . animalsnames1 ();
+    </script>
+</body>
+</html>
