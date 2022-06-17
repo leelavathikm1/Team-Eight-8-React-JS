@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Laptops(Price) {
+       this.Name = "Lenovo";
+       this.IntelCore = "i3";
+       this.Price = Price;
+       this.LaptopDetails = function () {
+         return this.Name + " " + this.IntelCore + this.Price;
+       };
+     }
+
+     Laptops.prototype.addSubject = "Lenovo Laptops";
+
+     var Price1 = new Laptops("40000");
+     var Price2 = new Laptops("50000");
+      
+     console.log(Price1,Price2);
+     console.log(Price1.addSubject);
+   </script>
+</body>
+</html>
