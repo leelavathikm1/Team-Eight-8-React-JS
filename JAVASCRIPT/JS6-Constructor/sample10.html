@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Bike(Price) {
+       this.Name = "RoyalEnfield";
+       this.Classic = "500";
+       this.Price = Price;
+       this.RoyalEnfieldDetails = function () {
+         return this.Name + " " + this.Classic + this.Price;
+       };
+     }
+
+     Bike.prototype.addSubject = "RoyalEnfield Classic 500";
+
+     var Price1 = new Bike("195000");
+     var Price2 = new Bike("200000");
+      
+     console.log(Price1,Price2);
+     console.log(Price1.addSubject);
+   </script>
+</body>
+</html>
