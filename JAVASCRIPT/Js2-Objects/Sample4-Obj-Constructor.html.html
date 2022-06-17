@@ -6,5 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // var student1 = {
+      //   course: "Front End Development",
+      //   instructor: "Leela",
+      //   studentName: "Sruthi",
+      // };
+      // var student2 = {
+      //   course: "Front End Development",
+      //   instructor: "Leela",
+      //   studentName: "Princella",
+      // };
+      // var student3 = {
+      //   course: "Front End Development",
+      //   instructor: "Leela",
+      //   studentName: "Pavan",
+      // };
+      // var student4 = {
+      //   course: "Front End Development",
+      //   instructor: "Leela",
+      //   studentName: "Gowthami",
+      // };
+
+      // OOPS Object Oriented Programming system
+      // Constructor Function
+
+      function student(studentName) {
+        this.course = " UI Developer";
+        this.instructor = "Leela";
+        this.studentName = studentName;
+        this.couseDetails = function () {
+          return this.course + " " + this.studentName + " " + this.instructor;
+        };
+      }
+
+      student.prototype.addSubject = "Angular";
+
+      var student1 = new student("Pavan");
+      var student2 = new student("Princella");
+      var student3 = new student("Sruthi");
+      var student4 = new student("Gowthami");
+      // console.log(student1, student2, student3, student4);
+      console.log(student1.couseDetails());
+      console.log(student1.addSubject);
+    </script>
+  </body>
 </html>

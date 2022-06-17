@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Builtin way of creating an Object
+      var person = new Object({ fName: "Leela", lName: "KM" });
+      console.log(person);
+
+      //   Creating a Class in JavaScript
+      class Student {
+        constructor(firstName, lastName, eMail) {
+          this.fName = firstName;
+          this.lName = lastName;
+          this.email = eMail;
+        }
+      }
+      var student1 = new Student("Pavan", "Kumar", "Pavan@gmail.com");
+      var student2 = new Student("sruthi", "sekar", "sruthi@gmail.com");
+      var student3 = new Student(
+        "Princella",
+        "flaremce",
+        "Princella@gmail.com"
+      );
+
+      console.log(student1, student2, student3);
+    </script>
+  </body>
+</html>
