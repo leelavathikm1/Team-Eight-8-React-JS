@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function ipl(playerName) {
+       this.Team = "Royal Challenger Bangalore";
+       this.Coach = "Sanjay Bangar";
+       this.playerName = playerName;
+       this.GroupDetails = function () {
+         return this.Team + " " + this.Coach + " " + this.playerName;
+       };
+     }
+
+     ipl.prototype.addSubject = "Indian Premier League 2022";
+
+     var player1 = new ipl("Virat Kohli");
+     var player2 = new ipl("FAF DU Plessis");
+     var player3 = new ipl("Glenn Maxwell");
+     var player4 = new ipl("Harshal Patel");
+     var player5 = new ipl("Mohammed Siraj");
+     var player6 = new ipl("Dinesh Karthi");
+     var player7 = new ipl("Josh Hazlewood");
+      
+     console.log(player1,player2,player3,player4,player5,player6,player7);
+     console.log(player1.addSubject);
+   </script>
+</body>
+</html>
