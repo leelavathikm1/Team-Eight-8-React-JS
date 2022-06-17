@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Bike(BikeCC) {
+       this.Name = "RoyalEnfield";
+       this.Model = "Classic";
+       this.BikeCC = BikeCC;
+       this.bikeDetails = function () {
+         return this.Name + " " + this.Model + this.BikeCC;
+       };
+     }
+
+     Bike.prototype.addSubject = "RoyalEnfieldBikes";
+
+     var CC1 = new Bike("350cc");
+     var CC2 = new Bike("500cc");
+      
+     console.log(CC1,CC2);
+     console.log(CC1.addSubject);
+   </script> 
+</body>
+</html>
