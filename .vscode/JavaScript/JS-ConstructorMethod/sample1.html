@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College</title>
+</head>
+
+<body>
+    <script>
+        function Student(StudentName) {
+            this.StudentName = StudentName;
+            this.course = "MBA";
+            this.Branch = "HR";
+
+            this.StudentDetails = function () {
+                return this.StudentName + "" + this.course + "" + this.Branch;
+            };
+
+        }
+        Student.prototype.addYear = 2;
+        var Student1 = new Student("Sruthi");
+        var Student2 = new Student("Magi");
+        var Student3 = new Student("Priya");
+        console.log(Student1.StudentDetails());
+        console.log(Student1.addYear);
+    </script>
+</body>
+
+</html>
