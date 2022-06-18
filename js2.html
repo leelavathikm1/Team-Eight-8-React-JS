@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul#pc {
+    color: darkmagenta;
+    text-align: center;
+}
+body {
+    background-color: gold;
+}
+    </style>
+</head>
+<body>
+    <ul id="pc"></ul>
+    <script>
+        var laptop={
+        spec:"specifications",
+        display:"4k-screen",
+        keyboard:"qwerty",
+        body:"metal",
+        fingerprint:"Yes"
+        }
+        console.log(laptop)
+        // document.write(laptop.body)
+        document.getElementById("pc").innerHTML=laptop.spec + "<br>" + laptop.keyboard + "<br>"+laptop.display + "<br>" +
+        laptop.fingerprint+ "<br>" + laptop.body
+    </script>
+</body>
+</html>
