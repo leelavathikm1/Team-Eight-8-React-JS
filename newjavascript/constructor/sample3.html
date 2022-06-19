@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+      function student(studentName) {
+        this.institute = "Eswari Typing Institute";
+        this.instructor = "Venkatesh";
+        this.studentName = studentName;
+        this.instituteDetails = function () {
+          return this.institute + " " + this.instructor + " " + this.studentName ;
+        };
+      }
+
+      student.prototype.addSubject = "TypeWriting";
+
+      var student1 = new student("Princella");
+      var student2 = new student("Geetha");
+      var student3 = new student("Devi");
+      var student4 = new student("Usha");
+      
+      console.log(student1 ,student2 ,student3 ,student4.couseDetails());
+      console.log(student1.addSubject);
+    </script>
+</body>
+</html>

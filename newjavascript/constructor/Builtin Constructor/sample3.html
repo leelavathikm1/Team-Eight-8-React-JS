@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     
+      var student = new Object({ fName: "princella", lName: "flarence" ,age : 23 });
+      console.log(student);
+
+      
+      class Student {
+        constructor(firstName, lastName, age) {
+          this.fName = firstName;
+          this.lName = lastName;
+          this.age = age;
+        }
+      }
+      var student1 = new Student("princella", "flarence", "23");
+      var student2 = new Student("preethi", "Munirathnam", "23");
+      var student3 = new Student("vakula", "Devi", "23");
+      console.log(student1 , student2 ,student3 );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+      function student(studentName) {
+        this.group = "B.C.A";
+        this.lecuture = "Lavanaya";
+        this.studentName = studentName;
+        this.groupDetails = function () {
+          return this.group + " " + this.lecuture + " " + this.studentName ;
+        };
+      }
+
+      student.prototype.addSubject = "computers";
+
+      var student1 = new student("Princella");
+      var student2 = new student("Preethi");
+      var student3 = new student("Vakula");
+      var student4 = new student("Haritha");
+      
+      console.log(student1 ,student2 ,student3 ,student4.groupDetails());
+      console.log(student1.addSubject);
+    </script>
+</body>
+</html>
