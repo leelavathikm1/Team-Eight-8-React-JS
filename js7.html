@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: tomato;
+}
+h1#pet {
+    color: darkturquoise;
+    font-family: cursive;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <h1 id="pet"></h1>
+    <script>
+        var breeds={
+            breed1:"golden retriver",
+            breed2:"lab",
+            breed3:"pomerian",
+            breed4:"shitzu",
+            breed5:"german shephard",
+        }
+        console.log(breeds)
+        var dogs="";
+        for(a in breeds){
+            dogs=dogs + a + " : " + breeds[a] + "<br>";
+        }
+        document.getElementById("pet").innerHTML=dogs;
+    </script>
+</body>
+</html>

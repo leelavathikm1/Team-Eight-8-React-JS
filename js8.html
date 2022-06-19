@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: cornflowerblue;
+}
+h1#twowheeler {
+    color: indigo;
+    text-align: center;
+    font-family: monospace;
+    font-size: 50px;
+}
+    </style>
+</head>
+<body>
+    <h1 id="twowheeler"></h1>
+    <script>
+        var bike={
+            type1:"hero",
+            type2:"honda",
+            type3:"royal enfield",
+            type4:"bajaj",
+            type5:"ninja",
+            type6:"triumph",
+        }
+        console.log(bike)
+        var brand="";
+        for (a in bike){
+            brand=brand + a + " : " + bike[a] + "<br>";
+        }
+        document.getElementById("twowheeler").innerHTML=brand;
+    </script>
+</body>
+</html>

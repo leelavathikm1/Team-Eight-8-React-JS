@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+    background-color: blue;
+}
+h1#jrntr {
+    color: red;
+    text-align: center;
+    font-family: cursive;
+    font-size: 50px;
+}
+</style>
+<body>
+    <h1 id="jrntr"></h1>
+    <script>
+        var ntr={
+            mov1:"Yamadonga",
+            mov2:"arvindhasametha",
+            mov3:"RRR",
+            mov4:"nanakuprematho",
+            mov5:"temper",
+        }
+        console.log(ntr)
+        var movies="";
+        for(a in ntr){
+            movies=movies + a + ":" + ntr[a] + "<br>";
+        }
+           document.getElementById("jrntr").innerHTML=movies;
+    </script>
+</body>
+</html>
