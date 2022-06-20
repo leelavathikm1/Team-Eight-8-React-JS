@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="color: rgb(20, 247, 231);">
+    <h1 style="color: rgb(123, 0, 255);"> Kids famous cartoons</h1>
+    <h2 id="style"></h2>
+    <script>
+        var  cartoons = {
+            List1 :"Masha and bear",
+            List2:"Pow Petrol",
+            List3:"Peppa Pig ",
+            List4:"Taking tom",
+            List5:"Shin shan",
+            List6:"Butter bean"
+        };
+        dispcartoons = " " ;
+        for (a in cartoons) {
+        dispcartoons = dispcartoons + a + " : " + cartoons [a] + "<br>";
+        document.getElementById("style").innerHTML = dispcartoons;
+        }
+</script> 
+</body>
+</html>
