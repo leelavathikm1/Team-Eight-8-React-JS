@@ -11,16 +11,16 @@
 <body>
     <script>
         class Employee {
-            constructor(firstName, lastName) {
+            constructor(firstName, lastName, email) {
                 this.fName = firstName;
                 this.lName = lastName;
-
+                this.email = email;
 
 
             }
         }
-        var Employee1 = new Employee("Sruthi", "Gnanasekkar");
-        var Employee2 = new Employee("Kayal", "Muthukumar");
+        var Employee1 = new Employee("Sruthi", "Gnanasekkar", "sruthi@gmail.com");
+        var Employee2 = new Employee("Kayal", "Muthukumar", "kayal@gmail.com");
 
         console.log(Employee1, Employee2);
     </script>
