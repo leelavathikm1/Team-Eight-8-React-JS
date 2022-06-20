@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var fruits = [
+        "Orange",
+        "Banana",
+        "Kiwi",
+        "Gova",
+        "Pinapple",
+        "Mosambi",
+        "Mango",
+        "apple",
+        "hi",
+      ];
+      //   fruits.forEach((val, i) => {
+      //     document.write(i + " : " + fruits[i] + "<br>");
+      //   });
+      //   var newFruits = fruits.map((fruit) => {
+      //     return fruit + " Fruit";
+      //   });
+      //   console.log(newFruits);
+
+      //   var char4fruits = fruits.find((val) => {
+      //     return val.length == 4;
+      //   });
+      //   console.log(char4fruits);
+
+      var char4fruits = fruits.filter((val) => {
+        return val.length == 5;
+      });
+      console.log(char4fruits);
+
+      var check = fruits.every((val) => {
+        return val.length == 4;
+      });
+      console.log(check);
+      var check = fruits.some((val) => {
+        return val.length == 4;
+      });
+      console.log(check);
+    </script>
+  </body>
+</html>
