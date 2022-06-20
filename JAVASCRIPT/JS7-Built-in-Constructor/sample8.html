@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ChannelDetails= new Object({ Name: "ChannelName"});
+        console.log(ChannelDetails);
+  
+        class Channel {
+          constructor(ChannelName, ChannelNumber,ProgrameName) {
+            this.ChannelName = ChannelName;
+            this.ChannelNumber = ChannelNumber;
+            this.ProgrameName = ProgrameName; 
+          }
+        }
+        var ChannelName1 = new Channel (" Sun Tv "," 105 ", " SuryaVamsam ");
+        var ChannelName2 = new Channel (" SunMusic "," 63 ", " Break Free Songs ");
+        var ChannelName3 = new Channel (" StarVijay "," 38 ", " Cooku With Comali Season 3 ");
+  
+        console.log(ChannelName1, ChannelName2, ChannelName3);
+      </script>
+</body>
+</html>

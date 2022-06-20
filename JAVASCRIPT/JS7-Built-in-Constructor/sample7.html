@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var BankDetails= new Object({ Name: "BankName"});
+        console.log(BankDetails);
+  
+        class Bank {
+          constructor(BankName, Location) {
+            this.BankName = BankName;
+            this.Location = Location;
+          }
+        }
+        var BankName1 = new Bank (" Indian Bank ", " Paradarami ");
+        var BankName2 = new Bank (" StateBank ", " Gudiytham ");
+        var BankName3 = new Bank (" UnionBank ", " Yadamari ");
+        var BankName4 = new Bank (" HDFC Bank ", " Chittoor ");
+  
+        console.log(BankName1, BankName2, BankName3,BankName4);
+      </script>
+</body>
+</html>
