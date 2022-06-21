@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India States</title>
+</head>
+
+<body>
+    <div id="States" style="width: 950px;float:right"></div>
+    <button onclick="DeleteUttarPradesh()">Delete Uttar Pradesh</button>
+    <br /> <br />
+    <button onclick="sortStates()">Sort States</button>
+    <br /> <br />
+    <script>
+        var States = ["Tamil Nadu", "Assam", "Andhra Pradesh", "Karnataka", "Maharashtra", "Kerala", "Uttar Pradesh"];
+        function displayStates() {
+            var displayStates = "";
+            States.forEach((dispStates) => {
+                displayStates = displayStates + dispStates + "<br>";
+            }
+            );
+            document.getElementById("States").innerHTML = displayStates;
+        }
+        console.log(States);
+        displayStates();
+
+        function DeleteUttarPradesh() {
+            States.pop();
+            displayStates()
+        }
+        function sortStates() {
+            States.sort();
+            displayStates()
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
