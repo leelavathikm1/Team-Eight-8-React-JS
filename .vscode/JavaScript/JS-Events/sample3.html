@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Districts</title>
+</head>
+
+<body>
+    <div id="disticts"></div>
+    <button onclick="AddSelamAtFront()">Include Selam</button>
+    <br /> <br />
+    <button onclick="DeleteNamakkalAtEnd()">Remove Namakkal</button>
+    <br /> <br />
+    <button onclick="SortDistrits()">Arrange As Per Alphabetical Order</button>
+    <br /> <br />
+    <script>
+        var disticts = ["Vellore", "Ramanathapuram", "Coimbatore", "Erode", "Dindigal", "Namakkal"];
+
+        function displayDisticts() {
+            var displayDisticts = "";
+            disticts.forEach((dispDisticts) => {
+                displayDisticts = displayDisticts + dispDisticts + "<br>";
+            }
+            );
+            document.getElementById("disticts").innerHTML = displayDisticts;
+        }
+        displayDisticts();
+
+        function AddSelamAtFront() {
+            disticts.unshift("Selam");
+            displayDisticts()
+        }
+
+        function DeleteNamakkalAtEnd() {
+            disticts.pop();
+            displayDisticts()
+        }
+        function SortDistrits() {
+            disticts.sort();
+            displayDisticts()
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
