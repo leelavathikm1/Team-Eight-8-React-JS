@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India States</title>
+</head>
+
+<body>
+    <div id="States" style="float:right ; width: 950px; "></div>
+    <br /><br />
+    <button onclick="addValueAtBegining()">Add Uttar Pradesh</button>
+    <br /><br />
+    <button onclick="addValueAtMiddle()">Add Punjab</button>
+    <br /><br />
+    <button onclick="addValueAtEnd()">Add Assam</button>
+    <br /><br />
+    <script>
+        var States = ["Tamil Nadu", "Andhra Pradesh", "Karnataka", "Telangana", "Kerala"];
+        function displayStates() {
+            var displayStates = "";
+            States.forEach((dispStates) => {
+                displayStates = displayStates + dispStates + "<br>";
+            }
+            );
+            document.getElementById("States").innerHTML = displayStates;
+
+        }
+        displayStates();
+
+        function addValueAtBegining() {
+            States.unshift("Uttar Pradesh");
+            displayStates();
+
+        }
+        function addValueAtMiddle() {
+            States.splice(3, 0, "Punjab");
+            displayStates();
+        }
+        function addValueAtEnd() {
+            States.push("Assam");
+            displayStates();
+        }
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
