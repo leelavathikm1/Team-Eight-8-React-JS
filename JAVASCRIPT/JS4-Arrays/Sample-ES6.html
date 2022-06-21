@@ -18,6 +18,7 @@
         "Mango",
         "apple",
         "hi",
+        "JS",
       ];
       //   fruits.forEach((val, i) => {
       //     document.write(i + " : " + fruits[i] + "<br>");
@@ -38,11 +39,11 @@
       console.log(char4fruits);
 
       var check = fruits.every((val) => {
-        return val.length == 4;
+        return val.length < 0;
       });
       console.log(check);
       var check = fruits.some((val) => {
-        return val.length == 4;
+        return val.length < -0;
       });
       console.log(check);
     </script>

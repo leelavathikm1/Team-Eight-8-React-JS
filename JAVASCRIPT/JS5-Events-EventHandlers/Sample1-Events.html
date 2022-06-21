@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Event Handlers onClick -->
+    <button onclick="helloJs()">Click Me</button>
+    <input
+      type="text "
+      onfocus="helloFocus()"
+      onblur="helloBlur()"
+      onchange="helloChange()"
+    />
+    <select name="" id="" onchange="helloChange()">
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+      <option value="">5</option>
+    </select>
+    <input type="radio" onchange="helloChange()" />Male
+
+    <input type="radio" name="" id="" />Female
+    <script>
+      // Key board Events
+      // Key Press
+      // Key Up
+      // Key Down
+      //
+
+      // Mouse events
+      // Mouse Move
+      // Mouse Out
+      // Click event
+      // Double click
+
+      // Document Events
+      // Focus
+      // blur
+      // Change
+
+      function helloFocus() {
+        console.log("Iam From Focus event");
+      }
+
+      function helloBlur() {
+        console.log("Iam from Blur event");
+      }
+
+      function helloChange() {
+        console.log("Iam from change event");
+      }
+
+      function helloJs() {
+        console.log("Hi Iam From Click Event");
+      }
+    </script>
+  </body>
+</html>

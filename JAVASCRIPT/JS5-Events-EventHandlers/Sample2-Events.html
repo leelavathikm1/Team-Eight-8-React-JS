@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" style="width: 200px; float: right"></div>
+    <br /><br />
+    <button onclick="addValueAtBegining()">Add Value at Start</button>
+    <br /><br />
+    <button onclick="addvalueAtEnd()">Add value at the end</button> <br /><br />
+    <button onclick="addValueAtMiddle()">Add value at middle of array</button>
+    <br /><br />
+    <button onclick="deleteValueAtStart()">Delete a Value At start</button>
+    <br /><br />
+    <button onclick="deleteValueAtend()">Delete a value at End</button>
+    <br /><br />
+    <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
+    <br /><br />
+    <button onclick="sortLaptops()">sort Values</button> <br /><br />
+    <button onclick="reverseLaptops()">Reverse Values</button> <br />
+    <br />
+
+    <script>
+      var laptops = ["HP", "Lenovo", "Dell", "acer", "Mach", "Ipad"];
+
+      function displayLaptops() {
+        var displayLaptopNames = "";
+        laptops.forEach((dispLap) => {
+          //   document.write(dispLap);
+          displayLaptopNames = displayLaptopNames + dispLap + "<br>";
+        });
+        document.getElementById("demo").innerHTML = displayLaptopNames;
+      }
+      displayLaptops();
+
+      function addValueAtBegining() {
+        laptops.unshift("Asus");
+        displayLaptops();
+      }
+
+      function addvalueAtEnd() {
+        laptops.push("RealMe");
+        displayLaptops();
+      }
+
+      function addValueAtMiddle() {
+        laptops.splice(3, 0, "Samsung");
+        displayLaptops();
+      }
+
+      function deleteValueAtStart() {
+        laptops.shift();
+        displayLaptops();
+      }
+
+      function deleteValueAtend() {
+        laptops.pop();
+        displayLaptops();
+      }
+
+      function deleteValueAtMiddle() {
+        laptops.splice(3, 1);
+        displayLaptops();
+      }
+
+      function sortLaptops() {
+        laptops.sort();
+        displayLaptops();
+      }
+
+      function reverseLaptops() {
+        laptops.reverse();
+        displayLaptops();
+      }
+    </script>
+  </body>
+</html>

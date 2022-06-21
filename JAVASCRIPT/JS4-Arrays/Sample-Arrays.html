@@ -8,7 +8,14 @@
   </head>
   <body>
     <script>
-      var students = ["Sruthi", "Princella", "Gowthami", "Pavan"];
+      var students = [
+        "Sruthi",
+        "Princella",
+        "Gowthami",
+        "Pavan",
+        "Leela",
+        "Abi",
+      ];
       //   console.log(students.length);
 
       // ES5 Array Methods
@@ -20,6 +27,10 @@
       //   students.shift(); // Shift method will remove the value at the begining of the array
       //   students.splice(2, 2); //splice method will remove the value at the given index position
       //   document.write(students);
+
+      students.sort();
+
+      console.log(students);
 
       for (i = 0; i > students.length; i++) {
         document.write(students[i] + "<br>");
