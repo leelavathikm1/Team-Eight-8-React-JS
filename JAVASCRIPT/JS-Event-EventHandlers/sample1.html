@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="EventsTopic" style="width: 40%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add Value at Start</button>
+    <br><br>
+    <button onclick="Ending()">Add value at the end</button> <br><br/>
+    <button onclick="Middle()">Add value at middle </button>
+    <br><br>
+    <button onclick="deleteAtFirst()">Delete a Value At start</button>
+    <br><br>
+    <button onclick="deleteAtend()">Delete a value at End</button>
+    <br><br>
+    <button onclick="deleteAtMiddle()">Delete value at middle</button>
+    <br><br>
+    <button onclick="sortHeros()">sort Values</button> <br><br>
+    <button onclick="reverseHeros()">Reverse Values</button> <br><br>
+
+    <script>
+        var Heros = ["AjithKumar", "Surya", "vijay", "kamal", "Pawankalyan"];
+
+        function displayHeros() {
+            var displayHerosNames = "";
+            Heros.forEach((disphero) => {
+                displayHerosNames = displayHerosNames + disphero + "<br>";
+            });
+            document.getElementById("EventsTopic").innerHTML = displayHerosNames;
+        }
+        displayHeros();
+
+        function Starting() {
+            Heros.unshift("Rajini");
+            displayHeros();
+        }
+        function Ending() {
+            Heros.push("Prabhas");
+            displayHeros();
+        }
+        function Middle() {
+            Heros.splice(3,0, "Junior NTR");
+            displayHeros();
+        }
+        function deleteAtFirst() {
+            Heros.shift();
+            displayHeros();
+        }
+        function deleteAtend() {
+            Heros.pop();
+            displayHeros();
+        }
+        function deleteAtMiddle() {
+            Heros.splice(3, 1);
+            displayHeros();
+      }
+        function sortHeros() {
+            Heros.sort();
+            displayHeros();
+        }
+        function reverseHeros() {
+            Heros.reverse();
+            displayHeros();
+        }
+    </script>
+</body>
+
+</html>
