@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <div id="EventsTopic" style="width: 60%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add Value at Start</button>
+    <br><br>
+    <button onclick="Ending()">Add value at the end</button> 
+    <br><br/>
+    <button onclick="deleteAtFirst()">Delete a Value At start</button>
+    <br><br>
+    <button onclick="deleteAtend()">Delete a value at End</button>
+    <br><br>
+    <button onclick="sortHeros()">sort Values</button> 
+    <br><br>
+    <script>
+        var States = ["Tamilnadu", "Andhrapradesh", "Telangana", "Kerala"];
+
+        function displayStates() {
+            var displayStatesNames = "";
+            States.forEach((dispState) => {
+                displayStatesNames = displayStatesNames + dispState + "<br>";
+            });
+            document.getElementById("EventsTopic").innerHTML = displayStatesNames;
+        }
+        displayStates();
+
+        function Starting() {
+            States.unshift("Karnataka");
+            displayStates();
+        }
+        function Ending() {
+            States.push("Maharastra");
+            displayStates();
+        }
+        function deleteAtFirst() {
+            States.shift();
+            displayStates();
+        }
+        function deleteAtend() {
+            States.pop();
+            displayStates();
+        }
+        function sortHeros() {
+            States.sort();
+            displayStates();
+        }
+    </script>
+ </body>
+ </html>
