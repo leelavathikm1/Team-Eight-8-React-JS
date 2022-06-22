@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" style="width: 800px; float: right; margin-top: 50px;"></div>
+    <br /><br />
+    <button onclick="addValueAtBegining()">Add Value at Start</button>
+    <br /><br />
+    <button onclick="addvalueAtEnd()">Add value at the end</button> <br /><br />
+    <button onclick="addValueAtMiddle()">Add value at middle of array</button>
+    <br /><br />
+    <button onclick="deleteValueAtStart()">Delete a Value At start</button>
+    <br /><br />
+    <button onclick="deleteValueAtend()">Delete a value at End</button>
+    <br /><br />
+    <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
+    <br /><br />
+    <button onclick="sortFruits()">sort Values</button> <br /><br />
+    <button onclick="reverseFruits()">Reverse Values</button> <br />
+    <br />
+
+    <script>
+      var fruits = ["ornage", "apple", "kiwi", "mango", "grapes", "banana"];
+      function displayFruits() {
+        var displaypFruitNames = "";
+        fruits.forEach((dispFruit) => {
+          
+            displaypFruitNames = displaypFruitNames + dispFruit + "<br>";
+        });
+        document.getElementById("demo").innerHTML = displaypFruitNames;
+      }
+      displayFruits();
+      function addValueAtBegining() {
+        fruits.unshift("pineapple");
+        displayFruits();
+      }
+
+      function addvalueAtEnd() {
+        fruits.push("jack fruit");
+        displayFruits();
+      }
+
+      function addValueAtMiddle() {
+        fruits.splice(3, 0, "cherry");
+        displayFruits();
+      }
+
+      function deleteValueAtStart() {
+        fruits.shift();
+        displayFruits();
+      }
+
+      function deleteValueAtend() {
+        fruits.pop();
+        displayFruits();
+      }
+
+      function deleteValueAtMiddle() {
+        fruits.splice(3, 1);
+        displayFruits();
+      }
+
+      function sortFruits() {
+        fruits.sort();
+        displayFruits();
+      }
+
+      function reverseFruits() {
+        fruits.reverse();
+        displayFruits();
+      }
+    </script>
+  </body>
+</html>

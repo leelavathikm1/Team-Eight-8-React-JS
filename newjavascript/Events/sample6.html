@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" style="width: 800px; float: right; margin-top: 50px;"></div>
+    <br /><br />
+    <button onclick="addValueAtBegining()">Add Value at Start</button>
+    <br /><br />
+    <button onclick="addvalueAtEnd()">Add value at the end</button> <br /><br />
+    <button onclick="addValueAtMiddle()">Add value at middle of array</button>
+    <br /><br />
+    <button onclick="deleteValueAtStart()">Delete a Value At start</button>
+    <br /><br />
+    <button onclick="deleteValueAtend()">Delete a value at End</button>
+    <br /><br />
+    <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
+    <br /><br />
+    <button onclick="sortAnimals()">sort Values</button> <br /><br />
+    <button onclick="reverseAnimals()">Reverse Values</button> <br />
+    <br />
+
+    <script>
+      var animals = ["Lion", "Tiger", "Bear", "Crocodile", "Wolf", "Fox"];
+      function displayAnimals() {
+        var displayAnimalsName = "";
+        animals.forEach((dispAnimal) => {
+          
+            displayAnimalsName = displayAnimalsName + dispAnimal + "<br>";
+        });
+        document.getElementById("demo").innerHTML = displayAnimalsName;
+      }
+      displayAnimals();
+      function addValueAtBegining() {
+        animals.unshift("Monkey");
+        displayAnimals();
+      }
+
+      function addvalueAtEnd() {
+        animals.push("Zebra");
+        displayAnimals();
+      }
+
+      function addValueAtMiddle() {
+        animals.splice(3, 0, "Bull");
+        displayAnimals();
+      }
+
+      function deleteValueAtStart() {
+        animals.shift();
+        displayAnimals();
+      }
+
+      function deleteValueAtend() {
+        animals.pop();
+        displayAnimals();
+      }
+
+      function deleteValueAtMiddle() {
+        animals.splice(3, 1);
+        displayAnimals();
+      }
+
+      function sortAnimals() {
+        animals.sort();
+        displayAnimals();
+      }
+
+      function reverseAnimals() {
+        animals.reverse();
+        displayAnimals();
+      }
+    </script>
+  </body>
+</html>

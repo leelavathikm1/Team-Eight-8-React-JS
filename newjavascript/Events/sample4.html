@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" style="width:800px; float:right; margin-top :50px; "></div>
+<br/> <br/>
+<button onclick="addValueAtBegining()">Add value at the Begining</button>
+<br/> <br/>
+<button onclick="addValueAtEnd()">Add value at the end</button>
+<br/> <br/>
+<button onclick="addValueAtMiddle()">Add value at the Middle</button>
+<br/> <br/>
+<button onclick="deleteValueAtBegining()">delete value at the Begining</button>
+<br/> <br/>
+<button onclick="deleteValueAtEnd()">delete value at the end</button>
+<br/> <br/>
+<button onclick="deleteValueAtMiddle()">delete value at the middile</button>
+<br/> <br/>
+<button onclick="sortMobile()">Sort Values</button>
+<br/> <br/>
+<button onclick="reverseMobile()">Reverse values</button>
+<br/> <br/>
+<script>
+    var mobiles = ["Samsung","Apple","Huawei", "Nokia", "Oppo", "Vivo"];
+     function displayMobiles (){
+         var displayMobilesNames = "";
+         mobiles.forEach ((dispMobile)=> {
+              displayMobilesNames= displayMobilesNames + dispMobile + "<br>";
+         });
+          document.getElementById("demo").innerHTML = displayMobilesNames;
+          }
+
+          displayMobiles ();
+          function addValueAtBegining(){
+            mobiles.unshift ("moto")
+          displayMobiles ();
+
+          }
+          
+         function addValueAtEnd (){
+             mobiles.push ("oneplus")
+             displayMobiles();
+         }
+
+         function addValueAtMiidle(){
+             mobiles.splice (3,0, "Xiaomi")
+             displayMobiles();
+
+         }
+
+         function deleteValueAtBegining () {
+             mobiles. shift ();
+             displayMobiles ();
+         }
+
+        function deleteValueAtEnd (){
+            mobiles.pop();
+            displayMobiles();
+        }
+       
+        function deleteValueAtMiddle (){
+            mobiles.splice (3,1);
+            displayMobiles();
+
+        }
+          
+          function sortMobile (){
+              mobiles.sort ();
+              displayMobiles ();
+
+
+          }
+          function reverseMobile (){
+              mobiles.rever ();
+              displayMobiles();
+          }
+</script>
+
+</body>
+</html>

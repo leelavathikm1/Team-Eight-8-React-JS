@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" style="width:800px; float: right; margin-top: 50px;"></div>
+
+    <button onclick="addValueAtBegining()">Add Value At Begining</button><br><br>
+    <button onclick="addValueAtEnd()">Add Value At End</button><br><br>
+    <button onclick="addValueAtMiddle()">Add Value At Middle</button><br><br>
+    <button onclick="deleteValueAtBegining()">Delete Value At Begining</button><br><br>
+    <button onclick="deleteValueAtEnd()">Delete Value At End</button><br><br>
+    <button onclick="deleteValueAtMiddle()">Delete Value At Middle</button><br><br>
+    <button ondblclick="SortLanaguages()" >Sort Values</button><br><br>
+    <button onclick="reverseLanguages()">Reverse Values</button><br><br>
+
+    <script>
+        var languages = [ "Assamese", "Bengali", "Gujarati", "Hindi", "Kannada","Malayalam"];
+
+        function displayLanguages() {
+            var displayLanguages = "";
+            languages.forEach((dispLanguage)=>{
+            displayLanguages=displayLanguages + dispLanguage + "<br>";
+            });
+
+        document.getElementById("demo").innerHTML= displayLanguages;
+
+        }
+        displayLanguages();
+        function addValueAtBegining(){
+            languages.unshift("Telugu");
+            displayLanguages();
+
+        }
+        displayLanguages();
+        function addvalueAtEnd(){
+            languages.push("Tamil");
+            displayLanguages();
+
+        }
+        displayLanguages();
+        function addValueAtMiddle(){
+            languages.splice(3,0, "Urdu ");
+            displayLanguages();
+
+        }
+        displayLanguages();
+        function deleteValueAtBegining(){
+            languages.shift();
+            displayLanguages();
+
+        }
+        displayLanguages();
+        function deletevalueAtEnd(){
+            languages.pop();
+            displayLanguages();
+
+        }
+        displayLanguages();
+        function deleteValueAtMiddle(){
+            languages.splice(3,1)
+            displayLanguages();
+
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" style="width: 800px; float: right; margin-top: 50px;"></div>
+    <br /><br />
+    <button onclick="addValueAtBegining()">Add Value at Start</button>
+    <br /><br />
+    <button onclick="addvalueAtEnd()">Add value at the end</button> <br /><br />
+    <button onclick="addValueAtMiddle()">Add value at middle of array</button>
+    <br /><br />
+    <button onclick="deleteValueAtStart()">Delete a Value At start</button>
+    <br /><br />
+    <button onclick="deleteValueAtend()">Delete a value at End</button>
+    <br /><br />
+    <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
+    <br /><br />
+    <button onclick="sortBirds()">sort Values</button> <br /><br />
+    <button onclick="reverseBirds()">Reverse Values</button> <br />
+    <br />
+
+    <script>
+      var birds = ["Pigeon", "Peacock", "Sparrow", "Crow", "Kingfisher", "Owl"];
+      function displayBirds() {
+        var displayBirdsName = "";
+        birds.forEach((dispBird) => {
+          
+            displayBirdsName = displayBirdsName + dispBird + "<br>";
+        });
+        document.getElementById("demo").innerHTML = displayBirdsName;
+      }
+      displayBirds();
+      function addValueAtBegining() {
+        birds.unshift("Turkey");
+        displayBirds();
+      }
+
+      function addvalueAtEnd() {
+        birds.push("Penguin");
+        displayBirds();
+      }
+
+      function addValueAtMiddle() {
+        birds.splice(3, 0, "Dove");
+        displayBirds();
+      }
+
+      function deleteValueAtStart() {
+        birds.shift();
+        displayBirds();
+      }
+
+      function deleteValueAtend() {
+        birds.pop();
+        displayBirds();
+      }
+
+      function deleteValueAtMiddle() {
+        birds.splice(3, 1);
+        displayBirds();
+      }
+
+      function sortBirds() {
+        birds.sort();
+        displayBirds();
+      }
+
+      function reverseBirds() {
+        birds.reverse();
+        displayBirds();
+      }
+    </script>
+  </body>
+</html>

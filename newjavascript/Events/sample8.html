@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" style="width: 800px; float: right; margin-top: 50px;"></div>
+    <br /><br />
+    <button onclick="addValueAtBegining()">Add Value at Start</button>
+    <br /><br />
+    <button onclick="addvalueAtEnd()">Add value at the end</button> <br /><br />
+    <button onclick="addValueAtMiddle()">Add value at middle of array</button>
+    <br /><br />
+    <button onclick="deleteValueAtStart()">Delete a Value At start</button>
+    <br /><br />
+    <button onclick="deleteValueAtend()">Delete a value at End</button>
+    <br /><br />
+    <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
+    <br /><br />
+    <button onclick="sortAlphabet()">sort Values</button> <br /><br />
+    <button onclick="reverseAlphabet()">Reverse Values</button> <br />
+    <br />
+
+    <script>
+      var alphabet = ["B", "C", "E", "F", "G", "H"];
+      function displayAlphabet() {
+        var displayAlphabetName = "";
+        alphabet.forEach((dispAlphabet) => {
+          
+            displayAlphabetName = displayAlphabetName + dispAlphabet + "<br>";
+        });
+        document.getElementById("demo").innerHTML = displayAlphabetName;
+      }
+      displayAlphabet();
+      function addValueAtBegining() {
+        alphabet.unshift("A");
+        displayAlphabet();
+      }
+
+      function addvalueAtEnd() {
+        alphabet.push("I");
+        displayAlphabet();
+      }
+
+      function addValueAtMiddle() {
+        alphabet.splice(3, 0, "D");
+        displayAlphabet();
+      }
+
+      function deleteValueAtStart() {
+        alphabet.shift();
+        displayAlphabet();
+      }
+
+      function deleteValueAtend() {
+        alphabet.pop();
+        displayAlphabet();
+      }
+
+      function deleteValueAtMiddle() {
+        alphabet.splice(3, 1);
+        displayAlphabet();
+      }
+      function sortAlphabet() {
+        alphabet.sort();
+        displayAlphabet();
+      }
+
+      function reverseAlphabet() {
+        alphabet.reverse();
+        displayAlphabet();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" style="width:800px; float: right; margin-top: 50px;"></div>
+    <br> <br>
+    <button onclick="addValueAtBegining()">Add value at the Begining</button>
+    <br/> <br/>
+    <button onclick="addValueAtEnd()">Add value at the end</button>
+    <br/> <br/>
+    <button onclick="addValueAtMiddle()">Add value at the Middle</button>
+    <br/> <br/>
+    <button onclick="deleteValueAtBegining()">delete value at the Begining</button>
+    <br/> <br/>
+    <button onclick="deleteValueAtEnd()">delete value at the end</button>
+    <br/> <br/>
+    <button onclick="deleteValueAtMiddle()">delete value at the middile</button>
+    <br/> <br/>
+    <button onclick="sortMobile()">Sort Values</button>
+    <br/> <br/>
+    <button onclick="reverseMobile()">Reverse values</button>
+    <br/> <br/>
+    <script>
+        var vegetables = ["Broccoli","Cabbage","Asparagus", "Avocado", "Beetroot", "Carrot"];
+         function displayvegetables (){
+             var displayvegetablesNames = "";
+             vegetables.forEach ((dispvegetable)=> {
+                displayvegetablesNames= displayvegetablesNames + dispvegetable + "<br>";
+             });
+              document.getElementById("demo").innerHTML = displayvegetablesNames;
+              }
+    
+              displayvegetables ();
+              function addValueAtBegining(){
+                vegetables.unshift ("Garlic")
+                displayvegetables ();
+    
+              }
+              
+             function addValueAtEnd (){
+                vegetables.push ("Mushroom")
+                displayvegetables();
+             }
+    
+             function addValueAtMiidle(){
+                vegetables.splice (3,0 ,"Onion")
+                displayvegetables();
+    
+             }
+    
+             function deleteValueAtBegining () {
+                vegetables. shift ();
+                displayvegetables ();
+             }
+    
+            function deleteValueAtEnd (){
+                vegetables.pop();
+                displayvegetables();
+            }
+           
+            function deleteValueAtMiddle (){
+                vegetables.splice (3,1);
+                displayvegetables();
+    
+            }
+              
+              function sortVegetables (){
+                vegetables.sort ();
+                displayvegetables ();
+    
+    
+              }
+              function revers (){
+                vegetables.rever ();
+                displayvegetables();
+              }
+    </script>
+</body>
+</html> 
