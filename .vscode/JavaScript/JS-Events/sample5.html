@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="CollegeNames"></div>
+    <button onclick="AddCollegeNameAtStart()">Panimalar</button>
+    <br /><br />
+    <button onclick="AddCollegeNameAtEnd()">RMKV</button>
+    <br /><br />
+    <button onclick="RemoveCollegeNameAtBegining()">SRM</button>
+    <br /><br />
+    <button onclick="SortCollegeName()">SortCollegeName</button>
+    <br /><br />
+    <script>
+        var CollegeNames = ["SRM", "IIT", "Vel Tech", "HIT"];
+        function displayCollegeNames() {
+            var displayCollegeNames = "";
+            CollegeNames.forEach((dispCollegeNames) => {
+                displayCollegeNames = displayCollegeNames + dispCollegeNames + "<br>";
+            });
+            document.getElementById("CollegeNames").innerHTML = displayCollegeNames;
+
+
+        }
+        displayCollegeNames();
+
+        function AddCollegeNameAtStart() {
+            CollegeNames.unshift("Panimalar");
+            displayCollegeNames()
+        }
+        function AddCollegeNameAtEnd() {
+            CollegeNames.push("RMKV");
+            displayCollegeNames()
+        }
+        function RemoveCollegeNameAtBegining() {
+            CollegeNames.splice(1, 1);
+            displayCollegeNames()
+        }
+        function SortCollegeName() {
+            CollegeNames.sort();
+            displayCollegeNames()
+        }
+
+
+    </script>
+</body>
+
+</html>
