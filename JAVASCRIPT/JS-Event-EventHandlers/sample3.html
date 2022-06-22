@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <div id="VegetableNames" style="width: 60%; float: right"></div>
+        <br><br>
+        <button onclick="Starting()">Add Cabbage</button>
+        <br><br>
+        <button onclick="Ending()">Add Aubergine</button> 
+        <br><br/>
+        <button onclick="deleteAtFirst()">Delete Cabbage </button>
+        <br><br>
+        <button onclick="deleteAtend()">Delete Aubergine</button>
+        <br><br>
+        <button onclick="sortVegetables()">sort Values</button> 
+        <br><br>
+        <script>
+            var vegetables = ["Tomato", "Potato", "Onion", "Carrot"];
+    
+            function displayvegetables() {
+                var displayvegetablesNames = "";
+                vegetables.forEach((dispvegetables) => {
+                    displayvegetablesNames = displayvegetablesNames + dispvegetables + "<br>";
+                });
+                document.getElementById("VegetableNames").innerHTML = displayvegetablesNames;
+            }
+            displayvegetables();
+    
+            function Starting() {
+                vegetables.unshift("Cabbage");
+                displayvegetables();
+            }
+            function Ending() {
+                vegetables.push("Aubergine");
+                displayvegetables();
+            }
+            function deleteAtFirst() {
+                vegetables.shift();
+                displayvegetables();
+            }
+            function deleteAtend() {
+                vegetables.pop();
+                displayvegetables();
+            }
+            function sortVegetables() {
+                vegetables.sort();
+                displayvegetables();
+            }
+        </script>
+     </body>
+</body>
+</html>
