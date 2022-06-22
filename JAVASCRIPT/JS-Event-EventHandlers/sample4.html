@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="MobileNames" style="width: 60%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add Realme</button>
+    <br><br>
+    <button onclick="Ending()">Add MI at end</button> 
+    <br><br/>
+    <button onclick="deleteAtFirst()">Delete Realme</button>
+    <br><br>
+    <button onclick="deleteAtend()">Delete MI</button>
+    <br><br>
+    <button onclick="Deleteatmiddle()">deleteAtMiddle</button>
+    <br><br>
+    <button onclick="reverseMobileNames()">Reverse Values</button> 
+    <br><br>
+    <script>
+        var Mobiles = ["Samsung", "Sony", "Apple Iphone", "Motorola"];
+
+        function displayMobiles() {
+            var displayMobileNames = "";
+            Mobiles.forEach((dispMobile) => {
+                displayMobileNames = displayMobileNames + dispMobile + "<br>";
+            });
+            document.getElementById("MobileNames").innerHTML = displayMobileNames;
+        }
+        displayMobiles();
+
+        function Starting() {
+            Mobiles.unshift("Realme");
+            displayMobiles();
+        }
+        function Ending() {
+            Mobiles.push("MI");
+            displayMobiles();
+        }
+        function deleteAtFirst() {
+            Mobiles.shift();
+            displayMobiles();
+        }
+        function deleteAtend() {
+            Mobiles.pop();
+            displayMobiles();
+        }
+        function Deleteatmiddle() {
+            Mobiles.splice(3,1);
+            displayMobiles();
+        }
+        function reverseMobileNames() {
+            Mobiles.reverse();
+            displayMobiles();
+        }
+    </script>
+</body>
+</html>
