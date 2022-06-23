@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function student (studentName) {
+            this.Course = "Phython Developer" ;
+            this.Instructer = "Priya";
+            this.studentName = studentName;
+            this.CourseDetails = function () {
+            return this.Course + " " + studentName + " " + this.Instructer;
+    };
+    }
+        var student1 = new student ("Megana");
+        var student2 = new student ("Shwetha");
+        var student3 = new student ("Soundarya");
+        var student4 = new student ("Priyanka");
+        var student5 = new student ("swathi");
+        console.log(student1.CourseDetails());
+        console.log(student2.CourseDetails());
+        console.log(student3.CourseDetails());
+        console.log(student4.CourseDetails());
+        console.log(student5.CourseDetails());
+        //console.log(student1,student2,student3,student4,student5);
+        
+    </script>
+</body>
+</html>

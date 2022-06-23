@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Fruits  (FruitsName) {
+            this.FruitsName = "Apple" ;
+            this.FruitsColor = "Red";
+            this.FruitsName = FruitsName;
+            this.FruitsDetails = function () {
+            return this.Fruits + " " + FruitsName + " " + this.FruitsColor;
+    };
+        }
+        var FruitsName1 = new Fruits ("Pomegranate");
+        
+      console.log(FruitsName1.FruitsDetails());
+</script>
+</body>
+</html>

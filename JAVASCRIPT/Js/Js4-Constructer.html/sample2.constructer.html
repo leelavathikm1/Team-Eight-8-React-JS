@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var AccountDetails = new Object({Name: "BankAccount"});
+        console.log(AccountDetails);
+        
+      class Account {  
+        constructor (HolderName,AccountNumber,BankName){
+        this.HolderName = HolderName;
+        this.AccountNumber =AccountNumber;
+        this.BankName = BankName;
+    }
+      }
+      var HolderName1 = new Account ("Bavana","9885954322","State Bank");
+      var HolderName2 = new Account ("Pavani","6894234112","HDFC Bank");
+      var HolderName3 = new Account ("Sushma","3568496210","Canara Bank");
+      console.log(HolderName1,HolderName2,HolderName3);
+
+    </script> 
+</body>
+</html>
