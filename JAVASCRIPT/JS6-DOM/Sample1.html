@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="demo"></h1>
+    <p class="para1">Para1</p>
+    <p class="para1">para2</p>
+    <p class="para1">para3</p>
+
+    <h3>heading Three -1</h3>
+    <h3>heading Three -2</h3>
+    <h3>heading Three -3</h3>
+    <h3>heading Three -4</h3>
+    <h2></h2>
+    <div id="div1">Div1</div>
+    <div>Div2</div>
+    <hr />
+
+    <input type="text" name="myName" value="Leela" id="myInputName" />
+    <hr />
+    <button onclick="setDivText()">Set Value</button>
+    <script>
+      function setDivText() {
+        document.getElementById("div1").innerHTML =
+          "I will change when you click";
+      }
+
+      document.write("Iam From  JavaScript DOM");
+      document.getElementById("demo").innerHTML = "Iam From Dom";
+
+      document.getElementsByClassName("para1")[2].innerHTML =
+        "Iam Paragraph from DOM";
+      document.getElementsByTagName("div")[1].innerHTML = "Iam Div from DOM";
+
+      //   document.getElementsByName("myName")[0].value;
+      document.getElementById("myInputName").value; //For Input Field
+
+      //   document.querySelector("h3").innerHTML = "Iam H3 From DOM";
+      document.querySelectorAll("h3")[3].innerHTML = "Iam H3 From DOM";
+    </script>
+  </body>
+</html>

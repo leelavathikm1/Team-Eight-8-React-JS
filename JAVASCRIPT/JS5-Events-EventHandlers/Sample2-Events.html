@@ -27,34 +27,58 @@
     <script>
       var laptops = ["HP", "Lenovo", "Dell", "acer", "Mach", "Ipad"];
 
-      function displayLaptops() {
-        var displayLaptopNames = "";
-        laptops.forEach((dispLap) => {
-          //   document.write(dispLap);
-          displayLaptopNames = displayLaptopNames + dispLap + "<br>";
-        });
-        document.getElementById("demo").innerHTML = displayLaptopNames;
+      // function displayLaptops() {
+      //   var displayLaptopNames = "";
+      //   laptops.forEach((dispLap) => {
+      //     //   document.write(dispLap);
+      //     displayLaptopNames = displayLaptopNames + dispLap + "<br>";
+      //   });
+      //   document.getElementById("demo").innerHTML = displayLaptopNames;
+      // }
+      // displayLaptops();
+
+      // function laptopCompNames() {
+      //   var dispLaps = "";
+      //   laptops.map((val) => {
+      //     dispLaps += val + "<br>";
+      //   });
+      //   document.getElementById("demo").innerHTML = dispLaps;
+      // }
+      // laptopCompNames();
+
+      function laptopCompNames() {
+        for (i = 0; i < laptops.length; i++) {
+          var dispLaps = "";
+          laptops.map((val) => {
+            dispLaps += val + "<br>";
+          });
+          document.getElementById("demo").innerHTML = dispLaps;
+        }
       }
-      displayLaptops();
+      laptopCompNames();
 
       function addValueAtBegining() {
         laptops.unshift("Asus");
-        displayLaptops();
+        // displayLaptops();
+        laptopCompNames();
       }
 
       function addvalueAtEnd() {
         laptops.push("RealMe");
-        displayLaptops();
+        // displayLaptops();
+        laptopCompNames();
       }
 
       function addValueAtMiddle() {
         laptops.splice(3, 0, "Samsung");
-        displayLaptops();
+        // displayLaptops();
+        laptopCompNames();
       }
 
       function deleteValueAtStart() {
         laptops.shift();
-        displayLaptops();
+        // displayLaptops();
+        laptopCompNames();
       }
 
       function deleteValueAtend() {
@@ -64,17 +88,20 @@
 
       function deleteValueAtMiddle() {
         laptops.splice(3, 1);
-        displayLaptops();
+        // displayLaptops();
+        laptopCompNames();
       }
 
       function sortLaptops() {
         laptops.sort();
-        displayLaptops();
+        // displayLaptops();
+        laptopCompNames();
       }
 
       function reverseLaptops() {
         laptops.reverse();
-        displayLaptops();
+        // displayLaptops();
+        laptopCompNames();
       }
     </script>
   </body>
