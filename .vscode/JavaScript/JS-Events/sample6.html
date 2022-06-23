@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies</title>
+</head>
+
+<body>
+    <button onclick="AddTcsAtStart() ">Add TCS</button>
+    <br /><br />
+    <button onclick="DeleteGoogleAtEnd() ">Delete Google</button>
+    <br /><br />
+    <script>
+        var CompaniesNames = ["Infosys", "HCL", "Wipro", "Amazon", "Microsoft", "IBM", "Google"];
+        function displayCompanies() {
+            var displayCompanies = "";
+            for (i = 0; i < CompaniesNames.length; i++) {
+                document.write(CompaniesNames[i] + "<br>");
+            }
+        }
+
+        displayCompanies();
+
+        function AddTcsAtStart() {
+            CompaniesNames.unshift("TCS");
+            displayCompanies()
+        }
+        function DeleteGoogleAtEnd() {
+            CompaniesNames.pop("Google");
+            displayCompanies()
+        }
+
+
+    </script>
+</body>
+
+</html>
