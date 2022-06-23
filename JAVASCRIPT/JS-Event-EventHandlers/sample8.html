@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="IPLTeams" style="width: 25%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add ChennaiSuperKings</button>
+    <br><br>
+    <button onclick="Ending()">Add MumbaiIndians at end</button> 
+    <br><br>
+    <button onclick="Middle()">Add Rajsthan Royals at middle </button>
+    <br><br>
+    <button onclick="RemoveatFirst()">Remove ChennaiSuperKings</button>
+    <br><br>
+    <button onclick="Removeatend()">Remove MumbaiIndians</button>
+    <br><br>
+    <button onclick="Removeatmiddle()">Remove Royal Challengers Bangalore</button>
+    <br><br>
+    <button onclick="SortAPPS()">sort values</button>
+    <br><br>
+    <button onclick="reverseAPPS()">Reverse Values</button> 
+    <br><br> 
+    <script>
+        var Teams = ["GujaratTitans", "SunrisersHyderabad", "Royal Challengers Bangalore", "Kolkata Knight Riders","LocknowSuperGaints","DelhiCapitals"];
+
+        function displayIPLTeams() {
+            var displayIPLTeamsNames = "";
+            Teams.forEach((dispTeams) => {
+                displayIPLTeamsNames = displayIPLTeamsNames + dispTeams + "<br>";
+            });
+            document.getElementById("IPLTeams").innerHTML = displayIPLTeamsNames;
+        }
+        displayIPLTeams();
+
+        function Starting() {
+            Teams.unshift("Chennai Super Kings");
+            displayIPLTeams();
+        }
+        function Ending() {
+            Teams.push("Mumbai Indians");
+            displayIPLTeams();
+        }
+        function Middle() {
+            Teams.splice(3,0, "Rajsthan Royals");
+            displayIPLTeams();
+        }
+        function RemoveatFirst() {
+            Teams.shift();
+            displayIPLTeams();
+        }
+        function Removeatend() {
+            Teams.pop();
+            displayIPLTeams();
+        }
+        function Removeatmiddle() {
+            Teams.splice(3,1);
+            displayIPLTeams();
+        }
+        function SortAPPS() {
+            Teams.sort();
+            displayIPLTeams();
+        }
+        function reverseAPPS() {
+            Teams.reverse();
+            displayIPLTeams();
+        }
+    </script>
+</body>
+</html>
