@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Applications" style="width: 60%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add Whatsapp</button>
+    <br><br>
+    <button onclick="Ending()">Add Youtube at end</button> 
+    <br><br/>
+    <button onclick="deleteAtFirst()">Delete Whatsapp</button>
+    <br><br>
+    <button onclick="deleteAtend()">Delete Youtube</button>
+    <br><br>
+    <button onclick="Deleteatmiddle()">Delete Camera</button>
+    <br><br>
+    <button onclick="SortAPPS()">sort values</button>
+    <br><br>
+    <button onclick="reverseAPPS()">Reverse Values</button> 
+    <br><br>
+    <script>
+        var APPS = ["Instagram", "Phone", "contacts", "Camera","Chrome","Flipkart"];
+
+        function displayAPPS() {
+            var displayAPPNames = "";
+            APPS.forEach((dispAPP) => {
+                displayAPPNames = displayAPPNames + dispAPP + "<br>";
+            });
+            document.getElementById("Applications").innerHTML = displayAPPNames;
+        }
+        displayAPPS();
+
+        function Starting() {
+            APPS.unshift("Whatsapp");
+            displayAPPS();
+        }
+        function Ending() {
+            APPS.push("Youtube");
+            displayAPPS();
+        }
+        function deleteAtFirst() {
+            APPS.shift();
+            displayAPPS();
+        }
+        function deleteAtend() {
+            APPS.pop();
+            displayAPPS();
+        }
+        function Deleteatmiddle() {
+            APPS.splice(3,1);
+            displayAPPS();
+        }
+        function SortAPPS() {
+            APPS.sort();
+            displayAPPS();
+        }
+        function reverseAPPS() {
+            APPS.reverse();
+            displayAPPS();
+        }
+    </script>
+</body>
+</html>
