@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="MusicDirectors" style="width: 30%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add Yuvan Shankar Raja</button>
+    <br><br>
+    <button onclick="Ending()">Add Anirudh Ravichander at end</button> 
+    <br><br>
+    <button onclick="Middle()">Add S. P. Balasubrahmanyam at middle </button>
+    <br><br>
+    <button onclick="RemoveatFirst()">Remove Yuvan Shankar Raja</button>
+    <br><br>
+    <button onclick="Removeatend()">Remove Anirudh Ravichander</button>
+    <br><br>
+    <button onclick="Removeatmiddle()">Remove Harris Jayaraj</button>
+    <br><br>
+    <button onclick="SortAPPS()">sort values</button>
+    <br><br>
+    <button onclick="reverseAPPS()">Reverse Values</button> 
+    <br><br> 
+    <script>
+        var MusicDirector = ["A. R. Rahman", "G. V. Prakash Kumar", "Harris Jayaraj", "Hiphop Tamizha","Ilayaraaja","D. Imman"];
+
+        function displayDirectorsNames() {
+            var displayMusicDirector = "";
+            MusicDirector.forEach((dispDirectors) => {
+                displayMusicDirector = displayMusicDirector + dispDirectors + "<br>";
+            });
+            document.getElementById("MusicDirectors").innerHTML = displayMusicDirector;
+        }
+        displayDirectorsNames();
+
+        function Starting() {
+            MusicDirector.unshift("Yuvan Shankar Raja");
+            displayDirectorsNames();
+        }
+        function Ending() {
+            MusicDirector.push("Anirudh Ravichander");
+            displayDirectorsNames();
+        }
+        function Middle() {
+            MusicDirector.splice(3,0, "S. P. Balasubrahmanyam");
+            displayDirectorsNames();
+        }
+        function RemoveatFirst() {
+            MusicDirector.shift();
+            displayDirectorsNames();
+        }
+        function Removeatend() {
+            MusicDirector.pop();
+            displayDirectorsNames();
+        }
+        function Removeatmiddle() {
+            MusicDirector.splice(3,1);
+            displayDirectorsNames();
+        }
+        function SortAPPS() {
+            MusicDirector.sort();
+            displayDirectorsNames();
+        }
+        function reverseAPPS() {
+            MusicDirector.reverse();
+            displayDirectorsNames();
+        }
+    </script>
+</body>
+</html>
