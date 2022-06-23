@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="TNDistrict" style="width: 25%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add Chennai</button>
+    <br><br>
+    <button onclick="Ending()">Add Coimbatore at end</button> 
+    <br><br/>
+    <button onclick="RemoveatFirst()">Remove Chennai</button>
+    <br><br>
+    <button onclick="Removeatend()">Remove Coimbatore</button>
+    <br><br>
+    <button onclick="Removeatmiddle()">Remove Vellore</button>
+    <br><br>
+    <button onclick="SortAPPS()">sort values</button>
+    <br><br>
+    <button onclick="reverseAPPS()">Reverse Values</button> 
+    <br><br>
+    <script>
+        var District = ["Krishnagiri", "Dharmapuri", "Kancheepuram", "Vellore","Thirunelveli","Tiruvannamalai"];
+
+        function displayDistricts() {
+            var displayDistrictsNames = "";
+            District.forEach((dispDistrict) => {
+                displayDistrictsNames = displayDistrictsNames + dispDistrict + "<br>";
+            });
+            document.getElementById("TNDistrict").innerHTML = displayDistrictsNames;
+        }
+        displayDistricts();
+
+        function Starting() {
+            District.unshift("Chennai");
+            displayDistricts();
+        }
+        function Ending() {
+            District.push("Coimbatore");
+            displayDistricts();
+        }
+        function RemoveatFirst() {
+            District.shift();
+            displayDistricts();
+        }
+        function Removeatend() {
+            District.pop();
+            displayDistricts();
+        }
+        function Removeatmiddle() {
+            District.splice(3,1);
+            displayDistricts();
+        }
+        function SortAPPS() {
+            District.sort();
+            displayDistricts();
+        }
+        function reverseAPPS() {
+            District.reverse();
+            displayDistricts();
+        }
+    </script>
+</body>
+</html>
