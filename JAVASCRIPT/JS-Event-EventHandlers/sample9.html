@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="DogNames" style="width: 25%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add German Shepherd</button>
+    <br><br>
+    <button onclick="Ending()">Add Dachshund at end</button> 
+    <br><br>
+    <button onclick="Middle()">Add Pug at middle </button>
+    <br><br>
+    <button onclick="RemoveatFirst()">Remove German Shepherd</button>
+    <br><br>
+    <button onclick="Removeatend()">Remove Dachshund</button>
+    <br><br>
+    <button onclick="Removeatmiddle()">Remove Golden Retriever</button>
+    <br><br>
+    <button onclick="SortAPPS()">sort values</button>
+    <br><br>
+    <button onclick="reverseAPPS()">Reverse Values</button> 
+    <br><br> 
+    <script>
+        var DogNames = [" Labrador Retriever", "Boxer", "Golden Retriever", "Doberman","Pomeranian","Indian Spitz"];
+
+        function displayDogNames() {
+            var displayDogName = "";
+            DogNames.forEach((dispNames) => {
+                displayDogName = displayDogName + dispNames + "<br>";
+            });
+            document.getElementById("DogNames").innerHTML = displayDogName;
+        }
+        displayDogNames();
+
+        function Starting() {
+            DogNames.unshift("German Shepherd");
+            displayDogNames();
+        }
+        function Ending() {
+            DogNames.push("Dachshund");
+            displayDogNames();
+        }
+        function Middle() {
+            DogNames.splice(3,0, "Pug");
+            displayDogNames();
+        }
+        function RemoveatFirst() {
+            DogNames.shift();
+            displayDogNames();
+        }
+        function Removeatend() {
+            DogNames.pop();
+            displayDogNames();
+        }
+        function Removeatmiddle() {
+            DogNames.splice(3,1);
+            displayDogNames();
+        }
+        function SortAPPS() {
+            DogNames.sort();
+            displayDogNames();
+        }
+        function reverseAPPS() {
+            DogNames.reverse();
+            displayDogNames();
+        }
+    </script>
+</body>
+</html>
