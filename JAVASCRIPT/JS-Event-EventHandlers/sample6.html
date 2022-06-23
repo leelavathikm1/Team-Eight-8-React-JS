@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Subjects" style="width: 25%; float: right"></div>
+    <br><br>
+    <button onclick="Starting()">Add Mathematics</button>
+    <br><br>
+    <button onclick="Ending()">Add Social Science at end</button> 
+    <br><br/>
+    <button onclick="RemoveatFirst()">Remove Mathematics</button>
+    <br><br>
+    <button onclick="Removeatend()">Remove Social Science</button>
+    <br><br>
+    <button onclick="Removeatmiddle()">Remove Physics</button>
+    <br><br>
+    <button onclick="SortAPPS()">sort values</button>
+    <br><br>
+    <button onclick="reverseAPPS()">Reverse Values</button> 
+    <br><br>
+    <script>
+        var Subjects = ["English", "Sanskrit", "Hindhi", "Physics","Chemistry","General Knowledge"];
+
+        function displaySunjects() {
+            var displaysubjectNames = "";
+            Subjects.forEach((dispSubject) => {
+                displaysubjectNames = displaysubjectNames + dispSubject + "<br>";
+            });
+            document.getElementById("Subjects").innerHTML = displaysubjectNames;
+        }
+        displaySunjects();
+
+        function Starting() {
+            Subjects.unshift("Mathematics");
+            displaySunjects();
+        }
+        function Ending() {
+            Subjects.push("Social Science");
+            displaySunjects();
+        }
+        function RemoveatFirst() {
+            Subjects.shift();
+            displaySunjects();
+        }
+        function Removeatend() {
+            Subjects.pop();
+            displaySunjects();
+        }
+        function Removeatmiddle() {
+            Subjects.splice(3,1);
+            displaySunjects();
+        }
+        function SortAPPS() {
+            Subjects.sort();
+            displaySunjects();
+        }
+        function reverseAPPS() {
+            Subjects.reverse();
+            displaySunjects();
+        }
+    </script>
+</body>
+</html>
