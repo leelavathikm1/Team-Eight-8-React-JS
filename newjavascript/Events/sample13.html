@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" style="width: 800px; float: right; margin-top: 50px;"></div>
+    <br /><br />
+    <button onclick="addValueAtBegining()">Add Value at Start</button>
+    <br /><br />
+    <button onclick="addvalueAtEnd()">Add value at the end</button> <br /><br />
+    <button onclick="addValueAtMiddle()">Add value at middle of array</button>
+    <br /><br />
+    <button onclick="deleteValueAtStart()">Delete a Value At start</button>
+    <br /><br />
+    <button onclick="deleteValueAtend()">Delete a value at End</button>
+    <br /><br />
+    <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
+    <br /><br />
+    <button onclick="sortFreedomFighters()">sort Values</button> <br /><br />
+    <button onclick="reverseFreedomFighters()">Reverse Values</button> <br />
+    <br />
+
+    <script>
+      var freedomFighters = ["Mahatma Gandhi", "Subhash Chandra Bose", "Sardar Vallabhbhai Patel", "Jawaharlal Nehru", "Bhagat Singh", "Lal Bahadur Shastri"];
+      function displayFreedomFighters() {
+        var displayFreedomFightersName = "";
+        freedomFighters.forEach((displayFreedomFighter) => {
+          
+            displayFreedomFightersName = displayFreedomFightersName + displayFreedomFighter + "<br>";
+        });
+        document.getElementById("demo").innerHTML = displayFreedomFightersName;
+      }
+      displayFreedomFighters();
+      function addValueAtBegining() {
+        freedomFighters.unshift("Bipin Chandra Pal");
+        displayFreedomFighters();
+      }
+
+      function addvalueAtEnd() {
+        freedomFighters.push("Rani Lakshmi Bai");
+        displayFreedomFighters();
+      }
+
+      function addValueAtMiddle() {
+        freedomFighters.splice(3, 0, "Begum Hazrat Mahal ");
+        displayFreedomFighters();
+      }
+
+      function deleteValueAtStart() {
+        freedomFighters.shift();
+        displayFreedomFighters();
+      }
+
+      function deleteValueAtend() {
+        freedomFighters.pop();
+        displayFreedomFighters();
+      }
+
+      function deleteValueAtMiddle() {
+        freedomFighters.splice(3, 1);
+        displayFreedomFighters();
+      }
+
+      function sortFreedomFighters() {
+        freedomFighters.sort();
+        displayFreedomFighters();
+      }
+
+      function reverseFreedomFighters() {
+        freedomFighters.reverse();
+        displayFreedomFighters();
+      }
+
+    </script> 
+  </body>
+</html>

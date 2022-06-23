@@ -20,59 +20,59 @@
     <br /><br />
     <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
     <br /><br />
-    <button onclick="sortProfessions()">sort Values</button> <br /><br />
-    <button onclick="reverseProfessions()">Reverse Values</button> <br />
+    <button onclick="sortNumbers()">sort Values</button> <br /><br />
+    <button onclick="reverseNumbers()">Reverse Values</button> <br />
     <br />
 
     <script>
-      var professions = ["Teacher", "Lawyer", "Police", "Doctor", "Actor", "Engineer"];
-      function displayProfessions() {
-        var displayProfessionsName = "";
-        professions.forEach((displayProfession) => {
+      var numbers = ["Two", "Three", "Five", "Six ", "Seven", "Eight"];
+      function displayNumbers() {
+        var displayNumbers = "";
+        numbers.forEach((displayNumber) => {
           
-            displayProfessionsName = displayProfessionsName + displayProfession + "<br>";
+            displayNumbers = displayNumbers + displayNumber + "<br>";
         });
-        document.getElementById("demo").innerHTML = displayProfessionsName;
+        document.getElementById("demo").innerHTML = displayNumbers;
       }
-      displayProfessions();
+      displayNumbers();
       function addValueAtBegining() {
-        professions.unshift("Dancer");
-        displayProfessions();
+        numbers.unshift("One");
+        displayNumbers();
       }
 
       function addvalueAtEnd() {
-        professions.push("Singer");
-        displayProfessions();
+        numbers.push("Nine");
+        displayNumbers();
       }
 
       function addValueAtMiddle() {
-        professions.splice(3, 0, "pilot");
-        displayProfessions();
+        numbers.splice(3, 0, "Four");
+        displayNumbers();
       }
 
       function deleteValueAtStart() {
-        professions.shift();
-        displayProfessions();
+        numbers.shift();
+        displayNumbers();
       }
 
       function deleteValueAtend() {
-        professions.pop();
-        displayProfessions();
+        numbers.pop();
+        displayNumbers();
       }
 
       function deleteValueAtMiddle() {
-        professions.splice(3, 1);
-        displayProfessions();
+        numbers.splice(3, 1);
+        displayNumbers();
       }
 
-      function sortProfessions() {
-        professions.sort();
-        displayProfessions();
+      function sortNumbers() {
+        numbers.sort();
+        displayNumbers();
       }
 
-      function reverseProfessions() {
-        professions.reverse();
-        displayProfessions();
+      function reverseNumbers() {
+        numbers.reverse();
+        displayNumbers();
       }
 
     </script> 

@@ -20,59 +20,59 @@
     <br /><br />
     <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
     <br /><br />
-    <button onclick="sortProfessions()">sort Values</button> <br /><br />
-    <button onclick="reverseProfessions()">Reverse Values</button> <br />
+    <button onclick="sortCars()">sort Values</button> <br /><br />
+    <button onclick="reverseCars()">Reverse Values</button> <br />
     <br />
 
     <script>
-      var professions = ["Teacher", "Lawyer", "Police", "Doctor", "Actor", "Engineer"];
-      function displayProfessions() {
-        var displayProfessionsName = "";
-        professions.forEach((displayProfession) => {
+      var cars = ["Hyundai", "Tata", "Mahindra", "Toyota", "Kia", "Benz"];
+      function displayCars() {
+        var displayCarsName = "";
+        cars.forEach((displayCar) => {
           
-            displayProfessionsName = displayProfessionsName + displayProfession + "<br>";
+            displayCarsName = displayCarsName + displayCar + "<br>";
         });
-        document.getElementById("demo").innerHTML = displayProfessionsName;
+        document.getElementById("demo").innerHTML = displayCarsName;
       }
-      displayProfessions();
+      displayCars();
       function addValueAtBegining() {
-        professions.unshift("Dancer");
-        displayProfessions();
+        cars.unshift("Volkswagen");
+        displayCars();
       }
 
       function addvalueAtEnd() {
-        professions.push("Singer");
-        displayProfessions();
+        cars.push("BMW");
+        displayCars();
       }
 
       function addValueAtMiddle() {
-        professions.splice(3, 0, "pilot");
-        displayProfessions();
+        cars.splice(3, 0, "MG");
+        displayCars();
       }
 
       function deleteValueAtStart() {
-        professions.shift();
-        displayProfessions();
+        cars.shift();
+        displayCars();
       }
 
       function deleteValueAtend() {
-        professions.pop();
-        displayProfessions();
+        cars.pop();
+        displayCars();
       }
 
       function deleteValueAtMiddle() {
-        professions.splice(3, 1);
-        displayProfessions();
+        cars.splice(3, 1);
+        displayCars();
       }
 
-      function sortProfessions() {
-        professions.sort();
-        displayProfessions();
+      function sortCars() {
+        cars.sort();
+        displayCars();
       }
 
-      function reverseProfessions() {
-        professions.reverse();
-        displayProfessions();
+      function reverseCars() {
+        cars.reverse();
+        displayCars();
       }
 
     </script> 

@@ -20,59 +20,59 @@
     <br /><br />
     <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
     <br /><br />
-    <button onclick="sortProfessions()">sort Values</button> <br /><br />
-    <button onclick="reverseProfessions()">Reverse Values</button> <br />
+    <button onclick="sortFestivals()">sort Values</button> <br /><br />
+    <button onclick="reverseFestivals()">Reverse Values</button> <br />
     <br />
 
     <script>
-      var professions = ["Teacher", "Lawyer", "Police", "Doctor", "Actor", "Engineer"];
-      function displayProfessions() {
-        var displayProfessionsName = "";
-        professions.forEach((displayProfession) => {
+      var festivals = ["Sakranti", "Holi	", "Janmashtmi", "Ganesh Chaturthi ", "Navratri", "Onam"];
+      function displayFestivals() {
+        var displayFestivals = "";
+        festivals.forEach((displayFestival) => {
           
-            displayProfessionsName = displayProfessionsName + displayProfession + "<br>";
+            displayFestivals = displayFestivals + displayFestival + "<br>";
         });
-        document.getElementById("demo").innerHTML = displayProfessionsName;
+        document.getElementById("demo").innerHTML = displayFestivals;
       }
-      displayProfessions();
+      displayFestivals();
       function addValueAtBegining() {
-        professions.unshift("Dancer");
-        displayProfessions();
+        festivals.unshift("Christmas");
+        displayFestivals();
       }
 
       function addvalueAtEnd() {
-        professions.push("Singer");
-        displayProfessions();
+        festivals.push("Ugadi");
+        displayFestivals();
       }
 
       function addValueAtMiddle() {
-        professions.splice(3, 0, "pilot");
-        displayProfessions();
+        festivals.splice(3, 0, "Maha Shivratr");
+        displayFestivals();
       }
 
       function deleteValueAtStart() {
-        professions.shift();
-        displayProfessions();
+        festivals.shift();
+        displayFestivals();
       }
 
       function deleteValueAtend() {
-        professions.pop();
-        displayProfessions();
+        festivals.pop();
+        displayFestivals();
       }
 
       function deleteValueAtMiddle() {
-        professions.splice(3, 1);
-        displayProfessions();
+        festivals.splice(3, 1);
+        displayFestivals();
       }
 
-      function sortProfessions() {
-        professions.sort();
-        displayProfessions();
+      function sortFestivals() {
+        festivals.sort();
+        displayFestivals();
       }
 
-      function reverseProfessions() {
-        professions.reverse();
-        displayProfessions();
+      function reverseFestivals() {
+        festivals.reverse();
+        displayFestivals();
       }
 
     </script> 

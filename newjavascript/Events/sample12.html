@@ -20,59 +20,59 @@
     <br /><br />
     <button onclick="deleteValueAtMiddle()">Delete value at middle</button>
     <br /><br />
-    <button onclick="sortProfessions()">sort Values</button> <br /><br />
-    <button onclick="reverseProfessions()">Reverse Values</button> <br />
+    <button onclick="sortBikes()">sort Values</button> <br /><br />
+    <button onclick="reverseBikes()">Reverse Values</button> <br />
     <br />
 
     <script>
-      var professions = ["Teacher", "Lawyer", "Police", "Doctor", "Actor", "Engineer"];
-      function displayProfessions() {
-        var displayProfessionsName = "";
-        professions.forEach((displayProfession) => {
+      var bikes = ["Honda", "Yamaha", "Suzuki", "Kawasaki", "BMW", "Ducati"];
+      function displayBikes() {
+        var displayBikesName = "";
+        bikes.forEach((displayBike) => {
           
-            displayProfessionsName = displayProfessionsName + displayProfession + "<br>";
+            displayBikesName = displayBikesName + displayBike + "<br>";
         });
-        document.getElementById("demo").innerHTML = displayProfessionsName;
+        document.getElementById("demo").innerHTML = displayBikesName;
       }
-      displayProfessions();
+      displayBikes();
       function addValueAtBegining() {
-        professions.unshift("Dancer");
-        displayProfessions();
+        bikes.unshift("Triumph");
+        displayBikes();
       }
 
       function addvalueAtEnd() {
-        professions.push("Singer");
-        displayProfessions();
+        bikes.push("KTM");
+        displayBikes();
       }
 
       function addValueAtMiddle() {
-        professions.splice(3, 0, "pilot");
-        displayProfessions();
+        bikes.splice(3, 0, "Harley-Davidson");
+        displayBikes();
       }
 
       function deleteValueAtStart() {
-        professions.shift();
-        displayProfessions();
+        bikes.shift();
+        displayBikes();
       }
 
       function deleteValueAtend() {
-        professions.pop();
-        displayProfessions();
+        bikes.pop();
+        displayBikes();
       }
 
       function deleteValueAtMiddle() {
-        professions.splice(3, 1);
-        displayProfessions();
+        bikes.splice(3, 1);
+        displayBikes();
       }
 
-      function sortProfessions() {
-        professions.sort();
-        displayProfessions();
+      function sortBikes() {
+        bikes.sort();
+        displayBikes();
       }
 
-      function reverseProfessions() {
-        professions.reverse();
-        displayProfessions();
+      function reverseBikes() {
+        bikes.reverse();
+        displayBikes();
       }
 
     </script> 
