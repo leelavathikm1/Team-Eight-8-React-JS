@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptops </title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Laptops Brand</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        var LaptopsDetails = [
+            {
+                Brand: "Samsung ",
+                Cost: 40000,
+            },
+
+            {
+                Brand: "Lenovo ",
+                Cost: 24000,
+            },
+            {
+                Brand: "HP",
+                Cost: 30000,
+            },
+            {
+                Brand: "Dell",
+                Cost: 70000,
+            },
+            {
+                Brand: "Asus",
+                Cost: 26990,
+            },
+
+        ];
+        function displayLaptopsDetails(LaptopsDetails) {
+            LaptopsDetails.forEach((dispLaptopsDetails) => {
+                var myTr = document.createElement("tr");
+                for (a in dispLaptopsDetails) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispLaptopsDetails[a];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTbody").appendChild(myTr);
+            })
+        }
+        displayLaptopsDetails(LaptopsDetails);
+    </script>
+</body>
+
+</html>
