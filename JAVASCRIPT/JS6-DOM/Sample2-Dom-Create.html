@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul></ul>
+    <script>
+      var cars = [
+        "Volvo",
+        "Mahindra",
+        "AUDI",
+        "Kia",
+        "MG",
+        "Tata",
+        "Toyota",
+        "Mahindra",
+        "AUDI",
+        "Kia",
+        "MG",
+        "Tata",
+        "Toyota",
+      ];
+
+      cars.forEach((dispCars) => {
+        var myLi = document.createElement("li");
+        myLi.innerHTML = dispCars;
+        document.querySelector("ul").appendChild(myLi);
+      });
+
+      for (i = 0; i < cars.length; i++) {
+        var myH1 = document.createElement("h1"); // creates a h1 Element
+        myH1.innerHTML = cars[i];
+        document.body.appendChild(myH1); //Adding h1 Element to Body
+      }
+
+      //   cars.forEach((dispCars) => {
+      //     var myDiv = document.createElement("div");
+      //     console.log(dispCars);
+      //     document.body.appendChild(myDiv);
+      //   });
+    </script>
+  </body>
+</html>

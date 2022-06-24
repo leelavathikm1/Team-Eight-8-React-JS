@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Car Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+      var carDetails = [
+        {
+          company: "Mahindra",
+          carName: "XUV 500",
+          price: 3200000,
+        },
+        {
+          company: "Mahindra",
+          carName: "XUV 500",
+          price: 3200000,
+        },
+        {
+          company: "Mahindra",
+          carName: "XUV 500",
+          price: 3200000,
+        },
+        {
+          company: "Mahindra",
+          carName: "XUV 500",
+          price: 3200000,
+        },
+        {
+          company: "Mahindra",
+          carName: "XUV 500",
+          price: 3200000,
+        },
+      ];
+
+      function displayCars(carDetails) {
+        carDetails.forEach((dispCars) => {
+          var myTr = document.createElement("tr");
+          for (a in dispCars) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = dispCars[a];
+            myTr.appendChild(myTd);
+          }
+          document.getElementById("myTbody").appendChild(myTr);
+        });
+      }
+      displayCars(carDetails);
+    </script>
+  </body>
+</html>
