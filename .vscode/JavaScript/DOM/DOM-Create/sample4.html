@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TamilNadu</title>
+</head>
+
+<body>
+    <ul></ul>
+    <script>
+        var TamilNadu = ["Vellore", "Selam", "Madurai", "Thirupathur", "Kanchipuram", "Chennai", "Erode", "Coimbatore", "Dharmapuri", "Cuddalore", "Tirunelveli"];
+        TamilNadu.forEach((dispTamilNadu) => {
+            var myLi = document.createElement("li");
+            myLi.innerHTML = dispTamilNadu;
+            document.querySelector("ul").appendChild(myLi);
+        });
+    </script>
+</body>
+
+</html>

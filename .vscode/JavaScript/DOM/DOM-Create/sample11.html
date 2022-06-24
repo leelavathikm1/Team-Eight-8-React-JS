@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        div {
+            border: 2px solid indigo;
+            padding: 10px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var tableNos = prompt("Enter No Table Numbers You Required");
+        var i = 1;
+        while (i <= tableNos) {
+            var mydiv = document.createElement("div");
+
+            var j = 1;
+            var table = "";
+            while (j <= 10) {
+                table = table + i + "x" + j + "=" + i * j + "<br>";
+                j++;
+            }
+            i++;
+            mydiv.innerHTML = table;
+            document.body.appendChild(mydiv);
+
+
+        }
+
+    </script>
+</body>
+
+</html>
