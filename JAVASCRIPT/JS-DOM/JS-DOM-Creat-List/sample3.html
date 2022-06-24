@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        var fruits = [
+            "Apple",
+            "Orange",
+            "JackFruit",
+            "Mango",
+            "Pineapple",
+            "Kiwi",
+            "DragonFruit",
+        ];
+        fruits.forEach((dispfruits) => {
+            var myLi = document.createElement("li");
+            myLi.innerHTML = dispfruits;
+            document.querySelector("ul").appendChild(myLi);
+         })
+
+         for (i = 0; i < fruits.length; i++) {
+        var myH1 = document.createElement("h1");
+        myH1.innerHTML = fruits[i];
+        document.body.appendChild(myH1);
+      }
+
+    </script>
+</body>
+</html>
