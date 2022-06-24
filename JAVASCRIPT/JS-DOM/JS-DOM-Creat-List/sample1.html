@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        var Mobiles = [
+            "Iphone",
+            "Samsung",
+            "LG",
+            "Nokia",
+            "Realme",
+            "RedMi",
+            "OnePlus",
+            "Vivo",
+            "Oppo",
+            "Lenovo",
+            "Micromax",
+            "Asus"
+        ];
+         Mobiles.forEach((dispMobiles) => {
+            var myLi = document.createElement("li");
+            myLi.innerHTML = dispMobiles;
+            document.querySelector("ul").appendChild(myLi);
+         })
+
+
+    </script>
+</body>
+</html>
