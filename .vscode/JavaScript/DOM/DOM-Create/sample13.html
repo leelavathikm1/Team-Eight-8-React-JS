@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile </title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mobile Brand</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        var MobileDetails = [
+            {
+                Brand: "Samsung Galaxy",
+                Cost: 20000,
+            },
+
+            {
+                Brand: "OPPO ",
+                Cost: 14000,
+            },
+            {
+                Brand: "Xiaomi",
+                Cost: 19000,
+            },
+            {
+                Brand: "Vivo",
+                Cost: 15000,
+            },
+            {
+                Brand: "Realme",
+                Cost: 6599,
+            },
+
+        ];
+        function displayMobileDetails(MobileDetails) {
+            MobileDetails.forEach((dispMobileDetails) => {
+                var myTr = document.createElement("tr");
+                for (a in dispMobileDetails) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispMobileDetails[a];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTbody").appendChild(myTr);
+            })
+        }
+        displayMobileDetails(MobileDetails);
+    </script>
+</body>
+
+</html>
