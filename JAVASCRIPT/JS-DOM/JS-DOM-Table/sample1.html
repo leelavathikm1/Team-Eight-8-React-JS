@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Model</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+      </table>
+      <script>
+        var Mobiles = [
+          {
+            company: "Realme",
+            Model: "X7 Max",
+            price: 20000,
+          },
+          {
+            company: "Iphone",
+            Model: "12 pro",
+            price: 80000,
+          },
+          {
+            company: "Iphone",
+            Model: "13 pro Max",
+            price: 125000,
+          },
+          {
+            company: "Oneplus",
+            Model: "XR ",
+            price: 50000,
+          },
+          {
+            company: "Samsung",
+            Model: "SE 6",
+            price: 75000,
+          },
+        ];
+  
+        function displayMobiles(Mobiles) {
+            Mobiles.forEach((displayMobiles) => {
+            var myTr = document.createElement("tr");
+            for (a in displayMobiles) {
+              var myTd = document.createElement("td");
+              myTd.innerHTML = displayMobiles[a];
+              myTr.appendChild(myTd);
+            }
+            document.getElementById("myTbody").appendChild(myTr);
+          });
+        }
+        displayMobiles(Mobiles);
+      </script>
+</body>
+
+</html>
