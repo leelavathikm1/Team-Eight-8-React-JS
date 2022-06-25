@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Markating"  style="width: 200px; float: right; color: rgb(255, 0, 0); font-style: italic; "></div>
+    
+    <br> <br>
+    <button onclick="Addvalueatstart()">Add value at start</button><br> <br>
+    <button onclick="AddvalueattheEnd()">Add value at the End</button><br> <br>
+    <button onclick="AddvalueatMiddle()">Add value at Middle</button><br> <br>
+    <button onclick="DeleteavalueatStart()">Delete a value at Start</button><br> <br>
+    <button onclick="deleteAtend()">Deleta a value at End</button><br> <br>
+    <button onclick="deleteatMiddle()">Delete a value at Middle</button><br> <br>
+    <button onclick="sortVegetables()">Sort Values</button><br> <br>
+    <button onclick="reverseVegetables()">Reverse Values</button><br> <br>
+<script>
+  var Vegetables = ["Potato","Beans","Onions","Beetroot","Cualiflower"];
+  
+  function displayVegetables() {
+    var displayVegetablesNames = "";
+    Vegetables.forEach((dispVegetables) => {
+        displayVegetablesNames = displayVegetablesNames + dispVegetables + "<br>";
+    });
+    document.getElementById("Markating").innerHTML = displayVegetablesNames;
+   }
+   displayVegetables();
+
+   function Addvalueatstart() {
+    Vegetables.unshift("LadyFinger");
+    dispVegetables();
+   }
+   function AddvalueattheEnd() {
+    Vegetables.push("Garlic");
+    dispVegetables();
+   }
+   function AddvalueatMiddle() {
+    Vegetables.splice(3,0,  "Carrot");
+    dispVegetables();
+   }
+   function DeleteavalueatStart() {
+    Vegetables.shift();
+    dispVegetables();
+   }
+   function deleteAtend() {
+    Vegetables.pop();
+    dispVegetables();
+   }
+   function deleteatMiddle() {
+    Vegetables.splice();
+    dispVegetables();
+   }
+   function sortVegetables() {
+    Vegetables.sort();
+    dispVegetables();
+   }
+   function reverseVegetables() {
+    Vegetables.reverse();
+    dispVegetables();
+   }
+   console.log(dispVegetables =displayVegetables);
+   </script>
+</body>
+</html>
