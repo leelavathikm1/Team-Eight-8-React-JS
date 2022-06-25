@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Profession</th>
+         
+        </tr>
+      </thead>
+      <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+      var personDetails = [
+        {
+          Name: "Rajinikanth",
+          DOB: "12 December 1950 ",
+          Profession : "Actor" ,
+         
+        },
+        {
+        Name: "savitri",
+          DOB: "6 December 1936",
+          Profession : "Actress" ,
+         
+        },
+        {
+          Name: "S. P. Balasubrahmanyam",
+          Age: "4 June 1946",
+          Profession : " playback singer" ,
+         
+        },
+        {
+          Name: "Prabhu Deva",
+          Age: " 3 April 1973",
+          Profession : "choreographer" ,
+         
+         
+        },
+        
+      
+      ];
+
+      function displayPerson(personDetails) {
+        personDetails.forEach((dispPerson) => {
+          var myTr = document.createElement("tr");
+          for (a in dispPerson) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = dispPerson[a];
+            myTr.appendChild(myTd);
+          }
+          document.getElementById("myTbody").appendChild(myTr);
+        });
+      }
+      displayPerson(personDetails)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Percentage</th>
+          <th>result</th>
+        </tr>
+      </thead>
+      <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+      var resultDetails = [
+        {
+          FirstName: "Preethi",
+          LastName: "Munirathnam",
+          Percentage : 80,
+          result : " Pass",
+
+        },
+        {
+          FirstName: "Vakula",
+          LastName: "Devi",
+          Percentage : 80,
+          result : " Pass",
+        },
+        {
+          FirstName: "Princella",
+          LastName: "flarence",
+          Percentage : 80,
+          result : " Pass",
+        },
+        {
+          FirstName: "Sony",
+          LastName: "Srinivas",
+          Percentage : 75,
+          result : " Pass",
+        },
+        {
+          FirstName: "Haritha",
+          LastName: "K.S",
+          Percentage : 85,
+          result : " Pass",
+        },
+      ];
+
+      function displayResults(resultDetails) {
+        resultDetails.forEach((dispResults) => {
+          var myTr = document.createElement("tr");
+          for (a in dispResults) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = dispResults[a];
+            myTr.appendChild(myTd);
+          }
+          document.getElementById("myTbody").appendChild(myTr);
+        });
+      }
+      displayResults(resultDetails)
+    </script>
+  </body>
+</html>
