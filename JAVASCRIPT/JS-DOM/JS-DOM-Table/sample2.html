@@ -10,54 +10,44 @@
     <table border="1">
         <thead>
           <tr>
-            <th>Company</th>
-            <th>Model</th>
+            <th>Fruit</th>
             <th>Price</th>
           </tr>
         </thead>
         <tbody id="myTbody"></tbody>
       </table>
       <script>
-        var Bikes = [
+        var Fruits = [
           {
-            company: "Bullet",
-            Model: "classic",
-            price: 200000,
+            company: "Mango",
+            price: 100,
           },
           {
-            company: "Pulsar",
-            Model: "Nsr200",
-            price: 170000,
+            company: "Apple",
+            price: 200,
           },
           {
-            company: "Yamaha",
-            Model: "R15",
-            price: 180000,
+            company: "Pineapple",
+            price: 180,
           },
           {
-            company: "KTM",
-            Model: "RC125",
-            price: 50000,
-          },
-          {
-            company: "Yamaha",
-            Model: "RX100",
-            price: 75000,
+            company: "Orange",
+            price: 120,
           },
         ];
   
-        function displayBikes(Bikes) {
-            Bikes.forEach((displayBikes) => {
+        function displayFruits(Fruits) {
+            Fruits.forEach((displayFruits) => {
             var myTr = document.createElement("tr");
-            for (a in displayBikes) {
+            for (a in displayFruits) {
               var myTd = document.createElement("td");
-              myTd.innerHTML = displayBikes[a];
+              myTd.innerHTML = displayFruits[a];
               myTr.appendChild(myTd);
             }
             document.getElementById("myTbody").appendChild(myTr);
           });
         }
-        displayBikes(Bikes);
+        displayFruits(Fruits);
       </script>
 </body>
 </html>
