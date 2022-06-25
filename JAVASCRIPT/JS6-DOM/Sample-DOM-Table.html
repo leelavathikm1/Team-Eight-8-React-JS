@@ -7,6 +7,9 @@
     <title>Document</title>
   </head>
   <body>
+    <input type="text" id="userInput" value="" />
+    <button onclick="searchCar()">Search User</button>
+    <button onclick="clearSearch()">Clear Search</button>
     <table border="1">
       <thead>
         <tr>
@@ -25,28 +28,29 @@
           price: 3200000,
         },
         {
-          company: "Mahindra",
-          carName: "XUV 500",
+          company: "Audi",
+          carName: "a6",
           price: 3200000,
         },
         {
-          company: "Mahindra",
-          carName: "XUV 500",
+          company: "Toyota",
+          carName: "Fortunar",
           price: 3200000,
         },
         {
-          company: "Mahindra",
-          carName: "XUV 500",
+          company: "Tata",
+          carName: "Safari",
           price: 3200000,
         },
         {
-          company: "Mahindra",
-          carName: "XUV 500",
+          company: "MG",
+          carName: "SUV 500",
           price: 3200000,
         },
       ];
 
       function displayCars(carDetails) {
+        document.getElementById("myTbody").innerHTML = "";
         carDetails.forEach((dispCars) => {
           var myTr = document.createElement("tr");
           for (a in dispCars) {
@@ -58,6 +62,21 @@
         });
       }
       displayCars(carDetails);
+
+      function searchCar() {
+        var userSearch = document.getElementById("userInput").value;
+        console.log(userSearch);
+
+        var filterCars = carDetails.filter((dispCar) => {
+          return dispCar.company.indexOf(userSearch) > -1;
+        });
+        displayCars(filterCars);
+      }
+
+      function clearSearch() {
+        displayCars(carDetails);
+        console.log("From ClearSearch");
+      }
     </script>
   </body>
 </html>
