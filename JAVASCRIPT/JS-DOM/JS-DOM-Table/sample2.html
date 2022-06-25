@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Model</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+      </table>
+      <script>
+        var Bikes = [
+          {
+            company: "Bullet",
+            Model: "classic",
+            price: 200000,
+          },
+          {
+            company: "Pulsar",
+            Model: "Nsr200",
+            price: 170000,
+          },
+          {
+            company: "Yamaha",
+            Model: "R15",
+            price: 180000,
+          },
+          {
+            company: "KTM",
+            Model: "RC125",
+            price: 50000,
+          },
+          {
+            company: "Yamaha",
+            Model: "RX100",
+            price: 75000,
+          },
+        ];
+  
+        function displayBikes(Bikes) {
+            Bikes.forEach((displayBikes) => {
+            var myTr = document.createElement("tr");
+            for (a in displayBikes) {
+              var myTd = document.createElement("td");
+              myTd.innerHTML = displayBikes[a];
+              myTr.appendChild(myTd);
+            }
+            document.getElementById("myTbody").appendChild(myTr);
+          });
+        }
+        displayBikes(Bikes);
+      </script>
+</body>
+</html>
