@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cenima" style="width: 200px;font-style: italic; float: right; color: rgb(5, 135, 248);"></div>
+    <br><br>
+    
+    <button onclick="addValueAtBegining()">Add Value At Start</button>
+    <br><br>
+    <button onclick="addValueAtEnd()">Add Value At The End</button>
+    <br><br>
+    <button onclick="addValueAtMiddle()">Add Value At Middle Of Array</button>
+    <br><br>
+    <button onclick="deleteaValueAtStart()">Delete a Value At Start</button>
+    <br><br>
+    <button onclick="deleteAtend()">Delete a Value At End</button>
+    <br><br>
+    <button onclick="deleteaValueAtMiddle()">Delete value at middle</button>
+    <br><br>
+    <button onclick="sortmovies()">sort values</button>
+    <br><br>
+    <button onclick="reversemovies()">Reverse values</button><br>
+    <br>
+
+    <script>
+       var movies = ["Chirutha","Magadheera","Orange","Yevadu","RRR"];
+
+       function displaymovies() {
+        var displaymoviesName = "";
+        movies.forEach((dispmovie) =>{
+        displaymoviesName = displaymoviesName + dispmovie + "<br>";
+        });
+        document.getElementById("cenima").innerHTML = displaymoviesName;
+       }
+       
+       displaymovies();
+
+       function addValueAtBegining(){
+        movies.unshift("Saira");
+        displaymovies()
+       }
+       
+       function addValueAtEnd(){
+        movies.push("Govindu Andhrivadele");
+        displaymovies();
+       }
+       
+       function addValueAtMiddle(){
+        movies.splice(3,0, "Bangaram");
+        displaymovies();
+       }
+       
+       function deleteaValueAtStart(){
+        movies.shift();
+        displaymovies();
+       }
+
+       function deleteAtend() {
+        movies.pop();
+        displaymovies();
+       }
+
+       function deleteaValueAtMiddle() {
+        movies.splice(3,1);
+        displaymovies();
+       }
+
+       function sortmovies() {
+        movies.sort();
+        displaymovies();
+       }
+
+       function reversemovies(){
+        movies.reverse();
+        displaymovies();
+       }
+       
+    </script>
+</body>
+</html>

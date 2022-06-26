@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Artistes" style="width: 200px; float: right; color: rgb(250, 7, 128); font-style: italic; "></div>
+     <br> <br>
+     
+     <button onclick="addValueAtBegining()">Add Value At Start</button>
+     <br> <br>
+     <button onclick="addValueAtEnd()">Add value At The End</button>
+     <br> <br>
+     <button onclick="addValueAtMiddle()">Add Value At Middle of Array</button>
+     <br> <br>
+     <button onclick="deleteaValueAtStart()">Delete a Value At Start</button>
+     <br> <br>
+     <button onclick="deleteaValueAtEnd()">Deleta a Value At End</button>
+     <br> <br>
+     <button onclick="deleteAtMiddle()">Delete a Value At Middle</button>
+     <br> <br>
+     <button onclick="sortActress()">Sort Values</button>
+     <br> <br>
+     <button onclick="reverseActress()">Reverse Values</button>
+     <br> <br>
+
+  <script>
+  var Actress = ["Sneha","Laya","Tapsi","Shreya","Trisha"];
+  
+  function displayActress() {
+    var displayActressNames = "";
+    Actress.forEach((dispActress) => {
+    displayActressNames = displayActressNames + dispActress + "<br>";
+    });
+    document.getElementById("Artistes").innerHTML = displayActressNames;
+   }
+   displayActress();
+
+   function addValueAtBegining() {
+    Actress.unshift("Anushka");
+    dispActress();
+   }
+   function addValueAtEnd() {
+    Actress.push("Tamanna");
+    dispActress();
+   }
+   function addValueAtMiddle() {
+    Actress.splice(2,0,  "Sonalibindray");
+    dispActress();
+   }
+
+   function deleteaValueAtStart() {
+    Actress.shift();
+    dispActress();
+   }
+
+   function deleteaValueAtEnd() {
+    Actress.pop();
+    dispActress();
+   }
+
+   function deleteAtMiddle() {
+    Actress.splice(2,1);
+    dispActress();
+   }
+
+   function sortActress() {
+    Actress.sort();
+    dispActress();
+   }
+
+   function reverseActress() {
+    Actress.reverse();
+    dispActress();
+   }
+
+   console.log(dispActress =displayActress);
+</script>
+</body>
+</html>
