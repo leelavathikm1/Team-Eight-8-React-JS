@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Nature" style="width: 200px;font-style: italic; float: right; color: rgb(248, 90, 5);"></div>
+    <br><br>
+    
+    <button onclick="addValueAtBegining()">Add Value At Start</button>
+    <br><br>
+    <button onclick="addValueAtEnd()">Add Value At The End</button>
+    <br><br>
+    <button onclick="addValueAtMiddle()">Add Value At Middle Of Array</button>
+    <br><br>
+    <button onclick="deleteaValueAtStart()">Delete a Value At Start</button>
+    <br><br>
+    <button onclick="deleteAtend()">Delete a Value At End</button>
+    <br><br>
+    <button onclick="deleteaValueAtMiddle()">Delete value at middle</button>
+    <br><br>
+    <button onclick="sortFlowers()">sort values</button>
+    <br><br>
+    <button onclick="reverseFlowers()">Reverse values</button><br>
+    <br>
+
+    <script>
+       var Flowers = ["Tiger Lilly","Sunflower","Orchid","Jasmine","Daffodil"];
+
+       function displayFlowers() {
+        var displayFlowersName = "";
+        Flowers.forEach((dispFlowers) =>{
+        displayFlowersName = displayFlowersName + dispFlowers + "<br>";
+        });
+        document.getElementById("Nature").innerHTML = displayFlowersName;
+       }
+       
+       displayFlowers();
+
+       function addValueAtBegining(){
+        Flowers.unshift("Rose");
+        displayFlowers()
+       }
+       
+       function addValueAtEnd(){
+        Flowers.push("Peonye");
+        displayFlowers();
+       }
+       
+       function addValueAtMiddle(){
+        Flowers.splice(3,0, "Calendul");
+        displayFlowers();
+       }
+       
+       function deleteaValueAtStart(){
+        Flowers.shift();
+        displayFlowers();
+       }
+
+       function deleteAtend() {
+        Flowers.pop();
+        displayFlowers();
+       }
+
+       function deleteaValueAtMiddle() {
+        Flowers.splice(3,1);
+        displayFlowers();
+       }
+
+       function sortFlowers() {
+        Flowers.sort();
+        displayFlowers();
+       }
+
+       function reverseFlowers(){
+        Flowers.reverse();
+        displayFlowers();
+       }
+       
+    </script>
+</body>
+</html>
