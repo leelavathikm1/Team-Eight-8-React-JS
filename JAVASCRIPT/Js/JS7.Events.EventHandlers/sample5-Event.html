@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Names" style="width: 200px;font-style: italic; float: right; color: rgb(70, 248, 5);"></div>
+    <br><br>
+    
+    <button onclick="addValueAtBegining()">Add Value At Start</button>
+    <br><br>
+    <button onclick="addValueAtEnd()">Add Value At The End</button>
+    <br><br>
+    <button onclick="addValueAtMiddle()">Add Value At Middle Of Array</button>
+    <br><br>
+    <button onclick="deleteaValueAtStart()">Delete a Value At Start</button>
+    <br><br>
+    <button onclick="deleteAtend()">Delete a Value At End</button>
+    <br><br>
+    <button onclick="deleteaValueAtMiddle()">Delete value at middle</button>
+    <br><br>
+    <button onclick="sortStudents()">sort values</button>
+    <br><br>
+    <button onclick="reverseStudents()">Reverse values</button><br>
+    <br>
+
+    <script>
+       var Students = ["Swathi","Anuradha","Priya","Keerthi","Prathusha"];
+
+       function displayStudents() {
+        var displayStudentsName = "";
+        Students.forEach((dispStudent) => {
+        displayStudentsName = displayStudentsName + dispStudent + "<br>";
+        });
+        document.getElementById("Nature").innerHTML = displayStudentsName;
+       }
+       
+       displayStudents();
+
+       function addValueAtBegining(){
+        Students.unshift("Swetha");
+        displayStudents
+        ()
+       }
+       
+       function addValueAtEnd(){
+        Students.push("Megana");
+        displayStudents();
+       }
+       
+       function addValueAtMiddle(){
+        Students.splice(3,0, "Anitha");
+        displayStudents();
+       }
+       
+       function deleteaValueAtStart(){
+        Students.shift();
+        displayStudents();
+       }
+
+       function deleteAtend() {
+        Students.pop();
+        displayStudents();
+       }
+
+       function deleteaValueAtMiddle() {
+        Students.splice(3,1);
+        displayStudents();
+       }
+
+       function sortStudents() {
+        Students.sort();
+        displayStudents();
+       }
+
+       function reverseStudents(){
+        Students.reverse();
+        displayStudents();
+       }
+       
+</script>
+</body>
+</html>
