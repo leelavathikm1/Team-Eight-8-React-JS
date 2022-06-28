@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./products.js"></script>
+    <style>
+      img {
+        width: 100px;
+      }
+      .product {
+        width: 200px;
+        height: 250px;
+        float: left;
+        border: 1px solid;
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="products"></div>
+    <img src="" alt="" />
+    <script>
+      allProducts.forEach((product) => {
+        var myProductDiv = document.createElement("div");
+        myProductDiv.setAttribute("class", "product");
+        var myImage = document.createElement("img");
+        myImage.setAttribute("src", product.image);
+        myImage.innerHTML = product.image;
+
+        var title = document.createElement("p");
+        title.innerHTML = product.title;
+
+        myProductDiv.appendChild(title);
+        // document.body.appendChild(myImage);
+        myProductDiv.appendChild(myImage);
+        document.getElementById("products").appendChild(myProductDiv);
+        // console.log(product.image);
+      });
+    </script>
+  </body>
+</html>
