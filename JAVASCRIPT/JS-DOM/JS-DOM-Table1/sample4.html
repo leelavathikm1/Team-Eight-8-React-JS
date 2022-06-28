@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userInput" value="">
+    <button onclick="SearchState()">Search State</button>
+    <button onclick="ClearSearch()">Clear Search</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>StateName</th>
+                <th>Capital</th>
+                <th>TotalDistrict</th>
+                <th>CheifMinister</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        var StateDetails = [
+            {
+                StateName: "TamilNadu",
+                Capital: "Chennai",
+                TotalDistrict: "38 Districts",
+                CheifMinister: "M K Stalin",
+            },
+            {
+                StateName: "Kerala",
+                Capital: "Thiruvananthapuram",
+                TotalDistrict: 14,
+                CheifMinister: "Pinarayi Vijayan",
+            },
+            {
+                StateName: "Andhra Pradesh",
+                Capital: "Amaravati",
+                TotalDistrict: 26,
+                CheifMinister: "Y S JaganMohan Reddy",
+            },
+            {
+                StateName: "Telangana",
+                Capital: "Hyderabad",
+                TotalDistrict: 33,
+                CheifMinister: "K Chandrashekar Rao",
+            },
+            {
+                StateName: "Karnataka",
+                Capital: "Bangalore",
+                TotalDistrict: 31,
+                CheifMinister: "Basavaraj Bommai",
+            },
+        ];
+        function displayState(StateDetails) {
+            document.getElementById("myTbody").innerHTML = "";
+            StateDetails.forEach((dispState) => {
+                var myTr = document.createElement("tr");
+                for (a in dispState) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispState[a];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTbody").appendChild(myTr);
+            });
+        }
+        displayState(StateDetails);
+
+        function SearchState() {
+            var userSearch = document.getElementById("userInput"). value;
+            console.log(userSearch);
+
+            var filterState = StateDetails.filter((dispState) => {
+                return dispState.StateName.indexOf(userSearch) > -1;
+            });
+            displayState(filterState);
+        } 
+        function ClearSearch() {
+            displayState(StateDetails);
+            console.log("From ClearSearch");
+        } 
+         </script>
+</body>
+</html>

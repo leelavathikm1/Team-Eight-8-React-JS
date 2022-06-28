@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="userInput" value="">
+    <button onclick="SearchStudent()">Search Student</button>
+    <button onclick="ClearSearch()">Clear Search</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>StudentName</th>
+                <th>Group</th>
+                <th>RollNumber</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        var StudentDetails = [
+            {
+                StudentName: "Pavan Kumar",
+                Group: "Bsc.MECS",
+                RollNumber: 6295912465,
+            },
+            {
+                StudentName: "Mahesh Kumar",
+                Group: "Bsc.MECS",
+                RollNumber: 6229595922,
+            },
+            {
+                StudentName: "Monesh",
+                Group: "Bsc.MECS",
+                RollNumber: 6295948485,
+            },
+            {
+                StudentName: "Chandu",
+                Group: "Bsc.MECS",
+                RollNumber: 6295919562,
+            },
+            {
+                StudentName: "Balakrishna",
+                Group: "Bsc.MSCS",
+                RollNumber: 6295932959,
+            },
+            {
+                StudentName: "Hareesh",
+                Group: "Bsc.MECS",
+                RollNumber: 6295995623,
+            },
+        ];
+
+        function displayStudents(StudentDetails) {
+            document.getElementById("myTbody").innerHTML = "";
+            StudentDetails.forEach((dispStudent) => {
+                var myTr = document.createElement("tr");
+                for (a in dispStudent) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispStudent[a];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTbody").appendChild(myTr);
+            });
+        }
+        displayStudents(StudentDetails);
+
+        function SearchStudent() {
+            var userSearch = document.getElementById("userInput").value;
+            console.log(userSearch);
+
+            var filterStudents = StudentDetails.filter((dispStudents) => {
+                return dispStudents.StudentName.indexOf(userSearch) > -1;
+            });
+            displayStudents(filterStudents);
+        }
+        function ClearSearch() {
+            displayStudents(StudentDetails);
+            console.log("From Clearsearch");
+        }
+    </script>
+</body>
+
+</html>

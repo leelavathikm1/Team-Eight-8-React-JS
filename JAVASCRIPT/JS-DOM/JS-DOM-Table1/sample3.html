@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="userInput" value="">
+    <button onclick="SearchCollege()">Search College</button>
+    <button onclick="ClearSearch()">Clear Search</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>CollegeName</th>
+                <th>TotalStudents</th>
+                <th>Boys</th>
+                <th>Girls</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        var CollegeDetails = [
+            {
+                CollegeName: "Vijayam Degree College",
+                TotalStudents: 2400,
+                Boys: 1600,
+                Girls: 800,
+            },
+            {
+                CollegeName: "VignanaSudha Degree College",
+                TotalStudents: 2400,
+                Boys: 1000,
+                Girls: 1400,
+            },
+            {
+                CollegeName: "VCR Degree College",
+                TotalStudents: 1000,
+                Boys: 400,
+                Girls: 600,
+            },
+            {
+                CollegeName: "PVKN Degree College",
+                TotalStudents: 2000,
+                Boys: 1200,
+                Girls: 800,
+            },
+            {
+                CollegeName: "Vijetha Degree College",
+                TotalStudents: 1500,
+                Boys: 780,
+                Girls: 720,
+            },
+        ];
+        function displayColleges(CollegeDetails) {
+            document.getElementById("myTbody").innerHTML = "";
+            CollegeDetails.forEach((dispCollege) => {
+                var myTr = document.createElement("tr");
+                for (a in dispCollege) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispCollege[a];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTbody").appendChild(myTr);
+            });
+        }
+        displayColleges(CollegeDetails);
+
+        function SearchCollege() {
+            var userSearch = document.getElementById("userInput"). value;
+            console.log(userSearch);
+
+            var filterCollege = CollegeDetails.filter((dispCollege) => {
+                return dispCollege.CollegeName.indexOf(userSearch) > -1;
+            });
+            displayColleges(filterCollege);
+        } 
+        function ClearSearch() {
+            displayColleges(CollegeDetails);
+            console.log("From ClearSearch");
+        } 
+         </script>
+
+
+
+</body>
+
+</html>

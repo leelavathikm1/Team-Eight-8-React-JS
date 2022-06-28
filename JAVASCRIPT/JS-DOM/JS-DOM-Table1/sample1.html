@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="userInput" value="">
+    <button onclick="searchCompany()">Search Company</button>
+    <button onclick="clearSearch()">Clear Search</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        var BikesDetails = [
+            {
+                Company: "Royal Enfield",
+                Model: "Cassic 350",
+                Price: 190000,
+            },
+
+            {
+                Company: "YAMAHA",
+                Model: "R15 V3",
+                Price: 180000,
+            },
+
+            {
+                Company: "Pulsar",
+                Model: "NS 200",
+                Price: 160000,
+            },
+
+            {
+                Company: "Suzuki",
+                Model: "Gixxer !50",
+                Price: 150000,
+            },
+
+            {
+                Company: "Apache",
+                Model: "RTR 180",
+                Price: 140000,
+            },
+
+            {
+                Company: "KTM",
+                Model: "RC 150",
+                Price: 210000,
+            },
+        ];
+
+        function displayBikes(BikesDetails) {
+            document.getElementById("myTbody").innerHTML ="";
+            BikesDetails.forEach((dispBikes) => {
+                var myTr = document.createElement("tr");
+                for (i in dispBikes) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispBikes[i];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTbody").appendChild(myTr);
+            });
+        }
+        displayBikes(BikesDetails);
+
+        function searchCompany() {
+            var userSearch = document.getElementById("userInput").value;
+            console.log(userSearch);
+            
+            var filterBikes = BikesDetails.filter((dispBikes) =>{
+                return dispBikes.Company.indexOf(userSearch) > -1;
+            });
+            displayBikes(filterBikes);
+        }
+
+        function clearSearch() {
+            displayBikes(BikesDetails);
+            console.log("From clearsearch");
+        }
+    </script>
+</body>
+
+</html>
