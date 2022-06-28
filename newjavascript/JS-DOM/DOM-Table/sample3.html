@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userInput" value="" />
+    <button onclick="searchMobile()">Search User</button>
+    <button onclick="clearSearch()">Clear Search</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mobile </th>
+                <th>Latest Price</th>
+              
+               
+              </tr>
+            </thead>
+            <tbody id="myTbody"></tbody> 
+          </table>
+          <script>
+            var mobileDetails = [
+              {
+                Mobile: "Realme C35",
+                LatestPrice: 11999,
+               
+               
+              },
+              {
+                Mobile: "Xiaomi Redmi Note 11 Pro",
+                LatestPrice: 18999,
+               
+              },
+              {
+                Mobile: "Vivo",
+                LatestPrice: 15990,
+               
+              },
+              {
+                Mobile: "OPPO F21 Pro",
+                LatestPrice: 22499,
+               
+              },
+            
+            ];
+      
+         function displayMobile(mobileDetails) {
+        document.getElementById("myTbody").innerHTML = "";
+        mobileDetails.forEach((dispMobile) => {
+            var myTr = document.createElement("tr");
+          for (a in dispMobile) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = dispMobile[a];
+            myTr.appendChild(myTd);
+          }
+          document.getElementById("myTbody").appendChild(myTr);
+          
+
+        });
+      }
+      displayMobile(mobileDetails)
+
+      function searchMobile() {
+        var userSearch = document.getElementById("userInput").value;
+        console.log(userSearch);
+
+        var filterMobile = mobileDetails.filter((dispMobile) => {
+          return dispMobile.Mobile.indexOf(userSearch) > -1;
+        });
+        displayMobile(filterMobile);
+      }
+
+      function clearSearch() {
+        displayMobile(mobileDetails);
+        console.log("From ClearSearch");
+      }
+     
+    </script>
+  </body>
+</html>

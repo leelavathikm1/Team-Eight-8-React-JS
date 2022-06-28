@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="userInput" value="" />
+    <button onclick="searchCompany()">Search User</button>
+    <button onclick="clearSearch()">Clear Search</button>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>company</th>
+          <th>Employee</th>
+          <th>Revenue</th>
+         
+        </tr>
+      </thead>
+      <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+      var companyDetails = [
+        {
+          company: "TCS",
+          employee: 420000,
+          revenue : "10.47per",
+         
+        },
+        {
+          company: "Infosys",
+          employee: 228000,
+          revenue :" 9.81 per",
+         
+        },
+        {
+          company: "HCL",
+          employee: 76306 ,
+          revenue : "24.74 per",
+         
+        },
+        {
+          company: "Wipro ",
+          employee:  64338,
+          revenue :  "4.82per",
+         
+        },
+        {
+          company: "Tech Mahindra",
+          employee: 125700,
+          revenue : "9.45 per",
+         
+        },
+      ];
+
+      function displayCompany(companyDetails) {
+        document.getElementById("myTbody").innerHTML = "";
+        companyDetails.forEach((dispCompany) => {
+          var myTr = document.createElement("tr");
+          for (a in dispCompany) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = dispCompany[a];
+            myTr.appendChild(myTd);
+          }
+          document.getElementById("myTbody").appendChild(myTr);
+        });
+      }
+      displayCompany(companyDetails);
+
+      function searchCompany() {
+        var userSearch = document.getElementById("userInput").value;
+        console.log(userSearch);
+
+        var filterCompany = companyDetails.filter((dispCompany) => {
+          return dispCompany.company.indexOf(userSearch) > -1;
+        });
+        displayCompany(filterCompany);
+      }
+
+      function clearSearch() {
+        displayCompany(companyDetails);
+        console.log("From ClearSearch");
+      }
+    </script>
+  </body>
+</html>

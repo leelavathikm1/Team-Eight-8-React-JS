@@ -1,0 +1,97 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userInput" value="" />
+    <button onclick="searchResult()">Search User</button>
+    <button onclick="clearResult()">Clear Search</button>
+    <table border="1">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Result</th>
+            <th>Percentage</th>
+           
+          </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+      </table>
+      <script>
+        var resultDetails = [
+          {
+             FirstName: "Jessi",
+            LastName:   "A",
+            Result : "Pass",
+            Percentage : "95 per",
+  
+           
+          },
+          {
+            FirstName: "Meghana",
+            LastName:   "Sree",
+            Result : "pass",
+            Percentage : "90per",
+  
+           
+          },
+          {
+            FirstName: "Sony",
+            LastName:   "S",
+            Result : "Pass",
+            Percentage : "80 per",
+  
+          },
+          {
+            FirstName: "preethi",
+            LastName:   "Munirathnam",
+            Result : "Pass",
+            Percentage : "80 per",
+  
+          },
+          {
+            FirstName: "Haritha",
+            LastName:   "K.S",
+            Result : "Pass",
+            Percentage : "75 per",
+  
+          },
+          ];
+ 
+          function displayResult(resultDetails) {
+        document.getElementById("myTbody").innerHTML = "";
+        resultDetails.forEach((dispResult) => {
+          var myTr = document.createElement("tr");
+          for (a in dispResult) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = dispResult[a];
+            myTr.appendChild(myTd);
+          }
+          document.getElementById("myTbody").appendChild(myTr);
+        });
+      }
+      displayResult(resultDetails);
+      
+      function searchResult() {
+        var userSearch = document.getElementById("userInput").value;
+        console.log(userSearch);
+
+        var filterResult = resultDetails.filter((dispResult) => {
+          return dispResult.FirstName.indexOf(userSearch) > -1;
+        });
+        displayResult(filterResult);
+      }
+
+      function clearSearch() {
+        displayResult(filterResult);
+        console.log("From ClearSearch");
+      }
+     
+    </script> 
+  </body>
+</html>

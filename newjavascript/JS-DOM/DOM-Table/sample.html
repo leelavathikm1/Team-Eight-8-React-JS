@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userInput" value="" />
+    <button onclick="searchPerson()">Search User</button>
+    <button onclick="clearSearch()">Clear Search</button>
+    <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>MobileNo</th>
+           
+          </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+      </table>
+      <script>
+        var personDetails = [
+          {
+            Name: "preethi",
+            Age:   23,
+            City : "chittoor",
+            MobileNo : 952014521,
+  
+           
+          },
+          {
+            Name: "Jessi",
+            Age:   24,
+            City : "chittoor",
+            MobileNo : 951247853,
+           
+          },
+          {
+              Name: "Meghana",
+              Age:   23,
+            City : "palamaner ",
+            MobileNo : 952147591,
+          },
+          {
+            Name: "Sony",
+            Age:   24,
+            City : "Tirupati",
+            MobileNo : 745189201,
+           
+          },
+          {
+            Name: "Haritha",
+            Age:   24,
+            City : "Tirupati ",
+            MobileNo :875212021,
+          },
+          ];
+ 
+          function displayPerson(personDetails) {
+            document.getElementById("myTbody").innerHTML = ""
+
+          personDetails.forEach((dispPerson) => {
+            var myTr = document.createElement("tr");
+
+          for (a in dispPerson) {
+            var myTd = document.createElement("td");
+
+            myTd.innerHTML = dispPerson[a];
+            myTr.appendChild(myTd);
+          }
+          
+          document.getElementById("myTbody").appendChild(myTr);
+          
+
+        });
+      }
+      displayPerson(personDetails)
+
+      function searchPerson() {
+        var userSearch = document.getElementById("userInput").value;
+        console.log(userSearch);
+
+        var filterPerson = personDetails.filter((dispPerson) => {
+          return dispPerson.Name.indexOf(userSearch) > -1;
+        });
+        displayPerson(filterPerson);
+      }
+
+      function clearSearch() {
+        displayPerson(personDetails);
+        console.log("From ClearSearch");
+      }
+     
+    </script>
+  </body>
+</html>

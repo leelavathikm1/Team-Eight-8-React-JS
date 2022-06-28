@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userInput" value="" />
+    <button onclick="searchBook()">Search User</button>
+    <button onclick="clearSearch()">Clear Search</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>price</th>
+              
+               
+              </tr>
+            </thead>
+            <tbody id="myTbody"></tbody> 
+          </table>
+          <script>
+            var bookDetails = [
+              {
+                BookName: "Wings of Fire",
+                Price: 252.00,
+               
+               
+              },
+              {
+                BookName: "One Day, Life Will Change",
+                Price:129.00,
+               
+              },
+              {
+                BookName: "The Alchemist ",
+                Price: 150.00,
+              },
+              {
+                BookName: "Will",
+                Price: 149.00,
+              },
+              {
+                BookName: "The Teacher I Never Met ",
+                Price: 185.00,
+              },
+            
+            ];
+      
+         function displayBook(bookDetails) {
+         document.getElementById("myTbody").innerHTML = "";
+         bookDetails.forEach((dispBook) => {
+            var myTr = document.createElement("tr");
+            for (a in dispBook) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = dispBook[a];
+            myTr.appendChild(myTd);
+          }
+          document.getElementById("myTbody").appendChild(myTr);
+          
+
+        });
+      }
+         displayBook(bookDetails) 
+
+      function searchBook() {
+        var userSearch = document.getElementById("userInput").value;
+        console.log(userSearch);
+
+        var filterBook = bookDetails.filter((dispBook) => {
+          return dispBook.BookName.indexOf(userSearch) > -1;
+        });
+        displayBook(filterBook);
+      }
+
+      function clearSearch() {
+        displayBook(bookDetails);
+        console.log("From ClearSearch");
+      }
+     
+    </script>
+  </body>
+</html>
