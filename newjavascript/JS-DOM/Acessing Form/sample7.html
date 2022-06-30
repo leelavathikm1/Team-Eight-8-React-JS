@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="">Gender</label>
+      <input type="radio" name="gender" value="Male" />Male <br />
+      <input type="radio" name="gender" value="Female" />Female <br /><br />
+
+      <input type="checkBox" name="bloodGroups" Value="A+">A+ <br> <br>
+      <input type="checkBox" name="bloodGroups" value="B+">B+ <br> <br>
+      <input type="checkBox" name="bloodGroups" value="O+">O+ <br> <br
+
+   </form>
+
+    <script>
+      function getData() {
+        var person = {
+          gender: "",
+          groups: [],
+        };
+        var allRadioBtns = document.getElementsByName("gender");
+        allRadioBtns.forEach((selectedGender) => {
+          if (selectedGender == true) {
+            person.gender = selectedGender.value;
+          }
+          console.log(person.gender);
+        });
+
+        var allCheckBoxes = document.getElementsByName("bloodGroups");
+        allCheckBoxes.forEach((capturedValue) => {
+          if (capturedValue == true) {
+            person.bloodGroups.push(capturedValue.value);
+            console.log(person.bloodGroups);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
