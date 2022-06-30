@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="fName">Enter First Name</label>
+        <input type="text" id="fName" />
+        <br /> <br />
+        <label for="lName">Enter Last Name</label>
+        <input type="text" id="lName" />
+        <br /> <br />
+        <label for="">Age</label>
+        <input type="text" id="myAge" />
+        <br /> <br />
+        <label for="Mobile">Enter Mobile Number</label>
+        <input type="text" id="myMobile" />
+        <br /> <br />
+        <label for="email">Enter email Id</label>
+        <input type="text" id="myemail" />
+        <br /> <br />
+
+        <button type="button" onclick="getData()"> Submit</button>
+
+        <script>
+            function getData() {
+
+                var person2 = {
+                    fName: "",
+                    lName: "",
+                    myAge: "",
+                    myMobile: "",
+                    myemail: "",
+                }
+                for (a in person2) {
+                    person2[a] = document.getElementById(a).value;
+                }
+                console.log(person2);
+            }
+
+        </script>
+    </form>
+</body>
+
+</html>

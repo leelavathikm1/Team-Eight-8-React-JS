@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="fName">Enter First Name</label>
+        <input type="text" id="fName" />
+        <br /> <br />
+        <label for="lName">Enter Last Name</label>
+        <input type="text" id="lName" />
+        <br /> <br />
+        <label for="">Age</label>
+        <input type="text" id="myAge" />
+        <br /> <br />
+        <label for="Mobile">Enter Mobile Number</label>
+        <input type="text" id="myMobile" />
+        <br /> <br />
+        <label for="email">Enter email Id</label>
+        <input type="text" id="myemail" />
+        <br /> <br />
+
+        <button type="button" onclick="getData()"> Submit</button>
+
+        <script>
+            function getData() {
+                var firstName = document.getElementById("fName").value;
+                var lastName = document.getElementById("lName").value;
+                var Age = document.getElementById("myAge").value;
+                var Mobile = document.getElementById("myMobile").value;
+                var email = document.getElementById("myemail").value;
+                console.log(firstName, lastName, Age, Mobile, email);
+
+                var person = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    Age: Age,
+                    Mobile: Mobile,
+                    email: email,
+
+                }
+
+            };
+
+
+            getData();
+
+
+        </script>
+    </form>
+</body>
+
+</html>
