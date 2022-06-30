@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="">Gender</label>
+        <input type="radio" name="gender" value="Male" />Male <br/>
+        <input type="radio" name="gender" value="Female" />Female <br/>
+        <input type="radio" name="gender" value="Others" />Others <br/>
+
+        <input type="checkbox" name="Group" value="MPC" />MPC <br />
+        <input type="checkbox" name="Group" value="BSC" />BSC <br />
+        <input type="checkbox" name="Group" value="BBA" />BBA <br />
+        <input type="checkbox" name="Group" value="BA" />BA <br />
+
+        <button type="button" onclick="getData()">AGREE</button>
+    </form>
+
+    <script>
+        function getData() {
+            var student = {
+                gender:"",
+                Group: [],
+            };
+
+            var RadioButtons = document.getElementsByName("gender");
+            RadioButtons.forEach((SelectGender) => {
+                if (SelectGender == true) {
+                    student.gender = SelectGender.value;
+                }
+                console.log(student.gender);
+            });
+
+            var checkBoxes = document.getElementsByName("Group");
+            checkBoxes.forEach((findGroup) => {
+                if (findGroup == true) {
+                    student.Group.push(findGroup.value);
+                }
+                console.log(student.Group);
+            });
+        }
+    </script>
+</body>
+</html>

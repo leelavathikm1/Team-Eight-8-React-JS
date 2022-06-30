@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .MyTable{
+            border: 1px solid;
+            margin: 10px;
+            padding: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="Tables"></div>
+    <script>
+        var targetNumber = prompt("Enter Number")
+        for (i =2; i<=targetNumber; i++) {
+            var Div = document.createElement("div")
+            Div.setAttribute("class","MyTable");
+            var results = "";
+            for (j = 1; j <= 10; j++) {
+                results += i + "x" + j + " = " + i * j + "<br>";
+                Div.innerHTML = results;
+            }
+            document.getElementById("Tables").appendChild(Div);
+        }
+    </script>
+</body>
+</html>
