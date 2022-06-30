@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetables</title>
+    <style>
+        img {
+            width: 200px;
+
+        }
+
+        img:hover {
+            width: 250px;
+            color: cadetblue;
+        }
+
+        .Vegetables {
+            width: 200px;
+            height: 400px;
+            float: left;
+            border: 10px solid aqua;
+            padding: 60px;
+            margin: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Vegetables"></div>
+    <img src="" alt="">
+    <script>
+        var AllVegetables = [
+            {
+                "title": "Tomato",
+                "image": "https://m.media-amazon.com/images/I/71DYmqoq-VL._SL1024_.jpg",
+                "benefits": "Tomatoes are loaded with a substance called lycopene. It gives them their bright red color and helps protect them from the ultraviolet rays of the sun"
+
+            },
+            {
+                "title": "Carrot",
+                "image": "https://gmartsupermarket.in/public/uploads/all/ctlWZbOqv0CfKArKaGFRV5yVNBQCCfjmPO89FxGf.jpg",
+                "benefits": "The fiber in carrots can help keep blood sugar levels under control. And they're loaded with vitamin A and beta-carotene, which there's evidence to suggest can lower your diabetes risk"
+
+            },
+            {
+                "title": "Onion",
+                "image": "data:image/jpeg;base64,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",
+                "benefits": "Onions contain organic sulfur compounds. These compounds are the reason why onions have such a sharp, strong taste and smell."
+
+            },
+
+
+        ]
+        AllVegetables.forEach((Vegetables) => {
+            var VegetableDetailsDiv = document.createElement("div")
+            VegetableDetailsDiv.setAttribute("class", "Vegetables")
+
+            var title = document.createElement("p");
+            title.innerHTML = Vegetables.title;
+            VegetableDetailsDiv.appendChild(title);
+
+            var VegetablesImg = document.createElement("img");
+            VegetablesImg.setAttribute("src", Vegetables.image);
+            VegetablesImg.innerHTML = Vegetables.image;
+            VegetableDetailsDiv.appendChild(VegetablesImg);
+
+            var benefits = document.createElement("P");
+            benefits.innerHTML = Vegetables.benefits;
+            VegetableDetailsDiv.appendChild(benefits);
+            document.getElementById("Vegetables").appendChild(VegetableDetailsDiv);
+            console.log(Vegetables.image);
+
+        })
+
+    </script>
+</body>
+
+</html>
