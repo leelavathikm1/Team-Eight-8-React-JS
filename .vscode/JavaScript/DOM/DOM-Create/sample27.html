@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./sample27.js"></script>
+    <style>
+        img {
+            width: 150px;
+        }
+
+        .Company {
+            width: 200px;
+            height: 250px;
+            float: left;
+            border: 1px solid blueviolet;
+            padding: 30px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="AllCompanies"></div>
+    <img src="" alt="">
+    <script>
+        AllCompanies.forEach((Company) => {
+            var CompanyDetailsDiv = document.createElement("div")
+            CompanyDetailsDiv.setAttribute("class", "Company")
+            var CompanyImg = document.createElement("img");
+            CompanyImg.setAttribute("src", Company.image);
+            CompanyImg.innerHTML = Company.Image;
+
+            var id = document.createElement("p");
+            id.innerHTML = Company.id;
+            CompanyDetailsDiv.appendChild(id);
+
+            var title = document.createElement("p");
+            title.innerHTML = Company.title;
+            CompanyDetailsDiv.appendChild(title);
+
+            CompanyDetailsDiv.appendChild(CompanyImg);
+            document.getElementById("AllCompanies").appendChild(CompanyDetailsDiv);
+
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>
