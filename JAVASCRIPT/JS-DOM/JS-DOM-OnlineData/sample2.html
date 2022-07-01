@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .Team {
+            width: 300px;
+            height: 400px;
+            padding: 10px;
+            float: left;
+            border: 2px solid yellow;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Teams"></div>
+    <!-- <img src="" alt=""> -->
+    <script>
+        var cskTeam = [
+            {
+                "id"    : 1,
+                "name"  : "Mahendra Singh Dhoni.",
+                "age"   : 41,
+                "role"  : " CAPTAIN ,Wicket-keeper & Batsman.",
+                "image" : "https://www.sportstiger.com/wp-content/uploads/2022/01/Dhoni-in-CSK.jpeg",
+            },
+
+            {
+                "id"    : 2,
+                "name"  : "Ravindra Jadeja.",
+                "age"   : 29,
+                "role"  : "All-rounder.",
+                "image" : "https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/4/2021_4$largeimg_1595129048.JPG",
+            },
+
+            {
+                "id"    : 3,
+                "name"  : "Deepak Chahar.",
+                "age"   : 29,
+                "role"  : "All-rounder.",
+                "image" : "https://images.news18.com/ibnlive/uploads/2022/03/pjimage-2022-03-09t094024.700.jpg",
+            },
+
+            {
+                "id"    : 4,
+                "name"  : "Ruturaj Gaikwad.",
+                "age"   : 25,
+                "role"  : "Top order Right-handed Batsman.",
+                "image" : "https://www.5dariyanews.com/Uploads/2021/04/22/en-news-09003893-61f1035da342fde90b9e89ca66d9bc4b.jpg",
+            },
+
+            {
+                "id"    : 5,
+                "name"  : "	Devon Conway.",
+                "age"   : 30,
+                "role"  : "Top-order  Left-handed Batsman.",
+                "image" : "https://staticg.sportskeeda.com/editor/2022/05/73fd6-16517347508900-1920.jpg",
+            },
+
+            {
+                "id"    : 6,
+                "name"  : "	Dwayne Bravo.",
+                "age"   : 38,
+                "role"  : "All-rounder.",
+                "image" : "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_800,q_50/lsci/db/PICTURES/CMS/338100/338118.jpg",
+            },
+
+            {
+                "id"    : 7,
+                "name"  : "Robin Uthappa.",
+                "age"   : 36,
+                "role"  : "Right-handed Batsman & wicketkeeper.",
+                "image" : "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_800,q_50/lsci/db/PICTURES/CMS/337900/337901.jpg",
+            },
+
+            {
+                "id"    : 8,
+                "name"  : "	Ambati Rayudu.",
+                "age"   : 36,
+                "role"  : "Right-handed Batsman.",
+                "image" : "https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-q1joqm3guaje3r139s2k8uhqd2-20180526215842.Medi.jpeg",
+            },
+
+            {
+                "id"    : 9,
+                "name"  : "Mukesh Choudhary.",
+                "age"   : 25,
+                "role"  : "Left-Handed Fast Bowler.",
+                "image" : "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_800,q_50/lsci/db/PICTURES/CMS/338700/338716.jpg",
+            },
+
+            {
+                "id"    : 10,
+                "name"  : "Shivam Dube.",
+                "age"   : 28,
+                "role"  : "All-rounder.",
+                "image" : "https://qph.cf2.quoracdn.net/main-qimg-64ccab280083a375104335f2ded88288-lq",
+            },
+
+            {
+                "id"    : 11,
+                "name"  : " Maheesh Theekshana.",
+                "age"   : 22,
+                "role"  : "Right-handed Spin Bowler.",
+                "image" : "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_800,q_50/lsci/db/PICTURES/CMS/338800/338829.jpg",
+            },
+
+            
+        ]
+        cskTeam.forEach((Team) => {
+            var TeamDiv = document.createElement("div");
+            TeamDiv.setAttribute("class", "Team");
+            var Image = document.createElement("img");
+            Image.setAttribute("src", Team.image);
+            Image.innerHTML = Team.image;
+
+            var id = document.createElement("p");
+            id.innerHTML = Team.id;
+
+            var name = document.createElement("p");
+            name.innerHTML = Team.name;
+
+            var age = document.createElement("p");
+            age.innerHTML = Team.age;
+
+            var role = document.createElement("p");
+            role.innerHTML = Team.role;
+
+
+            TeamDiv.appendChild(id);
+
+            TeamDiv.appendChild(name);
+
+            TeamDiv.appendChild(age);
+
+            TeamDiv.appendChild(role);
+
+            TeamDiv.appendChild(Image);
+
+            document.getElementById("Teams").appendChild(TeamDiv);
+            
+        });
+    </script>
+
+</body>
+
+</html>

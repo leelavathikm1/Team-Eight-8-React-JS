@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .Hero {
+            width: 310px;
+            height: 450px;
+            padding: 10px;
+            float: left;
+            border: 2px solid;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="Heros"></div>
+    <!-- <img src="" alt=""> -->
+    <script>
+        var kollywoodHeros = [
+            {
+                "id"          : 1,
+                "name"        : " RajiniKanth.",
+                "age"         : 71,
+                "title"       : " SuperStar,Thalaivar.",
+                "image"       : "https://images.news18.com/ibnlive/uploads/2021/10/rajinikanth-2-16357014324x3.jpg",
+                "description" : " He is an Indian actor, producer and screenwriter who works predominantly in Tamil cinema. He has won many awards, including four Tamil Nadu State Film Best Actor Awards,"
+            },
+
+            {
+                "id"          : 2,
+                "name"        : "Kamal Haasan.",
+                "age"         : 67,
+                "title"       : "Ulaganayagan.",
+                "image"       : "https://images.news18.com/ibnlive/uploads/2021/11/kamal-haasan-1.jpg",
+                "description" : " He is an Indian actor, director, dancer, writer, lyricist, playback singer, choreographer, screenwriter, makeup artist[6] and politician."
+            },
+
+            {
+                "id"          : 3,
+                "name"        : "Ajith Kumar.",
+                "age"         : 51,
+                "title"       : "UltimateStar,Thala.",
+                "image"       : "https://i.pinimg.com/474x/29/61/03/296103edb700bd1f65f1819ba2a195bb.jpg",
+                "description" : "He is an Indian actor who works predominantly in Tamil cinema. To date, he has starred in over 60 films in Tamil. "
+            },
+
+            {
+                "id"          : 4,
+                "name"        : " Joseph Vijay.",
+                "age"         : 48,
+                "title"       : "Thalapathy.",
+                "image"       : "https://s3images.zee5.com/wp-content/uploads/sites/7/2021/06/Thalapathy-Vijay.jpg",
+                "description" : "He is an Indian actor, dancer, playback singer and philanthropist who works predominantly in Tamil cinema and also appeared in other Indian languages films.["
+            },
+
+            {
+                "id"          : 5,
+                "name"        : "Surya.",
+                "age"         : 46,
+                "title"       : "Nadippin Nayagan.",
+                "image"       : "https://igimages.gumlet.io/tamil/home/suriya11062022m1.jpg",
+                "description" : "He is an Indian actor, producer, television presenter and a philanthropist.[3] He is best known for his work in Tamil cinema."
+            },
+
+            {
+                "id"          : 6,
+                "name"        : "	vikram.",
+                "age"         : 56,
+                "title"       : "Chiyaan.",
+                "image"       : "https://www.filmibeat.com/ph-big/2019/02/vikram_155057678830.jpg",
+                "description" : "He is an Indian actor and playback singer who predominantly appears in Tamil cinema and also appeared in Telugu, Malayalam and Hindi cinema."
+            },
+
+            {
+                "id"          : 7,
+                "name"        : "Vijay Sethupathi.",
+                "age"         : 44,
+                "title"       : "Makkal Selvam.",
+                "image"       : "https://1480864561.rsc.cdn77.org/assets/gallery/profile/vijaysethupathi-14168/misc-big/vijay-sethupathi-407.512",
+                "description" : "He is an Indian actor and producer who predominantly works in Tamil films, in addition to few Malayalam, Telugu and Hindi films."
+            },
+
+            {
+                "id"          : 8,
+                "name"        : "	SivaKarthikeyan.",
+                "age"         : 37,
+                "title"       : "Namma Veetu Pillai.",
+                "image"       : "https://www.wallsnapy.com/img_gallery/siva-karthikeyan-best-photos-download-2992677.jpg",
+                "description" : "He is an Indian actor, playback singer, film producer, lyricist, and television presenter, who works predominantly in Tamil cinema and television."
+            },
+
+            {
+                "id"          : 9,
+                "name"        : "Silambarasan.",
+                "age"         : 39,
+                "title"       : "S T R.",
+                "image"       : "https://timesofindia.indiatimes.com/thumb/msid-73319072,width-1200,height-900,resizemode-4/.jpg",
+                "description" : "He is an Indian actor, filmmaker and musician in Tamil cinema.He began his acting career by playing roles as a child artist in films directed by his father T. Rajendar."
+            },
+            
+        ];
+        kollywoodHeros.forEach((Hero) => {
+            var HeroDiv = document.createElement("div");
+            HeroDiv.setAttribute("class", "Hero");
+            var Image = document.createElement("img");
+            Image.setAttribute("src", Hero.image);
+            Image.innerHTML = Hero.image;
+
+            var id = document.createElement("p");
+            id.innerHTML = Hero.id;
+
+            var name = document.createElement("p");
+            name.innerHTML = Hero.name;
+
+            var age = document.createElement("p");
+            age.innerHTML = Hero.age;
+
+            var title = document.createElement("p");
+            title.innerHTML = Hero.title;
+            
+            var description = document.createElement("p");
+            description.innerHTML = Hero.description;
+
+
+            HeroDiv.appendChild(id);
+
+            HeroDiv.appendChild(name);
+
+            HeroDiv.appendChild(age);
+
+            HeroDiv.appendChild(title);
+
+            HeroDiv.appendChild(Image);
+
+            HeroDiv.appendChild(description);
+
+            document.getElementById("Heros").appendChild(HeroDiv);
+            
+        });
+        </script>
+</body>
+</html>
