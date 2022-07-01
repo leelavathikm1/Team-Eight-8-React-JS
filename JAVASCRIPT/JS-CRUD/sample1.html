@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="fName">First Name</label> <br>
+        <input type="text" id="fName"> <br> <br>
+
+        <label for="mName">Middle Name</label> <br>
+        <input type="text" id="mName"> <br> <br>
+
+        <label for="lName"> Last Name</label> <br>
+        <input type="text" id="lName"> <br> <br>
+
+        <label for="eMail"> EMail</label> <br>
+        <input type="text" id="eMail"> <br> <br>
+
+        <button type="button" onclick="addStudent()">Add Student</button>
+    </form>
+
+    <hr>
+    
+    <script>
+        function addStudent() {
+            var Students = {
+                fName: document.getElementById("fName").value,
+                mName: document.getElementById("mName").value,
+                lName: document.getElementById("lName").value,
+                eMail: document.getElementById("eMail").value,
+            };
+
+            console.log(Students)
+            clearform();
+        }
+
+        function clearform() {
+            document.getElementById("fName").value = "";
+            document.getElementById("mName").value = "";
+            document.getElementById("lName").value = "";
+            document.getElementById("eMail").value = "";
+        }
+    </script>
+</body>
+
+</html>
