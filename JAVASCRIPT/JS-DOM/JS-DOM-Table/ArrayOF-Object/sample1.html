@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="displayData()">Display Data</button>
+    <table border = "1">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="myTable"></tbody>
+    </table>
+    <ul id="myUl"></ul>
+    
+    <script>
+        var BikesDetails = [
+            {
+                Company: "Royal Enfield",
+                Model: "Cassic 350",
+                Price: 190000,
+            },
+
+            {
+                Company: "YAMAHA",
+                Model: "R15 V3",
+                Price: 180000,
+            },
+
+            {
+                Company: "Pulsar",
+                Model: "NS 200",
+                Price: 160000,
+            },
+
+            {
+                Company: "Suzuki",
+                Model: "Gixxer !50",
+                Price: 150000,
+            },
+
+            {
+                Company: "Apache",
+                Model: "RTR 180",
+                Price: 140000,
+            },
+
+            {
+                Company: "KTM",
+                Model: "RC 150",
+                Price: 210000,
+            },
+        ];
+            
+        function displayData(){
+            var i=0;
+            while(i<BikesDetails.length){
+                var myTr=document.createElement("tr")
+                for(a in BikesDetails[i]){
+                    var myTd=document.createElement("td")
+                    myTd.innerHTML=BikesDetails[i][a]
+                    myTr.appendChild(myTd)
+                }
+                i++
+                document.getElementById("myTable").appendChild(myTr)
+            }
+
+        }
+        // displayData()
+
+        // function displayData(){
+        //     BikesDetails.forEach((bike)=>{
+        //         var myTr=document.createElement("tr")
+        //         for(a in bike){
+        //             var myTd=document.createElement("td")
+        //             myTd.innerHTML=bike[a]
+        //             myTr.appendChild(myTd)
+        //         }
+        //         document.getElementById("myTable").appendChild(myTr)
+        //     })
+        // }
+
+        // var i = 0;
+        // while (i < BikesDetails.length) {
+        //     console.log(BikesDetails[i])
+        //     var myUl = document.createElement("ul")
+        //     for(a in BikesDetails[i]){
+        //         var myLi=document.createElement("li")
+        //         myLi.innerHTML=BikesDetails[i][a]
+        //         myUl.appendChild(myLi)
+        //     }
+        //     i++
+        //     document.getElementById("myUl").appendChild(myUl)
+        // }
+
+
+    </script>
+</body>
+
+</html>
