@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        img {
+            width: 250px;
+        }
+
+        .jewellery {
+            width: 400px;
+            height: 500px;
+            padding: 10px;
+            float: left;
+            border: 1px solid;
+        }
+    </style>
+</head
+
+<body>
+    <div id="jewellery"></div>
+    <img src="" alt="">
+    <script>
+        var allJewellery = [
+            {
+             "id" : "1",
+             "category": "jewellery ",
+             "title" : "Faux Ruby Temple Jewellery Set",
+             "image": "https://cdn.shopify.com/s/files/1/2015/7815/products/rubans-22k-gold-plated-handcrafted-faux-ruby-temple-jewellery-set-necklace-set-27930523140270_1800x1800.jpg?v=1628489295",
+             "price": "₹ 2,032",
+
+            },
+            {
+             "id" : "2",
+             "category": "jewellery ",
+             "title" : "Kundan Necklace Set",
+             "image": "https://di2ponv0v5otw.cloudfront.net/posts/2022/04/03/6249c04c6f6c91fd5d2d25d4/m_wp_6249c0ca8da5c90194a97075.webp",
+             "price": "₹600",
+
+            },
+            {
+             "id" : "3",
+             "category": "jewellery ",
+             "title" : "Zircon Earring",
+             "image": "https://cdn.shopify.com/s/files/1/0796/1959/products/zircon-earring-pink-rose-gold-zircon-earring-137126-30921714106524_600x600.jpg?v=1641130696",
+             "price": "₹700",
+
+            },
+            {
+             "id" : "4",
+             "category": "jewellery ",
+             "title" : "Ear Ring",
+             "image": "https://img3.junaroad.com/uiproducts/17459048/std_300_1-1608739471.jpg",
+             "price": "₹1000",	
+
+
+            },
+            {
+             "id" : "5",
+             "category": "jewellery ",
+             "title" : "Zircon Necklace ",
+             "image": "https://cdn.shopify.com/s/files/1/0796/1959/products/zircon-necklace-ruby-rose-gold-zircon-necklace-134995-29068959711388_600x600.jpg?v=1640381897",
+             "price": "₹13,800",
+
+            },
+        ]
+         allJewellery.forEach((jewellery)=>{
+         var myJewelleryDiv = document.createElement("div");
+         myJewelleryDiv.setAttribute("class", "jewellery");
+         var myImage = document.createElement("img");
+          myImage.setAttribute("src", jewellery.image);
+          myImage.innerHTML = jewellery.image;
+         var id = document.createElement("p");
+         id.innerHTML = jewellery.id ;
+         var category = document.createElement("p");
+        category.innerHTML = jewellery.category;
+        var title = document.createElement("p");
+        title.innerHTML = jewellery.title;
+        var price = document.createElement("p");
+        price.innerHTML = jewellery.price;
+         
+        myJewelleryDiv.appendChild(id)
+        myJewelleryDiv.appendChild(category);
+        myJewelleryDiv.appendChild(title);
+        myJewelleryDiv.appendChild(myImage);
+        myJewelleryDiv.appendChild(price);
+        
+        document.getElementById("jewellery").appendChild(myJewelleryDiv);
+   })
+    </script>
+</body>
+</html> 

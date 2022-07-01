@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        img {
+            width: 250px;
+        }
+
+        .product {
+            width: 400px;
+            height: 500px;
+            padding: 10px;
+            float: left;
+            border: 1px solid;
+        }
+    </style>
+</head
+
+<body>
+    <div id="products"></div>
+    <img src="" alt="">
+    <script>
+        var allproducts = [
+    {
+      "id": 1,
+      "title": "Royal Blue Designer Partywear Jacquard Gown",
+      "price": "Rs-1699",
+      "description": "Superb craftsmanship of designs exhibited in this royal blue colored gown",
+      "category": "women's clothing",
+      "image": "https://cdn.shopify.com/s/files/1/0637/4834/1981/products/1631882429_1628250059_1_VIVA-34082-V125-PEACHMODE.jpg?v=1654139715",
+  },
+  {
+    "id": 2,
+      "title": "Lehenga",
+      "price": "Rs-2499",
+      "description": "Attract compliments by this Multicolored colored wedding wear lehenga choli",
+      "category": "women's clothing",
+      "image": "https://cdn.shopify.com/s/files/1/0637/4834/1981/products/1639544051_1_NLFS-ALFAAZ-4003-PEACHMODE.jpg?v=1655315521",
+  },
+
+  {
+    "id": 3,
+      "title": "Off White Lucknowi Chikankari",
+      "price": "Rs-1899",
+      "description": "Spread the aura of freshness with this off white colored partywear gown",
+      "category": "women's clothing",
+      "image": "https://cdn.shopify.com/s/files/1/0637/4834/1981/products/1642509185_1_PRNEA-W313-PEACHMODE.jpg?v=1654744982",
+
+  },
+  {
+    "id": 4,
+     "category": "women's clothing",
+      "title": "Rayon Palazzo Suit",
+      "description": "Real magnificence comes out of your dressing design with this Lavender colored partywear palazzo Suit",
+       "image": "https://cdn.shopify.com/s/files/1/0637/4834/1981/products/1642594153_1_VMIK-LAKHNAWI-1002-B-PEACHMODE.jpg?v=1654681924",
+      "price": "Rs-1799",
+    },
+
+{
+      "id": 5,
+      "title": "Printed Chanderi Silk Saree",
+      "price": "Rs-1149",  
+      "description": "Mustard colored saree is made from chanderi silk fabric which is highlighted with beautiful weaving golden zari kanchi patta border digital printed work as shown",
+      "category": "women's clothing",
+      "image": "https://cdn.shopify.com/s/files/1/0637/4834/1981/products/1645157037_1_SAREX-KCS-8608.jpg?v=1654178747",
+
+},
+];
+     allproducts.forEach((product)=>{
+    var myProductDiv = document.createElement("div");
+     myProductDiv.setAttribute("class", "product");
+     var myImage = document.createElement("img");
+     myImage.setAttribute("src", product.image);
+     myImage.innerHTML = product.image;
+     var id = document.createElement("p");
+     id.innerHTML = product.id ;
+     var category = document.createElement("p");
+     category.innerHTML = product.category;
+     var title = document.createElement("p");
+     title.innerHTML = product.title;
+     var description = document.createElement("p");
+     description.innerHTML = product.description;
+     var price = document.createElement("p");
+     price.innerHTML = product.price;
+
+    myProductDiv.appendChild(id)
+    myProductDiv.appendChild(category);
+    myProductDiv.appendChild(title);
+    myProductDiv.appendChild(description);
+    myProductDiv.appendChild(myImage);
+    myProductDiv.appendChild(price);
+   document.getElementById("products").appendChild(myProductDiv);
+   })
+</script>
+</body>
+</html>
