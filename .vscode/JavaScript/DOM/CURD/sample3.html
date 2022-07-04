@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Model</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="MobileName">Employee Name</label>
+        <input type="text" id="MobileName" />
+        <br /> <br />
+        <label for="mobileModel">Employee ID</label>
+        <input type="text" id="mobileModel" />
+        <br /> <br />
+
+
+        <button type="button" onclick="mobileDetails()"> ADD Mobile Details</button>
+    </form>
+
+    <hr />
+    <script>
+        function mobileDetails() {
+            var User = {
+                MobileName: document.getElementById("MobileName").value,
+                mobileModel: document.getElementById("mobileModel").value,
+
+
+            };
+            console.log(User);
+            clearForm();
+        }
+
+        function clearForm() {
+            document.getElementById("MobileName").value = "";
+            document.getElementById("mobileModel").value = "";
+
+        }
+    </script>
+</body>
+
+</html>
