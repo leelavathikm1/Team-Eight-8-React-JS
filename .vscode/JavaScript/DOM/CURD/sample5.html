@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Details</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="bookName">Book Name </label>
+        <input type="text" id="bookName" />
+        <br /> <br />
+        <label for="bookAuthor">BookAuthor </label>
+        <input type="text" id="bookAuthor" />
+        <br /> <br />
+
+
+        <button type="button" onclick="BooksDetails()"> ADD Books Details</button>
+    </form>
+
+    <hr />
+    <script>
+        function BooksDetails() {
+            var User = {
+                BookeName: document.getElementById("bookName").value,
+                bookAuthor: document.getElementById("bookAuthor").value,
+
+
+            };
+            console.log(User);
+            clearForm();
+        }
+
+        function clearForm() {
+            document.getElementById("bookName").value = "";
+            document.getElementById("bookAuthor").value = "";
+
+        }
+    </script>
+</body>
+
+</html>

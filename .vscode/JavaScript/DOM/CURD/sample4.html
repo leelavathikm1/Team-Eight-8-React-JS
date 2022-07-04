@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laptops</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="laptopName">laptopName</label>
+        <input type="text" id="laptopName" />
+        <br /> <br />
+        <label for="laptopModel">laptop Model</label>
+        <input type="text" id="laptopModel" />
+        <br /> <br />
+
+
+        <button type="button" onclick="laptopDetails()"> ADD Laptop Details</button>
+    </form>
+
+    <hr />
+    <script>
+        function laptopDetails() {
+            var User = {
+                laptopName: document.getElementById("laptopName").value,
+                laptopModel: document.getElementById("laptopModel").value,
+
+
+            };
+            console.log(User);
+            clearForm();
+        }
+
+        function clearForm() {
+            document.getElementById("laptopName").value = "";
+            document.getElementById("laptopModel").value = "";
+
+        }
+    </script>
+</body>
+
+</html>
