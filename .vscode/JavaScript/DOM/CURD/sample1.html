@@ -6,26 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Details</title>
+    <style>
+        form {
+            text-align: center;
+            border: 5px solid;
+            margin: 10px;
+            padding: 10px;
+
+        }
+
+        table {
+            border: 5px solid;
+            margin: 10px;
+
+            width: 1325px;
+            text-align: center;
+        }
+
+        body {
+            background-color: darkseagreen;
+        }
+    </style>
 </head>
 
 <body>
     <form action="">
-        <label for="fName">Enter First Name</label>
-        <input type="text" id="fName" />
+        <h2>Student Details</h2>
+        <label for="fName">Enter First Name :</label>
+        <input type="text" id="fName" onkeyup=" validate()" />
         <br /><br />
-        <label for="lName">Enter Last Name</label>
-        <input type="text" id="lName" />
+        <label for="lName">Enter Last Name :</label>
+        <input type="text" id="lName" onkeyup=" validate()" />
         <br /><br />
-        <label for="Email">Enter E-Mail</label>
-        <input type="text" id="Email" />
+        <label for="Email">Enter E-Mail Id :</label>
+        <input type="text" id="Email" onkeyup=" validate()" />
         <br /><br />
-        <label for="Mobile">Enter Mobile Number</label>
-        <input type="text" id="Mobile" />
+        <label for="Mobile">Enter Mobile No :</label>
+        <input type="text" id="Mobile" onkeyup=" validate()" />
         <br /><br />
 
 
-        <button type="button " onclick="addDetails()">Add Details </button>
+        <button type="button " id="addUsers" onclick="addDetails()" disabled="true">Add Details </button>
 
+        <button type="button" onclick="updateUser()" id="update" style="display: none">Update User</button>
     </form>
     <hr />
     <table border="1">
@@ -35,6 +58,8 @@
                 <th>Last Name</th>
                 <th>E-Mail</th>
                 <th>Mobile</th>
+                <th>Edit</th>
+                <th>Delete</th>
 
             </tr>
         </thead>
@@ -42,6 +67,10 @@
     </table>
     <script>
         var allUserDetails = JSON.parse(localStorage.getItem("allUserDetails"));
+        var index = null;
+        if (allUserDetails == null) {
+            allUserDetails = [];
+        }
 
         function addDetails() {
             var User = {
@@ -82,6 +111,23 @@
                 }
 
 
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+                editBtn.innerHTML = "Edit";
+                editTd.appendChild(editBtn);
+                myTr.appendChild(editTd);
+
+
+
+                var delTd = document.createElement("td");
+                var delBtn = document.createElement("button");
+                delBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                delBtn.innerHTML = "delete";
+                delTd.appendChild(delBtn);
+                myTr.appendChild(delTd);
+
+
                 document.getElementById("myTbody").appendChild(myTr);
 
 
@@ -89,6 +135,75 @@
             });
 
         }
+
+        function editUser(i) {
+            console.log("this  is edit")
+            index = i;
+            document.getElementById("fName").value = allUserDetails[i].fName;
+            document.getElementById("lName").value = allUserDetails[i].lName;
+            document.getElementById("Email").value = allUserDetails[i].Email;
+            document.getElementById("Mobile").value = allUserDetails[i].Mobile;
+            document.getElementById("addUsers").style.display = "none";
+            document.getElementById("update").style.display = "block";
+
+        }
+
+        function deleteUser(i) {
+            console.log(allUserDetails[i]);
+            allUserDetails.splice(i, 1);
+            displayUser(allUserDetails);
+        }
+        displayUser(allUserDetails);
+
+
+        function validate() {
+            var User = {
+                fName: document.getElementById("fName").value,
+                lName: document.getElementById("lName").value,
+                Email: document.getElementById("Email").value,
+                Mobile: document.getElementById("Mobile").value,
+
+
+            };
+
+
+            var check = false;
+            for (a in User) {
+                if (User[a] == "") {
+                    check = true;
+                }
+            }
+
+            if (check == true) {
+                document.getElementById("addUsers").setAttribute("disabled", true);
+
+            } else {
+                document.getElementById("addUsers").removeAttribute("disabled");
+            }
+        }
+
+
+        function updateUser() {
+            console.log("from Update");
+            var User = {
+                fName: document.getElementById("fName").value,
+                lName: document.getElementById("lName").value,
+                Email: document.getElementById("Email").value,
+                Mobile: document.getElementById("Mobile").value,
+
+
+            };
+            allUserDetails[index] = User;
+            localStorage.setItem("allUserDetails", JSON.stringify(allUserDetails))
+
+
+            displayUser(allUserDetails);
+            clearForm()
+            document.getElementById("addUsers").style.display = "block";
+            document.getElementById("update").style.display = "none";
+
+        }
+
 
 
 
