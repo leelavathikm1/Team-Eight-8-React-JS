@@ -9,15 +9,20 @@
   <body>
     <form action="">
       <label for="fName">Enter Name </label>
-      <input type="text" id="fName" /><br /><br />
+      <input type="text" id="fName" onkeyup="validate()" /><br /><br />
 
       <label for="lName">Last Name</label>
-      <input type="text" id="lName" /><br /><br />
+      <input type="text" id="lName" onkeyup="validate()" /><br /><br />
 
       <label for="email">Enter E-MAil</label>
-      <input type="email" id="eMail" /><br /><br />
+      <input type="email" id="eMail" onkeyup="validate()" /><br /><br />
 
-      <button type="button" onclick="addUser()">Add User</button>
+      <button type="button" id="addUsers" onclick="addUser()" disabled="true">
+        Add User
+      </button>
+      <button onclick="updateUser()" id="update" style="display: none">
+        Update User
+      </button>
     </form>
 
     <hr />
@@ -45,6 +50,11 @@
       // Update User
 
       var allUsers = JSON.parse(localStorage.getItem("allUsers"));
+      var index = null;
+      if (allUsers == null) {
+        allUsers = [];
+      }
+
       function addUser() {
         var user = {
           fName: document.getElementById("fName").value,
@@ -77,13 +87,14 @@
 
           var editTd = document.createElement("td");
           var editBtn = document.createElement("button");
+          editBtn.setAttribute("onclick", "editUser(" + i + ")");
           editBtn.innerHTML = "Edit";
           editTd.appendChild(editBtn);
           myTr.appendChild(editTd);
 
           var delTd = document.createElement("td");
           var delBtn = document.createElement("button");
-          delBtn.setAttribute("onclick", deleteUser("+i+"));
+          delBtn.setAttribute("onclick", "deleteUser(" + i + ")");
           delBtn.innerHTML = "Delete";
           delTd.appendChild(delBtn);
           myTr.appendChild(delTd);
@@ -91,6 +102,66 @@
           document.getElementById("myTbody").appendChild(myTr);
         });
       }
+
+      function editUser(i) {
+        console.log("Iam called from edit USer");
+        index = i;
+        document.getElementById("fName").value = allUsers[i].fName;
+        document.getElementById("lName").value = allUsers[i].lName;
+        document.getElementById("eMail").value = allUsers[i].eMail;
+        document.getElementById("addUsers").style.display = "none";
+        document.getElementById("update").style.display = "block";
+      }
+
+      function deleteUser(i) {
+        console.log(allUsers[i]);
+        allUsers.splice(i, 1);
+        displayUser(allUsers);
+      }
+
+      displayUser(allUsers);
+
+      function validate() {
+        var user = {
+          fName: document.getElementById("fName").value,
+          lName: document.getElementById("lName").value,
+          eMail: document.getElementById("eMail").value,
+        };
+        // console.log("iam Called");
+
+        var check = false;
+        for (a in user) {
+          if (user[a] == "") {
+            check = true;
+          }
+        }
+        if (check == true) {
+          document.getElementById("addUsers").setAttribute("disabled", true);
+        } else {
+          document.getElementById("addUsers").removeAttribute("disabled");
+        }
+      }
+
+      function updateUser(index) {
+        console.log("iam called from update user");
+        var user = {
+          fName: document.getElementById("fName").value,
+          lName: document.getElementById("lName").value,
+          eMail: document.getElementById("eMail").value,
+        };
+        allUsers[index] = user;
+        localStorage.setItem("allUsers", JSON.stringify(allUsers));
+
+        displayUser(allUsers);
+        clearForm();
+        document.getElementById("addUsers").style.display = "block";
+        document.getElementById("update").style.display = "none";
+      }
+
+      // create
+      // Read
+      // Update
+      // Delete
     </script>
   </body>
 </html>
