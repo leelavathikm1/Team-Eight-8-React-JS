@@ -6,39 +6,185 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>laptops</title>
+    <style>
+        form {
+            border: 5px solid;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            background-color: plum;
+        }
+
+        table {
+            width: 1350px;
+            text-align: center;
+            background-color: plum;
+        }
+
+        body {
+            background-color: turquoise;
+        }
+
+        h2 {
+            font-style: italic;
+            color: purple;
+        }
+    </style>
 </head>
 
 <body>
     <form action="">
+        <h2>Laptop Details</h2>
         <label for="laptopName">laptopName</label>
-        <input type="text" id="laptopName" />
+        <input type="text" id="laptopName" onkeyup=" validate()" />
         <br /> <br />
         <label for="laptopModel">laptop Model</label>
-        <input type="text" id="laptopModel" />
+        <input type="text" id="laptopModel" onkeyup=" validate()" />
+        <br /> <br />
+        <label for="laptopPrice">laptop Price</label>
+        <input type="text" id="laptopPrice" onkeyup=" validate()" />
         <br /> <br />
 
 
-        <button type="button" onclick="laptopDetails()"> ADD Laptop Details</button>
+
+        <button type="button" onclick="updateUser()" id="update" style="display: none">Update User</button>
+        <button type="button" id="addUsers" onclick="laptopDetails()" disabled="true"> ADD Laptop Details</button>
     </form>
 
+
     <hr />
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Laptop Name</th>
+                <th>Laptop Model</th>
+                <th>Laptop Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="detailsL"></tbody>
+    </table>
     <script>
+        var allLaptopDetails = JSON.parse(localStorage.getItem("allLaptopDetails"));
+        var index = null;
+        if (allLaptopDetails == null) {
+            allLaptopDetails = [];
+        }
         function laptopDetails() {
+
             var User = {
                 laptopName: document.getElementById("laptopName").value,
                 laptopModel: document.getElementById("laptopModel").value,
+                laptopPrice: document.getElementById("laptopPrice").value,
 
 
             };
+            allLaptopDetails.push(User);
             console.log(User);
+            localStorage.setItem("allLaptopDetails", JSON.stringify(allLaptopDetails));
+            displayUser(allLaptopDetails);
             clearForm();
         }
 
         function clearForm() {
             document.getElementById("laptopName").value = "";
             document.getElementById("laptopModel").value = "";
+            document.getElementById("laptopPrice").value = "";
 
         }
+        function displayUser(data) {
+            document.getElementById("detailsL").innerHTML = "";
+            data.forEach((User, i) => {
+                var myTr = document.createElement("tr");
+                for (a in User) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = User[a];
+                    myTr.appendChild(myTd);
+                }
+
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+                editBtn.innerHTML = "Edit";
+                editTd.appendChild(editBtn);
+                myTr.appendChild(editTd);
+
+
+                var delTd = document.createElement("td");
+                var delBtn = document.createElement("button");
+                delBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                delBtn.innerHTML = "delete";
+                delTd.appendChild(delBtn);
+                myTr.appendChild(delTd);
+
+
+                document.getElementById("detailsL").appendChild(myTr);
+
+            });
+        }
+
+        function editUser(i) {
+            index = i;
+            document.getElementById("laptopName").value = allLaptopDetails[i].laptopName;
+            document.getElementById("laptopModel").value = allLaptopDetails[i].laptopModel;
+            document.getElementById("laptopPrice").value = allLaptopDetails[i].laptopPrice;
+            document.getElementById("addUsers").style.display = "none";
+            document.getElementById("update").style.display = "block";
+        }
+        function deleteUser(i) {
+            console.log(allLaptopDetails[i]);
+            allLaptopDetails.splice(i, 1);
+            displayUser(allLaptopDetails);
+        }
+        displayUser(allLaptopDetails);
+
+        function validate() {
+            var User = {
+                laptopName: document.getElementById("laptopName").value,
+                laptopModel: document.getElementById("laptopModel").value,
+                laptopPrice: document.getElementById("laptopPrice").value,
+
+            }
+            var check = false;
+            for (a in User) {
+                if (User[a] == "") {
+                    check = true;
+                }
+            }
+
+            if (check == true) {
+                document.getElementById("addUsers").setAttribute("disabled", true);
+
+            } else {
+                document.getElementById("addUsers").removeAttribute("disabled");
+            }
+        }
+
+        function updateUser() {
+            var User = {
+                laptopName: document.getElementById("laptopName").value,
+                laptopModel: document.getElementById("laptopModel").value,
+                laptopPrice: document.getElementById("laptopPrice").value,
+
+
+            }
+
+            allLaptopDetails[index] = User;
+            localStorage.setItem("allLaptopDetails", JSON.stringify(allLaptopDetails))
+
+
+            displayUser(allLaptopDetails);
+            clearForm()
+            document.getElementById("addUsers").style.display = "block";
+            document.getElementById("update").style.display = "none";
+
+        }
+
+
+
+
+
     </script>
 </body>
 

@@ -6,39 +6,171 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile Model</title>
+    <style>
+        form {
+            background-color: steelblue;
+            border: 5px solid;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table {
+            width: 1325px;
+            background-color: thistle;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <form action="">
-        <label for="MobileName">Mobile Name </label>
-        <input type="text" id="MobileName" />
+        <h3> Mobile Details</h3>
+        <label for="mobileName">Mobile Name </label>
+        <input type="text" id="mobileName" onkeyup=" validate()" />
         <br /> <br />
         <label for="mobileModel">Mobile Model </label>
-        <input type="text" id="mobileModel" />
+        <input type="text" id="mobileModel" onkeyup=" validate()" />
         <br /> <br />
 
 
-        <button type="button" onclick="mobileDetails()"> ADD Mobile Details</button>
+        <button type="button" onclick="updateUser()" id="update" style="display: none">Update User</button>
+
+        <button type="button" id="addUsers" onclick="mobileDetails()" disabled="true"> ADD Mobile Details</button>
     </form>
 
     <hr />
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mobile Name</th>
+                <th>Mobile Model</th>
+
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="myData"></tbody>
+    </table>
     <script>
+        var allMobileDetails = JSON.parse(localStorage.getItem("allMobileDetails"));
+        var index = null;
+        if (allMobileDetails == null) {
+            allMobileDetails = [];
+        }
         function mobileDetails() {
             var User = {
-                MobileName: document.getElementById("MobileName").value,
+                MobileName: document.getElementById("mobileName").value,
                 mobileModel: document.getElementById("mobileModel").value,
 
 
+
             };
+            allMobileDetails.push(User);
             console.log(User);
+            localStorage.setItem("allMobileDetails", JSON.stringify(allMobileDetails));
+            displayUser(allMobileDetails);
             clearForm();
         }
 
         function clearForm() {
-            document.getElementById("MobileName").value = "";
+            document.getElementById("mobileName").value = "";
             document.getElementById("mobileModel").value = "";
 
+
         }
+
+
+        function displayUser(data) {
+            document.getElementById("myData").innerHTML = "";
+            data.forEach((User, i) => {
+                var myTr = document.createElement("tr");
+                for (a in User) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = User[a];
+                    myTr.appendChild(myTd);
+                }
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+                editBtn.innerHTML = "Edit";
+                editTd.appendChild(editBtn);
+                myTr.appendChild(editTd);
+
+
+                var delTd = document.createElement("td");
+                var delBtn = document.createElement("button");
+                delBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                delBtn.innerHTML = "delete";
+                delTd.appendChild(delBtn);
+                myTr.appendChild(delTd);
+
+                document.getElementById("myData").appendChild(myTr);
+
+            })
+        }
+        function editUser(i) {
+            console.log("edit")
+            index = i;
+            document.getElementById("mobileName").value = allMobileDetails[i].mobileName;
+            document.getElementById("mobileModel").value = allMobileDetails[i].mobileModel;
+
+
+            document.getElementById("addUsers").style.display = "none";
+            document.getElementById("update").style.display = "block";
+
+
+        }
+        function deleteUser(i) {
+            console.log(allMobileDetails[i]);
+            allMobileDetails.splice(i, 1);
+            displayUser(allMobileDetails);
+        }
+        displayUser(allMobileDetails);
+
+
+        function validate() {
+            var User = {
+                MobileName: document.getElementById("mobileName").value,
+                mobileModel: document.getElementById("mobileModel").value,
+
+
+
+            };
+            var check = false;
+            for (a in User) {
+                if (User[a] == "") {
+                    check = true;
+                }
+            }
+
+            if (check == true) {
+                document.getElementById("addUsers").setAttribute("disabled", true);
+
+            } else {
+                document.getElementById("addUsers").removeAttribute("disabled");
+            }
+
+        }
+        function updateUser() {
+            console.log("Update");
+            var User = {
+                MobileName: document.getElementById("mobileName").value,
+                mobileModel: document.getElementById("mobileModel").value,
+
+
+
+            };
+            allMobileDetails[index] = User;
+            localStorage.setItem("allMobileDetails", JSON.stringify(allMobileDetails))
+
+            displayUser(allMobileDetails);
+            clearForm()
+            document.getElementById("addUsers").style.display = "block";
+            document.getElementById("update").style.display = "none";
+
+        }
+
     </script>
 </body>
 

@@ -6,39 +6,185 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books Details</title>
+    <style>
+        h1 {
+            font-style: italic;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: initial;
+        }
+
+        form {
+            border: 5px solid;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            background-color: cornflowerblue;
+        }
+
+        table {
+            width: 1350px;
+            text-align: center;
+            background-color: plum;
+        }
+
+        body {
+            background-color: turquoise;
+        }
+    </style>
 </head>
 
 <body>
+
+    <h1> Pick Your Book</h1>
     <form action="">
+        <h3> Book Details</h3>
         <label for="bookName">Book Name </label>
-        <input type="text" id="bookName" />
+        <input type="text" id="bookName" onkeyup=" validate()" />
         <br /> <br />
-        <label for="bookAuthor">BookAuthor </label>
-        <input type="text" id="bookAuthor" />
+        <label for="bookAuthor">Book Author </label>
+        <input type="text" id="bookAuthor" onkeyup=" validate()" />
+        <br /> <br />
+        <label for="bookPrice">Book Price </label>
+        <input type="text" id="bookPrice" onkeyup=" validate()" />
         <br /> <br />
 
+        <button type="button" onclick="updateUser()" id="update" style="display: none">Update User</button>
 
-        <button type="button" onclick="BooksDetails()"> ADD Books Details</button>
+        <button type="button" id="addUsers" onclick="BooksDetails()" disabled="true"> ADD Books Details</button>
     </form>
 
     <hr />
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Book Author </th>
+                <th>Book Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="bookDetail"></tbody>
+    </table>
     <script>
+        var allBookDetails = JSON.parse(localStorage.getItem("allBookDetails"));
+        var index = null;
+        if (allBookDetails == null) {
+            allBookDetails = [];
+        }
         function BooksDetails() {
             var User = {
                 BookeName: document.getElementById("bookName").value,
                 bookAuthor: document.getElementById("bookAuthor").value,
-
+                bookPrice: document.getElementById("bookPrice").value,
 
             };
+            allBookDetails.push(User);
             console.log(User);
+            localStorage.setItem("allBookDetails", JSON.stringify(allBookDetails));
+            displayUser(allBookDetails);
             clearForm();
         }
 
         function clearForm() {
             document.getElementById("bookName").value = "";
             document.getElementById("bookAuthor").value = "";
+            document.getElementById("bookPrice").value = "";
 
         }
+        function displayUser(data) {
+            document.getElementById("bookDetail").innerHTML = "";
+            data.forEach((User, i) => {
+                var myTr = document.createElement("tr");
+                for (a in User) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = User[a];
+                    myTr.appendChild(myTd);
+                }
+
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+                editBtn.innerHTML = "Edit";
+                editTd.appendChild(editBtn);
+                myTr.appendChild(editTd);
+
+
+                var delTd = document.createElement("td");
+                var delBtn = document.createElement("button");
+                delBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                delBtn.innerHTML = "delete";
+                delTd.appendChild(delBtn);
+                myTr.appendChild(delTd);
+
+
+                document.getElementById("bookDetail").appendChild(myTr);
+
+            });
+        }
+
+        function editUser(i) {
+            index = i;
+            document.getElementById("bookName").value = allBookDetails[i].value;
+            document.getElementById("bookAuthor").value = allBookDetails[i].value;
+            document.getElementById("bookPrice").value = allBookDetails[i].value;
+            document.getElementById("addUsers").style.display = "none";
+            document.getElementById("update").style.display = "block";
+
+        }
+        function deleteUser(i) {
+            console.log(allBookDetails[i]);
+            allBookDetails.splice(i, 1);
+            displayUser(allBookDetails);
+        }
+        displayUser(allBookDetails);
+
+        function validate() {
+            var User = {
+                BookeName: document.getElementById("bookName").value,
+                bookAuthor: document.getElementById("bookAuthor").value,
+                bookPrice: document.getElementById("bookPrice").value,
+
+            };
+
+            var check = false;
+            for (a in User) {
+                if (User[a] == "") {
+                    check = true;
+                }
+            }
+
+            if (check == true) {
+                document.getElementById("addUsers").setAttribute("disabled", true);
+
+            } else {
+                document.getElementById("addUsers").removeAttribute("disabled");
+            }
+        }
+
+        function updateUser() {
+            var User = {
+                BookeName: document.getElementById("bookName").value,
+                bookAuthor: document.getElementById("bookAuthor").value,
+                bookPrice: document.getElementById("bookPrice").value,
+
+            };
+            allBookDetails[index] = User;
+            localStorage.setItem("allBookDetails", JSON.stringify(allBookDetails))
+
+
+            displayUser(allBookDetails);
+            clearForm()
+            document.getElementById("addUsers").style.display = "block";
+            document.getElementById("update").style.display = "none";
+
+        }
+
+
+
     </script>
 </body>
 
