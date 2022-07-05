@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     {
+
+    }
+  </style>
+</head>
+
+<body style="text-align: center;">
+  <form>
+    <label for="SerialNumber">Sl.No </label>
+    <input type="text" id="SerialNumber" onkeyup="validate()"> <br><br>
+
+    <label for="RollNumber">Roll Number</label>
+    <input type="text" id="RollNumber" onkeyup="validate()"><br><br>
+
+    <label for="Name">Enter Name</label>
+    <input type="text" id="Name" onkeyup="validate()"><br><br>
+
+    <label for="College">Enter College Name</label>
+    <input type="text" id="College" onkeyup="validate()"><br><br>
+
+    <label for="Group">Enter Group</label>
+    <input type="text" id="Group" onkeyup="validate()"><br><br>
+
+    <label for="Percentage">Enter Percentage</label>
+    <input type="text" id="Percentage" onkeyup="validate()"><br><br>
+
+    <button type="button" id="addUsers" onclick="addDetails()" disabled="true">Add <Details></Details></button>
+
+    <button type="button" onclick="updateuser()" id="update" style="display: none;">update User</button>
+  </form>
+
+  <hr>
+
+  <h2>Report Card</h2>
+  <h3>Academic Session 2021-2022 </h3>
+
+  <table border="1" style="text-align: center; width:1000px; margin-left:250px">
+    <thead>
+      <tr>
+        <th>Sl.No</th>
+        <th>Roll Number</th>
+        <th>Name</th>
+        <th>College</th>
+        <th>Group</th>
+        <th>Percentage(%)</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="myTbody"></tbody>
+  </table>
+
+  <script>
+    var allUserDetails = JSON.parse(localStorage.getItem("allUserDetails"));
+    var index = null;
+    if (allUserDetails ==null) {
+      allUserDetails = [];
+    }
+
+    function addDetails() {
+      var user = {
+        SerialNumber: document.getElementById("SerialNumber").value,
+        RollNumber: document.getElementById("RollNumber").value,
+        Name: document.getElementById("Name").value,
+        College: document.getElementById("College").value,
+        Group: document.getElementById("Group").value,
+        Percentage: document.getElementById("Percentage").value,
+
+      };
+
+      allUserDetails.push(user);
+      console.log(user); 
+      localStorage.setItem("allUserDetails",JSON.stringify(allUserDetails));
+      displayUser(allUserDetails);
+      clearForm();
+    }
+
+    function clearForm() {
+      document.getElementById("SerialNumber").value = "";
+      document.getElementById("RollNumber").value = "";
+      document.getElementById("Name").value = "";
+      document.getElementById("College").value = "";
+      document.getElementById("Group").value = "";
+      document.getElementById("Percentage").value = "";
+
+    }
+
+    function displayUser(details) {
+      document.getElementById("myTbody").innerHTML = "";
+      details.forEach((user, i) => {
+        var myTr = document.createElement("tr");
+        for (a in user) {
+          var myTd = document.createElement("td");
+          myTd.innerHTML = user[a];
+          myTr.appendChild(myTd);
+
+        }
+
+        var editTd = document.createElement("td")
+        var editbtn = document.createElement("button")
+        editbtn.setAttribute("onclick","editUser(" + i + ")");
+        editbtn.innerHTML = "Edit"
+        editTd.appendChild(editbtn)
+        myTr.appendChild(editTd)
+
+        var delTd = document.createElement("td");
+        var delbtn = document.createElement("button");
+        delbtn.setAttribute("onclick","deleteUser(" + i + ")");
+        delbtn.innerHTML = "Delete";
+        delTd.appendChild(delbtn);
+        myTr.appendChild(delTd);
+
+        document.getElementById("myTbody").appendChild(myTr);
+      });
+
+    }
+    
+    function editUser(i) {
+      console.log("this is Edit")
+      index = i;
+      document.getElementById("SerialNumber").value = allUserDetails[i].SerialNumber;
+      document.getElementById("RollNumber").value = allUserDetails[i].RollNumber;
+      document.getElementById("Name").value = allUserDetails[i].Name;
+      document.getElementById("College").value = allUserDetails[i].College;
+      document.getElementById("Group").value = allUserDetails[i].Group;
+      document.getElementById("Percentage").value = allUserDetails[i].Percentage;
+      document.getElementById("addUsers").style.display = "none";
+      document.getElementById("update").style.display = "block";
+    }
+
+    function deleteUser(i) {
+      console.log(allUserDetails[i]);
+      allUserDetails.splice(i , 1);
+      displayUser(allUserDetails);
+    }
+    displayUser(allUserDetails);
+
+    function validate() {
+      var User = {
+        SerialNumber: document.getElementById("SerialNumber").value,
+        RollNumber: document.getElementById("RollNumber").value,
+        Name: document.getElementById("Name").value,
+        College: document.getElementById("College").value,
+        Group: document.getElementById("Group").value,
+        Percentage: document.getElementById("Percentage").value,
+      };
+
+      var check = false;
+      for (a in User) {
+        if (User[a] == "") {
+          check = true;
+        }
+      }
+      if (check == true) {
+        document.getElementById("addUsers").setAttribute("disabled", true);
+      }
+      else {
+        document.getElementById("addUsers").removeAttribute("disabled");
+      }
+    }
+    function updateUser() {
+      console.log("from Update");
+      var User = {
+        SerialNumber: document.getElementById("SerialNumber").value,
+        RollNumber: document.getElementById("RollNumber").value,
+        Name: document.getElementById("Name").value,
+        College: document.getElementById("College").value,
+        Group: document.getElementById("Group").value,
+        Percentage: document.getElementById("Percentage").value,
+      };
+      allUserDetails[index] = User;
+      localStorage.setItem("allUserDetails",JSON.stringify(allUserDetails))
+
+
+      displayUser(allUserDetails);
+      clearForm();
+      document.getElementById("addUsers").style.display = "block";
+      document.getElementById("update").style.display = "none"
+    }
+      </script>
+</body>
+
+</html>
