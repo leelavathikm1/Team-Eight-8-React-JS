@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+      }
+      .product {
+        width: 200px;
+        height: 250px;
+        float: left;
+        border: 1px solid;
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" onclick="GetDataFromAPI()">GetDataFromAPI</button>
+    <div id="products"></div>
+    <script>
+      function GetDataFromAPI() {
+        //1. It Should Give Status Code 200
+        //2. It should Compleate ready State 4
+
+        var getData = new XMLHttpRequest();
+
+        getData.onreadystatechange = function () {
+          if (getData.status == 200 && getData.readyState == 4) {
+            console.log(this.response);
+            var allProducts = JSON.parse(this.response);
+            displayProducts(allProducts);
+          }
+        };
+
+        getData.open("GET", "https://fakestoreapi.com/products");
+        getData.send();
+      }
+
+      function displayProducts(allProducts) {
+        allProducts.forEach((product) => {
+          var myProductDiv = document.createElement("div");
+          myProductDiv.setAttribute("class", "product");
+          var myImage = document.createElement("img");
+          myImage.setAttribute("src", product.image);
+          myImage.innerHTML = product.image;
+
+          var title = document.createElement("p");
+          title.innerHTML = product.title;
+
+          myProductDiv.appendChild(title);
+          // document.body.appendChild(myImage);
+          myProductDiv.appendChild(myImage);
+          document.getElementById("products").appendChild(myProductDiv);
+          // console.log(product.image);
+        });
+      }
+    </script>
+
+    <!-- http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&pretty=true
+ https://fakestoreapi.com/carts
+ https://fakestoreapi.com/users
+ https://jsonplaceholder.typicode.com/comments
+ https://jsonplaceholder.typicode.com/albums
+ https://jsonplaceholder.typicode.com/photos
+ https://jsonplaceholder.typicode.com/todos
+ https://jsonplaceholder.typicode.com/users -->
+  </body>
+</html>

@@ -20,7 +20,12 @@
       <button type="button" id="addUsers" onclick="addUser()" disabled="true">
         Add User
       </button>
-      <button onclick="updateUser()" id="update" style="display: none">
+      <button
+        type="button"
+        onclick="updateUser()"
+        id="update"
+        style="display: none"
+      >
         Update User
       </button>
     </form>
@@ -142,7 +147,7 @@
         }
       }
 
-      function updateUser(index) {
+      function updateUser() {
         console.log("iam called from update user");
         var user = {
           fName: document.getElementById("fName").value,
@@ -158,6 +163,7 @@
         document.getElementById("update").style.display = "none";
       }
 
+      displayUser(allUsers);
       // create
       // Read
       // Update
