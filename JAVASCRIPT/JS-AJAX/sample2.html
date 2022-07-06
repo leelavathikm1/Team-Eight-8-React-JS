@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            border: 2px solid;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul></ul>
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API</button>
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allData = JSON.parse(this.response)
+                    displayData(allData)
+                }
+            };
+            getData.open("GET", "https://jsonplaceholder.typicode.com/albums");
+            getData.send();
+        }
+        function displayData(allData) {
+            allData.forEach((Data) => {
+                var myLi = document.createElement("li");
+
+                var userId = document.createElement("p")
+                userId.innerHTML = Data.userId;
+
+                var id = document.createElement("p")
+                id.innerHTML = Data.id;
+
+                var title = document.createElement("p")
+                title.innerHTML = Data.title;
+
+                myLi.appendChild(userId);
+                myLi.appendChild(id);
+                myLi.appendChild(title);
+
+                document.querySelector("ul").appendChild(myLi);
+            })
+        }
+    </script>
+</body>
+
+</html>
