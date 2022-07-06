@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body >
+  <form>
+    <label for="firstName"> Enter first Name</label>
+    <input type="text" id="firstName" onkeyup="validate()"> <br><br>
+
+    <label for="lastName">Enter last Name</label>
+    <input type="text" id="lastName" onkeyup="validate()"><br><br>
+
+    <label for="College">Enter College Name</label>
+    <input type="text" id="College" onkeyup="validate()"><br><br>
+
+    <label for="Group">Enter Group</label>
+    <input type="text" id="Group" onkeyup="validate()"><br><br>
+
+    <label for="Result">Enter Result</label>
+    <input type="text" id="Result" onkeyup="validate()"><br><br>
+
+    <button type="button" id="addUsers" onclick="addDetails()" disabled="true">Add <Details></Details></button>
+
+    <button type="button" onclick="updateuser()" id="update" style="display: none;">update User</button>
+  </form>
+
+  <hr>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>College</th>
+        <th>Group</th>
+        <th>Result</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="myTbody"></tbody>
+  </table>
+
+  <script>
+    var allUserDetails = JSON.parse(localStorage.getItem("allUserDetails"));
+    var index = null;
+    if (allUserDetails ==null) {
+      allUserDetails = [];
+    }
+
+    function addDetails() {
+      var user = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        College: document.getElementById("College").value,
+        Group: document.getElementById("Group").value,
+        Result: document.getElementById("Result").value,
+
+      };
+
+      allUserDetails.push(user);
+      console.log(user); 
+      localStorage.setItem("allUserDetails",JSON.stringify(allUserDetails));
+      displayUser(allUserDetails);
+      clearForm();
+    }
+
+    function clearForm() {
+      document.getElementById("firstName").value = "";
+      document.getElementById("lastName").value = "";
+      document.getElementById("College").value = "";
+      document.getElementById("Group").value = "";
+      document.getElementById("Result").value = "";
+
+    }
+
+    function displayUser(details) {
+      document.getElementById("myTbody").innerHTML = "";
+      details.forEach((user, i) => {
+        var myTr = document.createElement("tr");
+        for (a in user) {
+          var myTd = document.createElement("td");
+          myTd.innerHTML = user[a];
+          myTr.appendChild(myTd);
+
+        }
+
+        var editTd = document.createElement("td")
+        var editbtn = document.createElement("button")
+        editbtn.setAttribute("onclick","editUser(" + i + ")");
+        editbtn.innerHTML = "Edit"
+        editTd.appendChild(editbtn)
+        myTr.appendChild(editTd)
+
+        var delTd = document.createElement("td");
+        var delbtn = document.createElement("button");
+        delbtn.setAttribute("onclick","deleteUser(" + i + ")");
+        delbtn.innerHTML = "Delete";
+        delTd.appendChild(delbtn);
+        myTr.appendChild(delTd);
+
+        document.getElementById("myTbody").appendChild(myTr);
+      });
+
+    }
+    
+    function editUser(i) {
+      console.log("this is Edit")
+      index = i;
+      document.getElementById("firstName").value = allUserDetails[i].firstName;
+      document.getElementById("lastName").value = allUserDetails[i].lastName;
+      document.getElementById("College").value = allUserDetails[i].College;
+      document.getElementById("Group").value = allUserDetails[i].Group;
+      document.getElementById("Result").value = allUserDetails[i].Result;
+      document.getElementById("addUsers").style.display = "none";
+      document.getElementById("update").style.display = "block";
+    }
+
+    function deleteUser(i) {
+      console.log(allUserDetails[i]);
+      allUserDetails.splice(i , 1);
+      displayUser(allUserDetails);
+    }
+    displayUser(allUserDetails);
+
+    function validate() {
+      var User = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        College: document.getElementById("College").value,
+        Group: document.getElementById("Group").value,
+        Result: document.getElementById("Result").value,
+      };
+
+      var check = false;
+      for (a in User) {
+        if (User[a] == "") {
+          check = true;
+        }
+      }
+      if (check == true) {
+        document.getElementById("addUsers").setAttribute("disabled", true);
+      }
+      else {
+        document.getElementById("addUsers").removeAttribute("disabled");
+      }
+    }
+    function updateUser() {
+      console.log("from Update");
+      var User = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        College: document.getElementById("College").value,
+        Group: document.getElementById("Group").value,
+        Result: document.getElementById("Result").value,
+      };
+      allUserDetails[index] = User;
+      localStorage.setItem("allUserDetails",JSON.stringify(allUserDetails))
+
+
+      displayUser(allUserDetails);
+      clearForm();
+      document.getElementById("addUsers").style.display = "block";
+      document.getElementById("update").style.display = "none"
+    }
+      </script>
+</body>
+
+</html>
