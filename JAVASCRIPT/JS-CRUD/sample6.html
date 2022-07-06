@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;background-color: yellowgreen">
+    <form>
+      <label for=" BikeName">Enter BikeName </label> <br>
+      <input type="text" id="BikeName" onkeyup="validate()"> <br><br>
+  
+      <label for="Model">Enter Model</label> <br>
+      <input type="text" id="Model" onkeyup="validate()"><br><br>
+  
+      <label for="EnginCC">Enter Engin CC</label> <br>
+      <input type="text" id="EnginCC" onkeyup="validate()"><br><br>
+
+      <label for="Price">Enter Price</label> <br>
+      <input type="text" id="Price" onkeyup="validate()"><br><br>
+  
+      <button type="button" id="addBikes" onclick="addBike()" disabled="true">Add Bikes</button>
+  
+      <button type="button" onclick="updatebutton()" id="update" style="display: none;">update Bikes</button>
+    </form>
+  
+    <hr>
+  
+    <h2>Bike Details</h2>
+  
+    <table border="1" style=" width:800px; margin-left:250px">
+      <thead>
+        <tr>
+          <th style="color: red;">BikeName</th>
+          <th style="color: red;">Model</th>
+          <th style="color: red;">Engine CC</th>
+          <th style="color: red;">Price</th>
+          <th style="color: yellow;">Edit</th>
+          <th style="color: yellow;">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="myTbody"></tbody>
+    </table>
+  
+    <script>
+      var BikeDetails = JSON.parse(localStorage.getItem("BikeDetails"));
+      var index = null;
+      if (BikeDetails ==null) {
+        BikeDetails = [];
+      }
+  
+      function addBike() {
+        var bike = {
+            BikeName: document.getElementById("BikeName").value,
+            Model: document.getElementById("Model").value,
+            EnginCC: document.getElementById("EnginCC").value,
+            Price: document.getElementById("Price").value,
+  
+        };
+  
+        BikeDetails.push(bike);
+        console.log(bike); 
+        localStorage.setItem("BikeDetails",JSON.stringify(BikeDetails));
+        displayBike(BikeDetails);
+        clear();
+      }
+  
+      function clear() {
+        document.getElementById("BikeName").value = "";
+        document.getElementById("Model").value = "";
+        document.getElementById("EnginCC").value = "";
+        document.getElementById("Price").value = "";
+      
+      }
+  
+      function displayBike(Data) {
+        document.getElementById("myTbody").innerHTML = "";
+        Data.forEach((bike, i) => {
+          var myTr = document.createElement("tr");
+          for (a in bike) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = bike[a];
+            myTr.appendChild(myTd);
+  
+          }
+  
+          var editTd = document.createElement("td")
+          var editbtn = document.createElement("button")
+          editbtn.setAttribute("onclick","editBike(" + i + ")");
+          editbtn.innerHTML = "Edit"
+          editTd.appendChild(editbtn)
+          myTr.appendChild(editTd)
+  
+          var delTd = document.createElement("td");
+          var delbtn = document.createElement("button");
+          delbtn.setAttribute("onclick","deleteBike(" + i + ")");
+          delbtn.innerHTML = "Delete";
+          delTd.appendChild(delbtn);
+          myTr.appendChild(delTd);
+  
+          document.getElementById("myTbody").appendChild(myTr);
+        });
+  
+      }
+      
+      function editBike(i) {
+        console.log("Edit")
+        index = i;
+        document.getElementById("BikeName").value = BikeDetails[i].BikeName;
+        document.getElementById("Model").value = BikeDetails[i].Model;
+        document.getElementById("EnginCC").value = BikeDetails[i].EnginCC;
+        document.getElementById("Price").value = BikeDetails[i].Price;
+        document.getElementById("addBikes").style.display = "none";
+        document.getElementById("update").style.display = "block";
+      }
+  
+      function deleteBike(i) {
+        console.log(BikeDetails[i]);
+        BikeDetails.splice(i , 1);
+        displayBike(BikeDetails);
+      }
+      displayBike(BikeDetails);
+  
+      function validate() {
+        var Bike = {
+            BikeName: document.getElementById("BikeName").value,
+            Model: document.getElementById("Model").value,
+            EnginCC: document.getElementById("EnginCC").value,
+            Price: document.getElementById("Price").value,
+        };
+  
+        var check = false;
+        for (a in Bike) {
+          if (Bike[a] == "") {
+            check = true;
+          }
+        }
+        if (check == true) {
+          document.getElementById("addBikes").setAttribute("disabled", true);
+        }
+        else {
+          document.getElementById("addBikes").removeAttribute("disabled");
+        }
+      }
+      function updatebutton() {
+        console.log("from Update");
+        var Bike = {
+            BikeName: document.getElementById("BikeName").value,
+            Model: document.getElementById("Model").value,
+            EnginCC: document.getElementById("EnginCC").value,
+            Price: document.getElementById("Price").value,
+        };
+        BikeDetails[index] = Bike;
+        localStorage.setItem("BikeDetails",JSON.stringify(BikeDetails))
+  
+  
+        displayUser(BikeDetails);
+        clear();
+        document.getElementById("addBikes").style.display = "block";
+        document.getElementById("update").style.display = "none"
+      }
+        </script>
+  </body>
+</html>
