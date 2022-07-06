@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;background-color: rgb(47, 94, 107);">
+    <form>
+      <label for="Name">Enter Name </label> <br>
+      <input type="text" id="Name" onkeyup="validate()"> <br><br>
+  
+      <label for="AccountNumber">Enter Enter Ac No</label> <br>
+      <input type="text" id="AccountNumber" onkeyup="validate()"><br><br>
+  
+      <label for="BankName">Enter BankName</label> <br>
+      <input type="text" id="BankName" onkeyup="validate()"><br><br>
+
+      <label for="Branch">Enter Branch</label> <br>
+      <input type="text" id="Branch" onkeyup="validate()"><br><br>
+  
+      <button type="button" id="addUsers" onclick="addDetails()" disabled="true">Add <Details></Details></button>
+  
+      <button type="button" onclick="updatebutton()" id="update" style="display: none;">update button</button>
+    </form>
+  
+    <hr>
+  
+    <h2>Account Details</h2>
+  
+    <table border="1" style=" width:1000px; margin-left:250px">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>AccountNumber</th>
+          <th>BankName</th>
+          <th>Branch</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="myTbody"></tbody>
+    </table>
+  
+    <script>
+      var UserDetails = JSON.parse(localStorage.getItem("UserDetails"));
+      var index = null;
+      if (UserDetails ==null) {
+        UserDetails = [];
+      }
+  
+      function addDetails() {
+        var user = {
+            Name: document.getElementById("Name").value,
+            AccountNumber: document.getElementById("AccountNumber").value,
+            BankName: document.getElementById("BankName").value,
+            Branch: document.getElementById("Branch").value,
+  
+        };
+  
+        UserDetails.push(user);
+        console.log(user); 
+        localStorage.setItem("UserDetails",JSON.stringify(UserDetails));
+        displayUser(UserDetails);
+        clear();
+      }
+  
+      function clear() {
+        document.getElementById("Name").value = "";
+        document.getElementById("AccountNumber").value = "";
+        document.getElementById("BankName").value = "";
+        document.getElementById("Branch").value = "";
+      
+      }
+  
+      function displayUser(Data) {
+        document.getElementById("myTbody").innerHTML = "";
+        Data.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+  
+          }
+  
+          var editTd = document.createElement("td")
+          var editbtn = document.createElement("button")
+          editbtn.setAttribute("onclick","editUser(" + i + ")");
+          editbtn.innerHTML = "Edit"
+          editTd.appendChild(editbtn)
+          myTr.appendChild(editTd)
+  
+          var delTd = document.createElement("td");
+          var delbtn = document.createElement("button");
+          delbtn.setAttribute("onclick","deleteUser(" + i + ")");
+          delbtn.innerHTML = "Delete";
+          delTd.appendChild(delbtn);
+          myTr.appendChild(delTd);
+  
+          document.getElementById("myTbody").appendChild(myTr);
+        });
+  
+      }
+      
+      function editUser(i) {
+        console.log("this is Edit")
+        index = i;
+        document.getElementById("Name").value = UserDetails[i].Name;
+        document.getElementById("AccountNumber").value = UserDetails[i].AccountNumber;
+        document.getElementById("BankName").value = UserDetails[i].BankName;
+        document.getElementById("Branch").value = UserDetails[i].Branch;
+        document.getElementById("addUsers").style.display = "none";
+        document.getElementById("update").style.display = "block";
+      }
+  
+      function deleteUser(i) {
+        console.log(UserDetails[i]);
+        UserDetails.splice(i , 1);
+        displayUser(UserDetails);
+      }
+      displayUser(allUserDetails);
+  
+      function validate() {
+        var User = {
+            Name: document.getElementById("Name").value,
+            AccountNumber: document.getElementById("AccountNumber").value,
+            BankName: document.getElementById("BankName").value,
+            Pincode: document.getElementById("Branch").value,
+        };
+  
+        var check = false;
+        for (a in User) {
+          if (User[a] == "") {
+            check = true;
+          }
+        }
+        if (check == true) {
+          document.getElementById("addUsers").setAttribute("disabled", true);
+        }
+        else {
+          document.getElementById("addUsers").removeAttribute("disabled");
+        }
+      }
+      function updatebutton() {
+        console.log("from Update");
+        var User = {
+            Name: document.getElementById("Name").value,
+            AccountNumber: document.getElementById("AccountNumber").value,
+            BankName: document.getElementById("BankName").value,
+            Branch: document.getElementById("Branch").value,
+        };
+        UserDetails[index] = User;
+        localStorage.setItem("UserDetails",JSON.stringify(UserDetails))
+  
+  
+        displayUser(UserDetails);
+        clear();
+        document.getElementById("addUsers").style.display = "block";
+        document.getElementById("update").style.display = "none"
+      }
+        </script>
+  </body>
+</html>
