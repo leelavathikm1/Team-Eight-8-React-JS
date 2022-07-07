@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <style>
+        img {
+            width: 100px;
+        }
+
+        .product {
+            width: 200px;
+            height: 250px;
+            float: left;
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" onclick="GetDataFromAPI()">GetDataFromAPI</button>
+    <div id="products"></div>
+    <script>
+        function GetDataFromAPI() {
+
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response);
+                    var allProducts = JSON.parse(this.response);
+                    displayProducts(allProducts);
+                }
+            };
+
+            getData.open("GET", "https://fakestoreapi.com/products");
+            getData.send();
+        }
+
+        function displayProducts(allProducts) {
+            allProducts.forEach((product) => {
+                var myProductDiv = document.createElement("div");
+                myProductDiv.setAttribute("class", "product");
+                var myImage = document.createElement("img");
+                myImage.setAttribute("src", product.image);
+                myImage.innerHTML = product.image;
+
+                var title = document.createElement("p");
+                title.innerHTML = product.title;
+
+                myProductDiv.appendChild(title);
+
+                myProductDiv.appendChild(myImage);
+                document.getElementById("products").appendChild(myProductDiv);
+
+            })
+        }
+    </script>
+
+    </script>
+</body>
+
+</html>

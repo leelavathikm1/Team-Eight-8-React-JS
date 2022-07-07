@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="GetDataFromAPI()">GetDataFromAPI</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>User Name</th>
+                <th>email</th>
+                <th>Address</th>
+            </tr>
+
+
+        </thead>
+        <tbody id="myTable"></tbody>
+    </table>
+
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response);
+                    var personDetails = JSON.parse(this.response);
+                    displaypersonDetails(personDetails);
+                }
+            };
+            getData.open("GET", "https://jsonplaceholder.typicode.com/users");
+            getData.send();
+        }
+        function displaypersonDetails(personDetails) {
+
+            personDetails.forEach((dispPerson) => {
+                var myTr = document.createElement("tr");
+                for (a in dispPerson) {
+                    var myTd = document.createElement("td");
+                    if (a !== "address" && a !== "company") {
+                        myTd.innerHTML = dispPerson[a];
+                    } else {
+                        var details = ""
+                        for (b in dispPerson[a]) {
+                            details = details + b + ":" + dispPerson[a][b] + "<br>"
+
+                        }
+                        myTd.innerHTML = details
+                    }
+
+
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTable").appendChild(myTr);
+
+            })
+
+        }
+    </script>
+</body>
+
+</html>

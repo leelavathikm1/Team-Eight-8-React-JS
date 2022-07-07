@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="photos"></div>
+    <img src="" alt="">
+    <button type="button" onclick="GetDataFromAPI">GetDataFromAPI</button>
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allPhotos = JSON.parse(this.response)
+                    displayPhotos(allPhotos)
+
+                }
+            };
+
+            getData.open("GET", " https://jsonplaceholder.typicode.com/photos");
+            getData.send();
+        }
+
+        function displayPhotos(allPhotos) {
+            allPhotos.forEach((photos) => {
+                var myPhotosDiv = document.createElement("div")
+                myPhotosDiv.setAttribute("class", "photos");
+
+
+                var myAlbumId = document.createElement("p");
+                myAlbumId.innerHTML = photos.albumId;
+                myPhotosDiv.appendChild(myAlbumId);
+
+                var id = document.createElement("p");
+                id.innerHTML = photos.id;
+                myPhotosDiv.appendChild(id);
+
+                var title = document.createElement("p");
+                title.innerHTML = photos.title;
+                myPhotosDiv.appendChild(title);
+
+                var myurl = document.createElement("p");
+                myurl.innerHTML = photos.url;
+                myPhotosDiv.appendChild(myurl);
+
+                var mythumbnailUrl = document.createElement("p");
+                mythumbnailUrl.innerHTML = photos.thumbnailUrl;
+                myPhotosDiv.appendChild(mythumbnailUrl);
+
+                document.getElementById("photos").appendChild(myPhotosDiv);
+            })
+
+        }
+    </script>
+</body>
+
+</html>
