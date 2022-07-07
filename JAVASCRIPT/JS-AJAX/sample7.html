@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(234, 234, 146);">
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API</button>
+    <table border="1" style="margin-left:300px;">
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>__v</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+         function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allData = JSON.parse(this.response)
+                    displayData(allData)
+                }
+            };
+            getData.open("GET", "https://fakestoreapi.com/users");
+            getData.send();
+        }
+        function  displayData(allData) {
+            allData.forEach((Data) => {
+                var myTr = document.createElement("tr")
+                for(i in Data) {
+                    var myTd = document.createElement("td")
+                    if (i !== "address" &&  i !== "name") {
+                        myTd.innerHTML = Data[i];
+                    }else {
+                        var details = ""
+                        for (a in Data[i]) {
+                            details = details + a +":" + Data[i][a] + "<br>"
+                        }
+                        myTd.innerHTML = details
+                    }
+                    myTr.appendChild(myTd)
+                }
+                document.getElementById("myTbody").appendChild(myTr)
+            })
+        }
+    </script>
+</body>
+</html>
