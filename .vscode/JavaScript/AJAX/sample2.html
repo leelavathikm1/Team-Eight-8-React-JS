@@ -5,13 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Photos</title>
+    <style>
+        body {
+            background-color: thistle;
+        }
+
+        .photos {
+            border: 1px solid;
+            width: 350px;
+            padding: 10px;
+            margin: 10px;
+            float: right;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="photos"></div>
+    <div id="allPhotos"></div>
     <img src="" alt="">
-    <button type="button" onclick="GetDataFromAPI">GetDataFromAPI</button>
+    <button type="button" onclick="GetDataFromAPI()">GetDataFromAPI</button>
     <script>
         function GetDataFromAPI() {
             var getData = new XMLHttpRequest();
@@ -34,10 +47,9 @@
                 var myPhotosDiv = document.createElement("div")
                 myPhotosDiv.setAttribute("class", "photos");
 
-
-                var myAlbumId = document.createElement("p");
-                myAlbumId.innerHTML = photos.albumId;
-                myPhotosDiv.appendChild(myAlbumId);
+                var albumId = document.createElement("p");
+                albumId.innerHTML = photos.albumId;
+                myPhotosDiv.appendChild(albumId);
 
                 var id = document.createElement("p");
                 id.innerHTML = photos.id;
@@ -47,15 +59,18 @@
                 title.innerHTML = photos.title;
                 myPhotosDiv.appendChild(title);
 
-                var myurl = document.createElement("p");
-                myurl.innerHTML = photos.url;
-                myPhotosDiv.appendChild(myurl);
 
-                var mythumbnailUrl = document.createElement("p");
-                mythumbnailUrl.innerHTML = photos.thumbnailUrl;
-                myPhotosDiv.appendChild(mythumbnailUrl);
+                var url = document.createElement("p");
+                url.innerHTML = photos.url;
+                myPhotosDiv.appendChild(url);
 
-                document.getElementById("photos").appendChild(myPhotosDiv);
+
+                var thumbnailUrl = document.createElement("p");
+                thumbnailUrl.innerHTML = photos.thumbnailUrl;
+                myPhotosDiv.appendChild(thumbnailUrl);
+
+
+                document.getElementById("allPhotos").appendChild(myPhotosDiv);
             })
 
         }

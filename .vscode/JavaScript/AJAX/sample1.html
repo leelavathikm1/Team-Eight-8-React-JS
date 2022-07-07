@@ -6,11 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Albums</title>
+    <style>
+        body {
+            background-color: purple;
+
+        }
+
+        button {
+            background-color: skyblue;
+        }
+
+        .Data {
+            background-color: plum;
+            border: 1px solid;
+            width: 350px;
+            padding: 10px;
+            margin: 10px;
+            float: right;
+        }
+    </style>
 </head>
 
 <body>
     <div id="albumDetails"></div>
-    <button type="button" onclick="GetDataFromAPI">GetDataFromAPI</button>
+    <button type="button" onclick="GetDataFromAPI()">GetDataFromAPI</button>
     <script>
         function GetDataFromAPI() {
             var getData = new XMLHttpRequest();
