@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  
+
+        img {
+            width: 100px;
+            border: 2px solid;
+        }
+
+        .photo {
+            width: 200px;
+            height: 370px;
+            padding: 10px;
+            float: left;
+            border: 1px solid;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body >
+    <div id="Photos"></div>
+    <img src="" alt="">
+
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API</button>
+
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () { 
+                if (getData.status ==200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allPhotos = JSON.parse(this.response)
+                    displayPhotos(allPhotos)
+                }
+            };
+            getData.open("GET","https://jsonplaceholder.typicode.com/photos");
+            getData.send();
+        }
+        function displayPhotos(allPhotos) {
+            allPhotos.forEach((photo)=>{
+                var myPhotoDiv = document.createElement("div")
+                myPhotoDiv.setAttribute("class", "photo")
+
+                var myImage = document.createElement("img")
+                myImage.setAttribute("src" ,photo.url)
+                myImage.innerHTML = photo.url;
+
+                var myImage1 = document.createElement("img")
+                myImage1.setAttribute("src" ,photo.thumbnailUrl)
+                myImage1.innerHTML = photo.thumbnailUrl;
+
+                var albumId = document.createElement("p")
+                albumId.innerHTML = photo.albumId;
+
+                var id = document.createElement("p")
+                id.innerHTML = photo.id;
+
+                var title = document.createElement("p")
+                title.innerHTML = photo.title;
+
+                var thumbnailUrl = document.createElement("p")
+                thumbnailUrl.innerHTML = photo.thumbnailUrl;
+
+                myPhotoDiv.appendChild(albumId);
+
+                myPhotoDiv.appendChild(id);
+
+                myPhotoDiv.appendChild(title);
+
+                myPhotoDiv.appendChild(myImage) ;
+
+                myPhotoDiv.appendChild(myImage1);
+
+                document.getElementById("Photos").appendChild(myPhotoDiv);
+            })
+        }
+    </script>
+</body>
+
+</html>

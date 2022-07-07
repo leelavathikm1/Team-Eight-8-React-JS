@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     img {
+            width: 200px;
+            border: 2px solid;
+        }
+
+        .comments {
+            width: 300px;
+            height: 250px;
+            padding: 10px;
+            float: left;
+            border: 2px solid;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body >
+    <div id="comments"></div>
+
+
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API</button>
+
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () { 
+                if (getData.status ==200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allComments = JSON.parse(this.response)
+                    displayComments(allComments)
+                }
+            };
+            getData.open("GET"," https://jsonplaceholder.typicode.com/comments");
+            getData.send();
+        }
+        function displayComments(allComments) {
+            allComments.forEach((comments)=>{
+                var myCommentsDiv = document.createElement("div")
+                myCommentsDiv.setAttribute("class", "comments")
+                
+                var postId = document.createElement("p")
+                postId.innerHTML = comments.postId;
+                var id = document.createElement("p")
+                id.innerHTML = comments.id;
+                var name = document.createElement("p")
+                name.innerHTML = comments.name;
+                var email = document.createElement("p")
+                email.innerHTML = comments.email;
+                var body = document.createElement("p")
+                body.innerHTML = comments.body;
+
+                myCommentsDiv.appendChild(postId);
+                myCommentsDiv.appendChild(id);
+                myCommentsDiv.appendChild(name);
+                myCommentsDiv.appendChild(email) ;
+                myCommentsDiv.appendChild(body);
+               
+
+                document.getElementById("comments").appendChild(myCommentsDiv);
+            })
+        }
+    </script>
+</body>
+
+</html>
