@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul></ul>
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API</button>
+
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allData = JSON.parse(this.response)
+                    displayData(allData)
+                }
+            };
+            getData.open("GET", "http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&pretty=true");
+            getData.send();
+        }
+        function displayData(allData) {
+            allData.forEach((Data) => {
+                var myLi = document.createElement("li")
+
+                var fname = document.createElement("p")
+                fname.innerHTML = Data.fname;
+
+                var lname = document.createElement("p")
+                lname.innerHTML = Data.lname;
+
+                myLi.appendChild(fname);
+                myLi.appendChild(lname);
+                
+                document.querySelector("ul").appendChild(myLi);
+            })
+        }
+    </script>
+</body>
+
+</html>
