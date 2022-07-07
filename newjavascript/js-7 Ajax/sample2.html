@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>albumId</th>
+                <th>id</th>
+                <th>title</th>
+                <th>url</th>
+                <th>thumbnailUrl</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allPhotos = JSON.parse(this.response)
+                    displayPhotos(allPhotos)
+                }
+            };
+            getData.open("GET", "https://jsonplaceholder.typicode.com/photos");
+            getData.send();
+        }
+        function displayPhotos(allPhotos){
+            document.getElementById("myTbody").innerHTML ="";
+            allPhotos.forEach((dispPhoto) =>{
+                var myTr = document.createElement("tr");
+                for(i in dispPhoto) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispPhoto[i];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTbody").appendChild(myTr);
+
+            })
+        }
+    </script>
+</body>
+</html> 

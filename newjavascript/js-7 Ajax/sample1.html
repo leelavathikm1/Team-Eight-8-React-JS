@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         ul{
+            border: 3px solid;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myul"></div>
+    <button type="button" onclick="GetDataFromAPI()">GetData From API</button>
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allData = JSON.parse(this.response)
+                    displayData(allData)
+                }
+            };
+            getData.open("GET", " https://jsonplaceholder.typicode.com/albums");
+            getData.send();
+        }
+        function displayData(allData) {
+            allData.forEach((Data) => {
+                var myul = document.createElement("ul");
+                var userId = document.createElement("p")
+                userId.innerHTML = Data.userId;
+                var id = document.createElement("p")
+                id.innerHTML = Data.id;
+                var title = document.createElement("p")
+                title.innerHTML = Data.title;
+                
+                myul.appendChild(userId);
+                myul.appendChild(id);
+                myul.appendChild(title);
+                
+                document.querySelector("div").appendChild(myul);
+            })
+        }
+    </script>
+</body>
+
+</html> 
+
+
+
+
+   <!-- http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&pretty=true
+ https://fakestoreapi.com/carts
+ https://fakestoreapi.com/users
+ https://jsonplaceholder.typicode.com/comments
+ https://jsonplaceholder.typicode.com/albums
+ https://jsonplaceholder.typicode.com/photos
+ https://jsonplaceholder.typicode.com/todos
+ https://jsonplaceholder.typicode.com/users -->
+
