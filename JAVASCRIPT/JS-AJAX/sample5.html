@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>PostId</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allComments = JSON.parse(this.response)
+                    displayComments(allComments)
+                }
+            };
+            getData.open("GET", " https://jsonplaceholder.typicode.com/comments");
+            getData.send();
+        }
+        function displayComments(allComments){
+            document.getElementById("myTbody").innerHTML ="";
+            allComments.forEach((dispComment) =>{
+                var myTr = document.createElement("tr");
+                for(i in dispComment) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispComment[i];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTbody").appendChild(myTr);
+
+            })
+        }
+    </script>
+</body>
+</html>
