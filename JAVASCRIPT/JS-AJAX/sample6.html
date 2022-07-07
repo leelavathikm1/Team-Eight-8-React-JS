@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>UserName</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+         function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allPerson = JSON.parse(this.response)
+                    displayPerson(allPerson)
+                }
+            };
+            getData.open("GET", "https://jsonplaceholder.typicode.com/users");
+            getData.send();
+        }
+        function  displayPerson(allPerson) {
+            allPerson.forEach((person) => {
+                var myTr = document.createElement("tr")
+                for(i in person) {
+                    var myTd = document.createElement("td")
+                    if (i !== "address" &&  i !== "company") {
+                        myTd.innerHTML = person[i];
+                    }else {
+                        var details = ""
+                        for (a in person[i]) {
+                            details = details + a +":" + person[i][a] + "<br>"
+                        }
+                        myTd.innerHTML = details
+                    }
+                    myTr.appendChild(myTd)
+                }
+                document.getElementById("myTbody").appendChild(myTr)
+            })
+        }
+    </script>
+</body>
+</html>
