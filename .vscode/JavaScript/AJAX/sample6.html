@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <style>
+        table {
+            background-color: skyblue;
+            text-align: center;
+        }
+
+        button {
+            background-color: midnightblue;
+            color: azure;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button type="button" onclick="GetDataFromAPI()">Get Data From API </button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th style="background-color: orange ;">postId</th>
+                <th style="background-color: orange ;">Id</th>
+                <th style="background-color: orange ;">Name</th>
+                <th style="background-color: orange ;">Email </th>
+                <th style="background-color: orange ;">Body</th>
+            </tr>
+
+        </thead>
+        <tbody id="myTable"></tbody>
+    </table>
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response);
+                    var CommentDetails = JSON.parse(this.response);
+                    displayCommentDetails(CommentDetails);
+                }
+            };
+            getData.open("GET", "https://jsonplaceholder.typicode.com/comments");
+            getData.send();
+        }
+
+        function displayCommentDetails(CommentDetails) {
+            CommentDetails.forEach((dispComments) => {
+                var myTr = document.createElement("tr");
+                for (a in dispComments) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = dispComments[a];
+                    myTr.appendChild(myTd);
+                }
+                document.getElementById("myTable").appendChild(myTr)
+            })
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
