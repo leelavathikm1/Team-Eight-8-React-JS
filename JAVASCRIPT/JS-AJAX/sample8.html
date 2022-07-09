@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="Getinfo()">Get Info</button>
+    <table border="1" style="background:rgb(226, 236, 153); color:black;">
+        <thead>
+            <th>Id</th>
+            <th>UserId</th>
+            <th>Date</th>
+            <th>Products</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        function Getinfo() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response)
+                    var allproduct = JSON.parse(this.response)
+                    displayproduct(allproduct)
+                }
+            };
+            getData.open("GET", "https://fakestoreapi.com/carts");
+            getData.send();
+        }
+        function displayproduct(allproduct) {
+            allproduct.forEach((Product, i) => {
+                // console.log(Product)
+                var myTr = document.createElement("tr")
+                for(a in Product) {
+                    var myTd = document.createElement("td")
+                    if(a !== "products"){
+                        myTd.innerHTML = Product[a]
+                    }else{
+                        myTd.innerHTML = JSON.stringify(Product[a])
+                    }
+                    myTr.appendChild(myTd)
+                }
+                document.querySelector("tbody").appendChild(myTr)
+            })
+        }
+    </script>
+</body>
+
+</html>
