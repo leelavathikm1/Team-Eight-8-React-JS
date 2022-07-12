@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="fName">First Name</label> <br>
+        <input type="text" id="fName"> <br> <br>
+
+        <label for="mName">Middle Name</label> <br>
+        <input type="text" id="mName"> <br> <br>
+
+        <label for="lName"> Last Name</label> <br>
+        <input type="text" id="lName"> <br> <br>
+
+        <label for="eMail"> EMail</label> <br>
+        <input type="text" id="eMail"> <br> <br>
+
+        <input type="text" id="IdNo" hidden> <br><br>
+
+        <button type="button" onclick="addStudent()">Add Student</button>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>ID</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allStudents = [];
+        function addStudent() {
+            var Students = {
+                fName: document.getElementById("fName").value,
+                mName: document.getElementById("mName").value,
+                lName: document.getElementById("lName").value,
+                eMail: document.getElementById("eMail").value,
+                id:document.getElementById("IdNo").value,
+            };
+
+            var sendStudent = new XMLHttpRequest()
+            sendStudent.onreadystatechange=function() {
+                if(sendStudent.status == 201 && sendStudent.readyState == 4) {
+                    console.log(Students);
+                }
+            };
+            sendStudent.open("POST", "http://localhost:3000/users");
+            sendStudent.setRequestHeader("Content-type", "application/json");
+            sendStudent.send(JSON.stringify(Students));
+        }
+        getStudentDataFromAPI();
+        function getStudentDataFromAPI() {
+            var getStudentData = new XMLHttpRequest()
+            getStudentData.onreadystatechange = function() {
+                if(getStudentData.status == 200 && getStudentData.readyState == 4){
+                    allStudents=JSON.parse(this.response)
+                    console.log(allStudents);
+                    displayStudents(allStudents);
+                }
+            };
+            getStudentData.open("GET", "http://localhost:3000/users");
+            getStudentData.send();
+        }
+        
+        function displayStudents(allStudentData){
+            allStudentData.forEach((Data) =>{
+                var mytr = document.createElement("tr");
+                for(i in Data){
+                    var mytd = document.createElement("td")
+                    mytd.innerHTML = Data[i];
+                    mytr.appendChild(mytd);
+                }
+                document.querySelector("tbody").appendChild(mytr);
+            })
+        }
+    </script>
+</body>
+
+</html>
