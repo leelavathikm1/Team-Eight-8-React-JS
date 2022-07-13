@@ -15,7 +15,15 @@
       <input type="text" name="" id="lName" />
       <br /><br />
       <input type="text" name="" id="idNo" hidden />
-      <button type="button" onclick="addUser()">Add User</button>
+      <button type="button" onclick="addUser()" id="add">Add User</button>
+      <button
+        type="button"
+        onclick="updateUser()"
+        id="update"
+        style="display: none"
+      >
+        Update User
+      </button>
     </form>
     <hr />
     <table border="1">
@@ -69,9 +77,9 @@
 
       function displayUsers(data) {
         // document.getElementById("myTbody").innerHtml = "";
-        data.forEach((user) => {
+        data.forEach((user, i) => {
           var myTr = document.createElement("tr");
-          for (a in (user, i)) {
+          for (a in user) {
             var myTd = document.createElement("td");
             myTd.innerHTML = user[a];
             myTr.appendChild(myTd);
@@ -93,6 +101,56 @@
           document.getElementById("myTbody").appendChild(myTr);
         });
       }
+
+      function deleteUser(i) {
+        console.log("user Deleted");
+        var delUser = new XMLHttpRequest();
+
+        delUser.onreadystatechange = function () {
+          if (delUser.status == 200 && delUser.readyState == 4) {
+            console.log("User Deleted");
+          }
+        };
+        delUser.open("DELETE", "http://localhost:3000/users/" + allUsers[i].id);
+        delUser.setRequestHeader("Content-type", "application/json");
+        delUser.send();
+      }
+
+      function editUser(i) {
+        console.log("Iam from edit user");
+        document.getElementById("add").style.display = "none";
+        document.getElementById("update").style.display = "block";
+
+        document.getElementById("fName").value = allUsers[i].fName;
+        document.getElementById("lName").value = allUsers[i].lName;
+        document.getElementById("idNo").value = allUsers[i].id;
+      }
+
+      function updateUser() {
+        console.log("Iam From Update User");
+
+        var user = {
+          fName: document.getElementById("fName").value,
+          lName: document.getElementById("lName").value,
+          id: document.getElementById("idNo").value,
+        };
+
+        var sendUser = new XMLHttpRequest();
+
+        sendUser.onreadystatechange = function () {
+          if (sendUser.status == 201 && sendUser.readyState == 4) {
+            getAllUsersFromAPI();
+            console.log("user added ");
+          }
+        };
+        sendUser.open("PUT", "http://localhost:3000/users/" + user.id, user);
+        sendUser.setRequestHeader("Content-type", "application/json");
+        sendUser.send(JSON.stringify(user));
+
+        document.getElementById("add").style.display = "block";
+        document.getElementById("update").style.display = "none";
+      }
+
       displayUsers(allUsers);
     </script>
   </body>

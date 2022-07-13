@@ -11,19 +11,14 @@
       "id": 2
     },
     {
-      "fName": "Km.Leela",
-      "lName": "VM",
+      "fName": "Leelavathi",
+      "lName": "KM",
       "id": 3
     },
     {
-      "fName": "Pavan",
+      "fName": "Pavan Reddy",
       "lName": "Kumar",
       "id": 4
-    },
-    {
-      "fName": "Km.Leela",
-      "lName": "VM",
-      "id": 5
     },
     {
       "fName": "Shruti",
@@ -36,39 +31,14 @@
       "id": 7
     },
     {
-      "fName": "",
-      "lName": "",
-      "id": 8
-    },
-    {
-      "fName": "",
-      "lName": "",
-      "id": 9
-    },
-    {
-      "fName": "",
-      "lName": "",
-      "id": 10
-    },
-    {
       "fName": "Shruti",
       "lName": "sekar",
       "id": 11
     },
     {
-      "fName": "",
-      "lName": "",
+      "fName": "Princella",
+      "lName": "princi",
       "id": 12
-    },
-    {
-      "fName": "",
-      "lName": "",
-      "id": 13
-    },
-    {
-      "fName": "",
-      "lName": "",
-      "id": 14
     }
   ]
 }
