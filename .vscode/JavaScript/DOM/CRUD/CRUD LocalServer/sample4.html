@@ -120,9 +120,10 @@
                     getAlbumsFromAPI()
 
 
-                    document.getElementById("addAlbums").style.display = "block"
-                    document.getElementById("Update").style.display = "none"
+
                 }
+                document.getElementById("addAlbums").style.display = "block"
+                document.getElementById("Update").style.display = "none"
             }
 
             sendData.open("PUT", "http://localhost:3000/albums" + user.id)
