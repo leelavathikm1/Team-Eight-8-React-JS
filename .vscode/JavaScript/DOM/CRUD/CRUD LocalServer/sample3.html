@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <style>
+        form {
+            text-align: center;
+            background-color: rosybrown;
+        }
+
+        table {
+            text-align: center;
+            background-color: plum;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="">
+        <label for=" ">Post Id</label>
+        <input type="text" name="" id="PostId"><br><br>
+        <label for="">id</label>
+        <input type="text" name="" id="id"><br><br>
+        <label for="">Name</label>
+        <input type="text" name="" id="name"><br><br>
+        <label for="">Email</label>
+        <input type="text" name="" id="Email"><br><br>
+        <label for="">Body</label>
+        <input type="text" name="" id="body"><br><br>
+        <button type="button" onclick="getCommentsFromAPI()" id="Comments">Comments</button>
+        <button type="button" onclick="updateComments()" id="Update" style="display: none">update Comments</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Post Id</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Body</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allComments = []
+        function getCommentsFromAPI() {
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    allComments = JSON.parse(getData.response)
+                    console.log(allComments)
+                    displayComments(allComments)
+                    clearForm();
+                }
+            }
+            getData.open("GET", "http://localhost:3000/comments")
+            getData.send()
+        }
+
+
+
+
+        function clearForm() {
+            document.getElementById("PostId").value = "";
+            document.getElementById("id").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("Email").value = "";
+            document.getElementById("body").value = "";
+
+        }
+
+        function displayComments(data) {
+
+            data.forEach((user, i) => {
+                var myTr = document.createElement("Tr")
+                for (a in user) {
+                    var myTd = document.createElement("Td")
+                    myTd.innerHTML = user[a]
+                    myTr.appendChild(myTd)
+
+                }
+                var editTd = document.createElement("Td")
+                var editBtn = document.createElement("button")
+                editBtn.setAttribute("onclick", "editComments(" + i + ")")
+                editBtn.innerHTML = "Edit"
+                editTd.appendChild(editBtn)
+                myTr.appendChild(editTd)
+
+
+
+                var deleteTd = document.createElement("Td")
+                var deletebtn = document.createElement("button")
+                deletebtn.setAttribute("onclick", "deleteComments(" + i + ")")
+                deletebtn.innerHTML = "Delete"
+                deleteTd.appendChild(deletebtn)
+                myTr.appendChild(deleteTd)
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function deleteComments(i) {
+            console.log(allComments[i])
+            var delComments = new XMLHttpRequest();
+            delComments.onreadystatechange = function () {
+                if (delComments.status == 200 && delComments.readyState == 4) {
+                    console.log("deleteComments")
+                }
+            }
+            delComments.open("DELETE", "http://localhost:3000/comments/" + allComments[i].id)
+            delComments.setRequestHeader("content-type", "application/json")
+            delComments.send()
+        }
+        function editComments(i) {
+            document.getElementById("Comments").style.display = "none"
+            document.getElementById("Update").style.display = "block"
+
+            document.getElementById("PostId").value = allComments[i].postId;
+            document.getElementById("id").value = allComments[i].id;
+            document.getElementById("name").value = allComments[i].name;
+            document.getElementById("Email").value = allComments[i].email;
+            document.getElementById("body").value = allComments[i].body;
+
+        }
+        function updateComments() {
+            var user = {
+                PostId: document.getElementById("PostId").value,
+                id: document.getElementById("id").value,
+                name: document.getElementById("name").value,
+                Email: document.getElementById("Email").value,
+                body: document.getElementById("body").value,
+            }
+            clearForm()
+
+            var sendData = new XMLHttpRequest();
+            sendData.onreadystatechange = function () {
+                if (sendData.status == 200 && sendData.readyState == 4) {
+                    getCommentsFromAPI()
+
+
+
+                }
+                document.getElementById("Comments").style.display = "block"
+                document.getElementById("Update").style.display = "none"
+            }
+
+            sendData.open("PUT", "http://localhost:3000/comments/" + user.id)
+            sendData.setRequestHeader("content-type", "application/json")
+            sendData.send(JSON.stringify(user))
+
+            displayComments();
+        }
+
+
+
+    </script>
+
+</body>

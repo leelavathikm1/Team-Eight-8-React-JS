@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <style>
+        body {
+            background-color: black;
+            text-align: center;
+            text-decoration: solid;
+        }
+
+        table {
+            text-align: center;
+            background-color: powderblue;
+            color: indigo;
+            width: 1335px;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" onclick="GetDataFromAPI()"> Get Data From API</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Address</th>
+
+                <th>Id</th>
+                <th>Email</th>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>V</th>
+            </tr>
+        </thead>
+        <tbody id="myTable"></tbody>
+    </table>
+    <script>
+        function GetDataFromAPI() {
+            var getData = new XMLHttpRequest();
+
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    console.log(this.response);
+                    var UserDetails = JSON.parse(this.response);
+                    displayUserDetails(UserDetails);
+                }
+
+            }
+            getData.open("GET", "https://fakestoreapi.com/users");
+            getData.send();
+
+        };
+
+
+        function displayUserDetails(UserDetails) {
+            UserDetails.forEach((dispUsers) => {
+                var myTr = document.createElement("tr");
+                for (a in dispUsers) {
+                    var myTd = document.createElement("td");
+                    if (a !== "address" && a !== "name") {
+                        myTd.innerHTML = dispUsers[a];
+
+                    }
+
+                    // else if {
+                    //     var details1 = ""
+                    //     for(c in dispUsers[a]) {
+                    //         details1 = details1 + c + ":" + dispUsers[a][c] + "<br>"
+                    //     }
+                    // }
+
+                    else {
+                        var details = ""
+                        for (b in dispUsers[a]) {
+                            details = details + b + ":" + dispUsers[a][b] + "<br>"
+                        }
+                        myTd.innerHTML = details
+                    }
+                    myTr.appendChild(myTd);
+
+                }
+                document.getElementById("myTable").appendChild(myTr);
+            })
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">userId</label>
+        <input type="text" name="" id="userId"><br><br>
+        <label for="">Id</label>
+        <input type="text" name="" id="id"><br><br>
+        <label for="">title</label>
+        <input type="text" name="" id="title"><br><br>
+        <button type="button" onclick="getAlbumsFromAPI()" id="addAlbums">addAlbums</button>
+        <button type="button " onclick="UpdateAlbums()" id="Update" style="display: none">Update</button>
+
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>userId</th>
+                <th>Id</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allAlbums = []
+        function getAlbumsFromAPI() {
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function () {
+
+                if (getData.status == 200 && getData.readyState == 4) {
+                    allAlbums = JSON.parse(getData.response)
+                    console.log(allAlbums)
+                    displayAlbums(allAlbums)
+                    clearForm();
+                }
+            }
+            getData.open("GET", "http://localhost:3000/albums")
+            getData.send()
+        }
+
+        function clearForm() {
+            document.getElementById("userId").value = "";
+            document.getElementById("id").value = "";
+            document.getElementById("title").value = "";
+        }
+
+
+        function displayAlbums(data) {
+
+            data.forEach((user, i) => {
+                var myTr = document.createElement("Tr")
+                for (a in user) {
+                    var myTd = document.createElement("Td")
+                    myTd.innerHTML = user[a]
+                    myTr.appendChild(myTd)
+
+                }
+                var editTd = document.createElement("Td")
+                var editBtn = document.createElement("button")
+                editBtn.setAttribute("onclick", "editAlbums(" + i + ")")
+                editBtn.innerHTML = "Edit"
+                editTd.appendChild(editBtn)
+                myTr.appendChild(editTd)
+
+
+
+                var deleteTd = document.createElement("Td")
+                var deletebtn = document.createElement("button")
+                deletebtn.setAttribute("onclick", "deleteAlbums(" + i + ")")
+                deletebtn.innerHTML = "Delete"
+                deleteTd.appendChild(deletebtn)
+                myTr.appendChild(deleteTd)
+                document.querySelector("tbody").appendChild(myTr)
+            })
+
+        }
+        function deleteAlbums(i) {
+            console.log(allAlbums[i])
+            var delAlbums = new XMLHttpRequest();
+            delAlbums.onreadystatechange = function () {
+                if (delComments.status == 200 && delComments.readyState == 4) {
+                    console.log("deleteAlbums")
+                }
+
+            }
+
+            delComments.open("DELETE", "http://localhost:3000/albums/" + allAlbums[i].id)
+            delComments.setRequestHeader("content-type", "application/json")
+            delComments.send()
+        }
+        function editAlbums(i) {
+            document.getElementById("addAlbums").style.display = "none"
+            document.getElementById("Update").style.display = "block"
+
+            document.getElementById("userId").value = allAlbums[i].userId;
+            document.getElementById("id").value = allAlbums[i].id;
+            document.getElementById("title").value = allAlbums[i].title;
+        }
+        function UpdateAlbums() {
+            var user = {
+                userId: document.getElementById("userId").value,
+                id: document.getElementById("id").value,
+                title: document.getElementById("title").value,
+
+            }
+            clearForm()
+
+            var sendData = new XMLHttpRequest();
+            sendData.onreadystatechange = function () {
+                if (sendData.status == 200 && sendData.readyState == 4) {
+                    getAlbumsFromAPI()
+
+
+                    document.getElementById("addAlbums").style.display = "block"
+                    document.getElementById("Update").style.display = "none"
+                }
+            }
+
+            sendData.open("PUT", "http://localhost:3000/albums" + user.id)
+            sendData.setRequestHeader("content-type", "application/json")
+            sendData.send(JSON.stringify(user))
+
+
+        }
+
+
+    </script>
+</body>
