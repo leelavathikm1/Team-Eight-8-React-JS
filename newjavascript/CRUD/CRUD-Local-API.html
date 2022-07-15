@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="fName">First Name</label> <br>
+        <input type="text" id="fName"> <br> <br>
+         <label for="mName">Middle Name</label> <br>
+        <input type="text" id="mName"> <br> <br>
+        <label for="lName"> Last Name</label> <br>
+        <input type="text" id="lName"> <br> <br>
+        <label for="eMail"> EMail</label> <br>
+        <input type="text" id="eMail"> <br> <br>
+        <label for="mobileNo"> MobileNo</label> <br>
+        <input type="text" id="mobileNo"> <br> <br>
+        <input type="text" id="IdNo" hidden> <br><br>
+        <button type="button" onclick="addUser()">Add User</button>    
+        
+
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>MobileNo</th>
+                <th>ID</th>
+            </tr>
+        </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+        var allUsers = [];
+        function addUser() {
+            var Users = {
+                fName: document.getElementById("fName").value,
+                mName: document.getElementById("mName").value,
+                lName: document.getElementById("lName").value,
+                eMail: document.getElementById("eMail").value,
+                mobileNo: document.getElementById("mobileNo").value,
+                id:document.getElementById("IdNo").value,
+            };
+
+            var sendUser = new XMLHttpRequest()
+            sendUser.onreadystatechange=function() {
+                if(sendUser.status == 201 && sendUser.readyState == 4) {
+                    console.log(Users);
+                }
+            };
+            sendUser.open("POST", "http://localhost:3000/users");
+            sendUser.setRequestHeader("Content-type", "application/json");
+            sendUser.send(JSON.stringify(Users));
+        }
+        getUserDataDataFromAPI();
+        function getUserDataDataFromAPI() {
+            var getUserData = new XMLHttpRequest()
+            getUserData.onreadystatechange = function() {
+                if(getUserData.status == 200 && getUserData.readyState == 4){
+                    allUsers=JSON.parse(this.response)
+                    console.log(allUsers);
+                    displayUsers(allUsers);
+                }
+            };
+            getUserData.open("GET", "http://localhost:3000/users");
+            getUserData.send();
+        }
+ 
+        function displayUsers(allUserData){
+            allUserData.forEach((Data) =>{
+                var mytr = document.createElement("tr");
+                for(i in Data){
+                    var mytd = document.createElement("td")
+                    mytd.innerHTML = Data[i];
+                    mytr.appendChild(mytd);
+                }
+                document.querySelector("tbody").appendChild(mytr);
+            })
+        }
+    </script>
+</body>
+
+</html>
