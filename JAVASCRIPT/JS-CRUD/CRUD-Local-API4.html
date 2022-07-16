@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="">First Name</label>
+        <input type="text" name="" id="fname"> <br><br>
+
+        <label for="">Last Name</label>
+        <input type="text" name="" id="lname"> <br><br>
+
+        <label for="">Telephone</label>
+        <input type="text" name="" id="tel"> <br><br>
+
+        <label for="">Address</label>
+        <input type="text" name="" id="address"> <br><br>
+
+        <label for="">City</label>
+        <input type="text" name="" id="city"> <br><br>
+
+        <label for="">State</label>
+        <input type="text" name="" id="state"> <br><br>
+
+        <label for="">Zip</label>
+        <input type="text" name="" id="zip"> <br><br>
+
+        <button type="button" onclick="addData()" id="add">Add Data</button>
+        <button type="button" onclick="updateData()" id="update" style="display: none;">Update Data</button>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Telephone</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        var allData = [];
+        getAllDataFromAPI()
+        function getAllDataFromAPI() {
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    allData = JSON.parse(getData.response);
+                    console.log(allData);
+                    displayUsers(allData);
+                }
+            };
+            getData.open("GET", "http://localhost:3000/Data");
+            getData.send();
+        }
+        function displayUsers(data) {
+            data.forEach((user, i) => {
+                var myTr = document.createElement("tr")
+                for (a in user) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = user[a];
+                    myTr.appendChild(myTd);
+                }
+
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.setAttribute("onclick", "editData(" + i + ")")
+                editBtn.innerHTML = "Edit";
+                editTd.appendChild(editBtn);
+                myTr.appendChild(editTd);
+
+                var delTd = document.createElement("td");
+                var delBtn = document.createElement("button");
+                delBtn.setAttribute("onclick", "deleteData(" + i + ")");
+                delBtn.innerHTML = "Delete";
+                delTd.appendChild(delBtn);
+                myTr.appendChild(delTd);
+
+                document.getElementById("myTbody").appendChild(myTr);
+            })
+        }
+
+        function deleteData(i) {
+            console.log("Comment Deleted");
+            var delData = new XMLHttpRequest();
+
+            delData.onreadystatechange = function () {
+                if (delData.status == 200 && delData.readyState == 4) {
+                    console.log("Comment Deleted");
+                }
+            };
+            delData.open("DELETE", "http://localhost:3000/Data/" + allData[i].id);
+            delData.setRequestHeader("Content-type", "application/json");
+            delData.send();
+        }
+        function editData(i) {
+            console.log("Edit Data");
+            document.getElementById("add").style.display = "none";
+            document.getElementById("update").style.display = "block";
+
+            document.getElementById("fname").value = allData[i].fname;
+            document.getElementById("lname").value = allData[i].lname;
+            document.getElementById("tel").value = allData[i].tel;
+            document.getElementById("address").value=allData[i].address;
+            document.getElementById("city").value=allData[i].city;
+            document.getElementById("state").value=allData[i].state;
+            document.getElementById("zip").value=allData[i].zip;
+        }
+
+        function updateData() {
+            console.log("Update Data");
+            var user ={
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                tel:document.getElementById("tel").value,
+                address:document.getElementById("address").value,
+                city:document.getElementById("city").value,
+                state:document.getElementById("state").value,
+                zip:document.getElementById("zip").value,
+            };
+            var sendData = new XMLHttpRequest();
+            sendData.onreadystatechange = function(){
+                if (sendData.status == 200 && sendData.readyState == 4) {
+                    getAllDataFromAPI()
+                    console.log("User Added");
+                }
+            };
+            sendData.open("PUT", "http://localhost:3000/Data/" + user.id,user);
+            sendData.setRequestHeader("Content-type", "application/json");
+            sendData.send(JSON.stringify(user));
+
+            document.getElementById("add").style.display="block";
+            document.getElementById("update").style.display ="none"
+        }
+
+    </script>
+</body>
+
+</html>
