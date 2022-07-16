@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <style>
+        form {
+            text-align: center;
+            background-color: darkgrey;
+            border: 5px solid;
+            margin: 10px;
+            padding: 10px;
+
+        }
+
+        table {
+            border: 5px solid;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            background-color: darkgrey;
+            width: 1318px;
+
+
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <form action="">
+        <label for="">Album Id</label>
+        <input type="text" name="" id="albumId"><br><br>
+        <label for="">Id</label>
+        <input type="text" name="" id="id"><br><br>
+        <label for="">Title</label>
+        <input type="text" name="" id="title"><br><br>
+        <label for="">Url</label>
+        <input type="text" name="" id="url"><br><br>
+        <label for="">ThumbnailUrl</label>
+        <input type="text" name="" id="thumbnailUrl"><br><br>
+
+
+        <button type="button" onclick="addUser()" id="Photos">Photos</button>
+        <button type="button" onclick="updatePhotos()" id="Update" style="display: none">update Photos</button>
+
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Album Id</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Url</th>
+                <th>ThumbnailUrl</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="PhotosTable"></tbody>
+    </table>
+    <script>
+        var allPhotos = []
+        getPhotosFromAPI()
+        function getPhotosFromAPI() {
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    allPhotos = JSON.parse(getData.response)
+                    console.log(allPhotos)
+                    displayPhotos(allPhotos)
+
+                }
+            }
+            getData.open("GET", "http://localhost:3000/photos")
+            getData.send()
+        }
+        function displayPhotos(data) {
+
+            data.forEach((user, i) => {
+                var myTr = document.createElement("Tr")
+                for (a in user) {
+                    var myTd = document.createElement("Td")
+                    myTd.innerHTML = user[a]
+                    myTr.appendChild(myTd)
+
+                }
+                console.log(user[a])
+
+                var editTd = document.createElement("Td")
+                var editBtn = document.createElement("button")
+                editBtn.setAttribute("onclick", "editPhotos(" + i + ")")
+                editBtn.innerHTML = "Edit"
+                editTd.appendChild(editBtn)
+                myTr.appendChild(editTd)
+
+
+
+                var deleteTd = document.createElement("Td")
+                var deletebtn = document.createElement("button")
+                deletebtn.setAttribute("onclick", "deletePhotos(" + i + ")")
+                deletebtn.innerHTML = "Delete"
+                deleteTd.appendChild(deletebtn)
+                myTr.appendChild(deleteTd)
+
+                document.getElementById("PhotosTable").appendChild(myTr)
+
+            });
+        }
+
+        function deletePhotos(i) {
+            console.log("delete Photos")
+            var delPhotos = new XMLHttpRequest();
+            delPhotos.onreadystatechange = function () {
+                if (delPhotos.status == 200 && delPhotos.readyState == 4) {
+                    console.log("deletingPhotos")
+                }
+            }
+            delPhotos.open("DELETE", "http://localhost:3000/photos/" + allPhotos[i].id)
+            delPhotos.setRequestHeader("content-type", "application/json")
+            delPhotos.send()
+        }
+        function editPhotos(i) {
+            document.getElementById("Photos").style.display = "none"
+
+            document.getElementById("Update").style.display = "block"
+
+            document.getElementById("albumId").value = allPhotos[i].albumId;
+            document.getElementById("id").value = allPhotos[i].id;
+            document.getElementById("title").value = allPhotos[i].title;
+            document.getElementById("url").value = allPhotos[i].url;
+            document.getElementById("thumbnailUrl").value = allPhotos[i].thumbnailUrl;
+
+
+        }
+
+        function updatePhotos() {
+            var user = {
+                albumId: document.getElementById("albumId").value,
+                id: document.getElementById("id").value,
+                title: document.getElementById("title").value,
+                url: document.getElementById("url").value,
+                thumbnailUrl: document.getElementById("thumbnailUrl").value,
+
+            }
+
+            var sendData = new XMLHttpRequest();
+            sendData.onreadystatechange = function () {
+                if (sendData.status == 200 && sendData.readyState == 4) {
+
+                    console.log("Photos added")
+
+
+                }
+
+            }
+
+
+            sendData.open("PUT", "http://localhost:3000/photos/" + user.id, user)
+            sendData.setRequestHeader("content-type", "application/json")
+            sendData.send(JSON.stringify(user))
+
+            document.getElementById("Photos").style.display = "block"
+            document.getElementById("Update").style.display = "none"
+
+
+        }
+
+        displayPhotos(allPhotos)
+
+    </script>
+
+</body>

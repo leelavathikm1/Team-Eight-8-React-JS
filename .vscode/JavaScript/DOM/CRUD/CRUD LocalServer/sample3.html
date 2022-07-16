@@ -33,7 +33,7 @@
         <input type="text" name="" id="Email"><br><br>
         <label for="">Body</label>
         <input type="text" name="" id="body"><br><br>
-        <button type="button" onclick="getCommentsFromAPI()" id="Comments">Comments</button>
+        <button type="button" onclick="addUser()" id="Comments">Comments</button>
         <button type="button" onclick="updateComments()" id="Update" style="display: none">update Comments</button>
     </form>
 
@@ -49,10 +49,12 @@
                 <th>Delete</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody id="myTbody"></tbody>
     </table>
     <script>
+
         var allComments = []
+        getCommentsFromAPI()
         function getCommentsFromAPI() {
             var getData = new XMLHttpRequest();
             getData.onreadystatechange = function () {
@@ -60,7 +62,7 @@
                     allComments = JSON.parse(getData.response)
                     console.log(allComments)
                     displayComments(allComments)
-                    clearForm();
+                    // clearForm();
                 }
             }
             getData.open("GET", "http://localhost:3000/comments")
@@ -70,14 +72,14 @@
 
 
 
-        function clearForm() {
-            document.getElementById("PostId").value = "";
-            document.getElementById("id").value = "";
-            document.getElementById("name").value = "";
-            document.getElementById("Email").value = "";
-            document.getElementById("body").value = "";
+        // function clearForm() {
+        //     document.getElementById("PostId").value = "";
+        //     document.getElementById("id").value = "";
+        //     document.getElementById("name").value = "";
+        //     document.getElementById("Email").value = "";
+        //     document.getElementById("body").value = "";
 
-        }
+        // }
 
         function displayComments(data) {
 
@@ -89,6 +91,8 @@
                     myTr.appendChild(myTd)
 
                 }
+                console.log(user[a])
+
                 var editTd = document.createElement("Td")
                 var editBtn = document.createElement("button")
                 editBtn.setAttribute("onclick", "editComments(" + i + ")")
@@ -104,11 +108,13 @@
                 deletebtn.innerHTML = "Delete"
                 deleteTd.appendChild(deletebtn)
                 myTr.appendChild(deleteTd)
-                document.querySelector("tbody").appendChild(myTr)
+
+                document.getElementById("myTbody").appendChild(myTr)
+
             });
         }
         function deleteComments(i) {
-            console.log(allComments[i])
+            console.log("delete Comments")
             var delComments = new XMLHttpRequest();
             delComments.onreadystatechange = function () {
                 if (delComments.status == 200 && delComments.readyState == 4) {
@@ -138,28 +144,31 @@
                 Email: document.getElementById("Email").value,
                 body: document.getElementById("body").value,
             }
-            clearForm()
+            // clearForm()
 
             var sendData = new XMLHttpRequest();
             sendData.onreadystatechange = function () {
                 if (sendData.status == 200 && sendData.readyState == 4) {
-                    getCommentsFromAPI()
-
+                    // getCommentsFromAPI()
+                    console.log("Comments added")
 
 
                 }
-                document.getElementById("Comments").style.display = "block"
-                document.getElementById("Update").style.display = "none"
+
             }
 
-            sendData.open("PUT", "http://localhost:3000/comments/" + user.id)
+
+            sendData.open("PUT", "http://localhost:3000/comments/" + user.id, user)
             sendData.setRequestHeader("content-type", "application/json")
             sendData.send(JSON.stringify(user))
 
-            displayComments();
+            document.getElementById("Comments").style.display = "block"
+            document.getElementById("Update").style.display = "none"
+
+
         }
 
-
+        displayComments(allComments)
 
     </script>
 

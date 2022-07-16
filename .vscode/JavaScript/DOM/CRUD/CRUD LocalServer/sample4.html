@@ -5,10 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Albums</title>
+    <style>
+        form {
+            text-align: center;
+            background-color: palegreen;
+            border: 5px solid;
+            margin: 10px;
+            padding: 10px;
+
+        }
+
+        table {
+            border: 5px solid;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            background-color: palegreen;
+            width: 1318px;
+
+
+
+        }
+    </style>
 </head>
 
 <body>
+
     <form action="">
         <label for="">userId</label>
         <input type="text" name="" id="userId"><br><br>
@@ -16,22 +39,26 @@
         <input type="text" name="" id="id"><br><br>
         <label for="">title</label>
         <input type="text" name="" id="title"><br><br>
-        <button type="button" onclick="getAlbumsFromAPI()" id="addAlbums">addAlbums</button>
-        <button type="button " onclick="UpdateAlbums()" id="Update" style="display: none">Update</button>
+        <button type="button" onclick="AddUser()" id="addAlbums">Add Albums</button>
+        <button type="button " onclick="UpdateAlbums()" id="Update" style="display: none">Update Albums</button>
 
     </form>
     <table border="1">
         <thead>
             <tr>
-                <th>userId</th>
+                <th>UserId</th>
                 <th>Id</th>
                 <th>Title</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody></tbody>
     </table>
     <script>
+
         var allAlbums = []
+        getAlbumsFromAPI()
         function getAlbumsFromAPI() {
             var getData = new XMLHttpRequest();
             getData.onreadystatechange = function () {
@@ -40,18 +67,13 @@
                     allAlbums = JSON.parse(getData.response)
                     console.log(allAlbums)
                     displayAlbums(allAlbums)
-                    clearForm();
+
                 }
             }
             getData.open("GET", "http://localhost:3000/albums")
             getData.send()
         }
 
-        function clearForm() {
-            document.getElementById("userId").value = "";
-            document.getElementById("id").value = "";
-            document.getElementById("title").value = "";
-        }
 
 
         function displayAlbums(data) {
@@ -87,15 +109,15 @@
             console.log(allAlbums[i])
             var delAlbums = new XMLHttpRequest();
             delAlbums.onreadystatechange = function () {
-                if (delComments.status == 200 && delComments.readyState == 4) {
+                if (delAlbums.status == 200 && delAlbums.readyState == 4) {
                     console.log("deleteAlbums")
                 }
 
             }
 
-            delComments.open("DELETE", "http://localhost:3000/albums/" + allAlbums[i].id)
-            delComments.setRequestHeader("content-type", "application/json")
-            delComments.send()
+            delAlbums.open("DELETE", "http://localhost:3000/albums/" + allAlbums[i].id)
+            delAlbums.setRequestHeader("content-type", "application/json")
+            delAlbums.send()
         }
         function editAlbums(i) {
             document.getElementById("addAlbums").style.display = "none"
@@ -122,17 +144,18 @@
 
 
                 }
-                document.getElementById("addAlbums").style.display = "block"
-                document.getElementById("Update").style.display = "none"
-            }
 
-            sendData.open("PUT", "http://localhost:3000/albums" + user.id)
+            }
+            document.getElementById("addAlbums").style.display = "block"
+            document.getElementById("Update").style.display = "none"
+
+            sendData.open("PUT", "http://localhost:3000/albums" + user.id, user)
             sendData.setRequestHeader("content-type", "application/json")
             sendData.send(JSON.stringify(user))
 
 
         }
-
+        displayAlbums(allAlbums)
 
     </script>
 </body>
