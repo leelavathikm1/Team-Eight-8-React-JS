@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="">UserId</label>
+        <input type="text" name="" id="userid"> <br> <br>
+
+
+        <label for="">id</label>
+        <input type="text" name="" id="id"><br><br>
+
+        <label for="">Title</label>
+        <input type="text" name="" id="title"><br><br>
+
+        <label for="">Body</label>
+        <input type="text" name="" id="body"> <br><br>
+
+        <button type="button" onclick="addUser()" id="add">Add User</button>
+        <button type="button" onclick="updateUser()" id="update" style="display: none;">Update User</button>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>UserId</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+    <script>
+        var allUsers = []
+        getUsersFromAPI()
+        function getUsersFromAPI() {
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function () {
+                if (getData.status == 200 && getData.readyState == 4) {
+                    allUsers = JSON.parse(getData.response)
+                    console.log(allUsers);
+                    displayUsers(allUsers);
+                  
+                }
+            };
+            getData.open("GET", "http://localhost:3000/Posts")
+            getData.send();
+        }
+        function displayUsers(data) {
+            data.forEach((user, i) => {
+                var myTr = document.createElement("tr")
+                for (b in user) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = user[b];
+                    myTr.appendChild(myTd);
+                }
+                console.log(user[b]);
+
+                var editTd = document.createElement("td")
+                var editBtn = document.createElement("button")
+                editBtn.setAttribute("onclick", "editUser(" + i + ")")
+                editBtn.innerHTML = "Edit"
+                editTd.appendChild(editBtn)
+                myTr.appendChild(editTd)
+
+                var delTd = document.createElement("td")
+                var delBtn = document.createElement("button")
+                delBtn.setAttribute("onclick", "deleteUser(" + i + ")")
+                delBtn.innerHTML = "Delete"
+                delTd.appendChild(delBtn)
+                myTr.appendChild(delTd)
+
+                document.getElementById("myTbody").appendChild(myTr)
+
+            });
+        }
+        function deleteUser(i) {
+            console.log("Todos Data deleted")
+            var delUser = new XMLHttpRequest();
+            delUser.onreadystatechange = function () {
+                if (delUser.status == 200 && delUser.readyState == 4) {
+                    console.log("Todos Data deleted")
+                }
+            }
+            delUser.open("DELETE", "http://localhost:3000/Posts/" + allUsers[i].id)
+            delUser.setRequestHeader("Content-type", "application/json")
+            delUser.send();
+        }
+        function editUser(i) {
+            console.log("Edit Todos");
+
+            document.getElementById("add").style.display = "none";
+            document.getElementById("update").style.display = "block";
+
+            document.getElementById("userid").value = allUsers[i].userid;
+            document.getElementById("id").value = allUsers[i].id;
+            document.getElementById("title").value = allUsers[i].title;
+            document.getElementById("body").value = allUsers[i].body;
+        }
+        function updateUser() {
+            console.log("Update Todos")
+
+            var user = {
+                userid: document.getElementById("userid").value,
+                id: document.getElementById("id").value,
+                title: document.getElementById("title").value,
+                body: document.getElementById("body").value,
+            }
+            var sendData = new XMLHttpRequest();
+            sendData.onreadystatechange = function () {
+                if (sendData.status == 200 && sendData.readyState == 4) {
+                    console.log("Todos Added") 
+                }
+            };
+
+            sendData.open("PUT", "http://localhost:3000/Posts/" + user.id,user)
+            sendData.setRequestHeader("Content-type", "application/json")
+            sendData.send(JSON.stringify(user))
+
+            document.getElementById("add").style.display= "block"
+            document.getElementById("update").style.display= "none"
+        }
+        displayUsers(allUsers);
+    
+    </script>
+</body>
+
+</html>
