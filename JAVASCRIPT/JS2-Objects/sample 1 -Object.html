@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:hover{
+            color: red;
+        }
+        img{
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(222, 190, 190); border:2px solid black;">
+    <h2> MNC Company's</h2>
+    <p>A multinational company (MNC) is a corporate organization that owns and controls the production of goods or
+        services in at least one country other than its home country.</p> <br>
+    <button onclick="Microsoft()">Microsoft</button>
+    <button onclick="Apple()">Apple</button>
+    <button onclick="TCS()">TCS</button>
+    <button onclick="Accenture()">Accenture</button>
+    <button onclick="IBM()">IBM</button>
+    <button onclick="CapGemini()">CapGemini</button>
+    <button onclick="Infosys()">Infosys</button>
+    <button onclick="Wipro()">Wipro</button>
+    <button onclick="HCL()">HCL</button>
+    <button onclick="TechMahindra()">Tech Mahindra</button>
+    <hr>
+    <h3 id="CompanyName"></h3>
+    <h3 id="Founders"></h3>
+    <img src="" id="Logo" alt="">
+    <h3 id="CEO"></h3>
+    <h5 id="AboutCompany"></h5>
+    <h3 id="Employees"></h3>
+    <script>
+        var company1 = {
+            CompanyName: "Microsoft",
+            Founder: "Bill Gates",
+            Logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWCZER?ver=1433&q=90&m=6&h=195&w=348&b=%23FFFFFFFF&l=f&o=t&aim=true",
+            CEO: "Satya Nadella",
+            AboutCompany: "Microsoft is an American multinational technology corporation which produces computer software, consumer electronics, personal computers, and related services headquartered at the Microsoft Redmond campus located in Redmond, Washington, United States.",
+            Employees:"182,268 (2021)"
+        }
+        function Microsoft() {
+            document.getElementById("CompanyName").innerHTML = company1.CompanyName;
+            document.getElementById("Founders").innerHTML = company1.Founder;
+            document.getElementById("Logo").setAttribute("src", company1.Logo);
+            document.getElementById("CEO").innerHTML = company1.CEO;
+            document.getElementById("AboutCompany").innerHTML = company1.AboutCompany;
+            document.getElementById("Employees").innerHTML = company1.Employees;
+        }
+
+        var company2 = {
+            CompanyName:"APPLE",
+            Founder:"Steve Jobs",
+            Logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3isC_ZUnQaTxH4bbYN3zObpXCYEmyKT-1zA&usqp=CAU",
+            CEO:"Tim COOK",
+            AboutCompany:"Apple Inc. is an American multinational technology company that specializes in consumer electronics, software and online services headquartered in Cupertino, California, United States.",
+            Employees:"154,000 (2021)"
+        }
+        function Apple() {
+            document.getElementById("CompanyName").innerHTML = company2.CompanyName;
+            document.getElementById("Founders").innerHTML = company2.Founder;
+            document.getElementById("Logo").setAttribute("src", company2.Logo);
+            document.getElementById("CEO").innerHTML = company2.CEO;
+            document.getElementById("AboutCompany").innerHTML = company2.AboutCompany;
+            document.getElementById("Employees").innerHTML = company2.Employees;
+        }
+
+        var company3 = {
+            CompanyName:"Tata Consultancy Services",
+            Founder:"Tata Sons",
+            Logo:"https://upload.wikimedia.org/wikipedia/hi/0/0c/TCS_Logo.svg.png",
+            CEO:"Rajesh Gopinathan",
+            AboutCompany:"TCS is an Indian multinational information technology (IT) services and consulting company with its headquarters in Mumbai.It is a part of the Tata Group and operates in 149 locations across 46 countries.",
+            Employees:"606,331 (June 2022)"
+        }
+        function TCS(){
+            document.getElementById("CompanyName").innerHTML = company3.CompanyName;
+            document.getElementById("Founders").innerHTML = company3.Founder;
+            document.getElementById("Logo").setAttribute("src", company3.Logo);
+            document.getElementById("CEO").innerHTML = company3.CEO;
+            document.getElementById("AboutCompany").innerHTML = company3.AboutCompany;
+            document.getElementById("Employees").innerHTML = company3.Employees;
+        }
+
+        var company4 = {
+            CompanyName:"Accenture",
+            Founder:"Clarence DeLany",
+            Logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbWIICcmryQPbxE1VLVgjqjw4UzOKkj-0Qg&usqp=CAU",
+            CEO:"Julie Sweet",
+            AboutCompany:"Accenture plc is an Irish-American, professional services company based in Dublin, specializing in information technology (IT) services and consulting. ",
+            Employees:"710,000 (2022)"
+        }
+        function Accenture(){
+            document.getElementById("CompanyName").innerHTML = company4.CompanyName;
+            document.getElementById("Founders").innerHTML = company4.Founder;
+            document.getElementById("Logo").setAttribute("src", company4.Logo);
+            document.getElementById("CEO").innerHTML = company4.CEO;
+            document.getElementById("AboutCompany").innerHTML = company4.AboutCompany;
+            document.getElementById("Employees").innerHTML = company4.Employees;
+        }
+
+        var company5 = {
+            CompanyName:"International Business Machines",
+            Founder:"Charles Ranlett Flint",
+            Logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoc59eRQ76AQcdfUOAJqjvwohMALRxfCd7gw&usqp=CAU",
+            CEO:"Arvind Krishna",
+            AboutCompany:"IBM was founded in 1911 in Endicott, New York, as the Computing-Tabulating-Recording Company (CTR) and was renamed International Business Machines in 1924. IBM is incorporated in New York and has operations in over 170 countries.",
+            Employees:"	282,100 (2021)"
+        }
+        function IBM(){
+            document.getElementById("CompanyName").innerHTML = company5.CompanyName;
+            document.getElementById("Founders").innerHTML = company5.Founder;
+            document.getElementById("Logo").setAttribute("src", company5.Logo);
+            document.getElementById("CEO").innerHTML = company5.CEO;
+            document.getElementById("AboutCompany").innerHTML = company5.AboutCompany;
+            document.getElementById("Employees").innerHTML = company5.Employees;
+        }
+
+        var company6 = {
+            CompanyName:"CapGemini",
+            Founder:"Serge Kampf",
+            Logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLIDjQI33Jgs1MzGDY1Osjmsb4rZPINxndOw&usqp=CAU",
+            CEO:"Aiman Ezzat",
+            AboutCompany:"Capgemini was founded by Serge Kampf in 1967 as an enterprise management and data processing company. The company was founded as the Société pour la Gestion de l'Entreprise et le Traitement de l'Information (Sogeti).",
+            Employees:"340,700 (2022)"
+        }
+        function CapGemini(){
+            document.getElementById("CompanyName").innerHTML = company6.CompanyName;
+            document.getElementById("Founders").innerHTML = company6.Founder;
+            document.getElementById("Logo").setAttribute("src", company6.Logo);
+            document.getElementById("CEO").innerHTML = company6.CEO;
+            document.getElementById("AboutCompany").innerHTML = company6.AboutCompany;
+            document.getElementById("Employees").innerHTML = company6.Employees;
+        }
+
+        var company7 = {
+            CompanyName:"Infosys",
+            Founder:"N. R. Narayana Murthy",
+            Logo:"https://dv-website.s3.amazonaws.com/uploads/2018/01/in.jpg",
+            CEO:"Salil Parekh",
+            AboutCompany:"Infosys was founded by seven engineers in Pune, Maharashtra, India with an initial capital of $250 in 1981.It was registered as Infosys Consultants Private Limited on 2 July 1981.In 1983, it relocated its office to Bangalore, Karnataka, India.",
+            Employees:"276,319 (2021)"
+        }
+        function Infosys(){
+            document.getElementById("CompanyName").innerHTML = company7.CompanyName;
+            document.getElementById("Founders").innerHTML = company7.Founder;
+            document.getElementById("Logo").setAttribute("src", company7.Logo);
+            document.getElementById("CEO").innerHTML = company7.CEO;
+            document.getElementById("AboutCompany").innerHTML = company7.AboutCompany;
+            document.getElementById("Employees").innerHTML = company7.Employees;
+        }
+
+        var company8 = {
+            CompanyName:"Wipro",
+            Founder:"Muhammed Hasham Premji",
+            Logo:"https://1000logos.net/wp-content/uploads/2021/05/Wipro-logo.png",
+            CEO:"Thierry Delaporte",
+            AboutCompany:"Wipro is an Indian multinational corporation that provides information technology, consulting and business process services.",
+            Employees:"231,671 (2021)"
+        }
+        function Wipro(){
+            document.getElementById("CompanyName").innerHTML = company8.CompanyName;
+            document.getElementById("Founders").innerHTML = company8.Founder;
+            document.getElementById("Logo").setAttribute("src", company8.Logo);
+            document.getElementById("CEO").innerHTML = company8.CEO;
+            document.getElementById("AboutCompany").innerHTML = company8.AboutCompany;
+            document.getElementById("Employees").innerHTML = company8.Employees;
+        }
+
+        var company9 = {
+            CompanyName:" Hindustan Computers Limited",
+            Founder:"Shiv Nadar",
+            Logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxN6-D8itCK595t2C-Ve2SaH--5dmuW4fffruteUGO3ZMjtGLexO8sd6MamRH4ID_jXQI&usqp=CAU",
+            CEO:"C Vijayakumar",
+            AboutCompany:"HCL Technologies (Hindustan Computers Limited) is an Indian multinational information technology (IT) services and consulting company headquartered in Noida.",
+            Employees:"208,877 (2022)"
+        }
+        function HCL(){
+            document.getElementById("CompanyName").innerHTML = company9.CompanyName;
+            document.getElementById("Founders").innerHTML = company9.Founder;
+            document.getElementById("Logo").setAttribute("src", company9.Logo);
+            document.getElementById("CEO").innerHTML = company9.CEO;
+            document.getElementById("AboutCompany").innerHTML = company9.AboutCompany;
+            document.getElementById("Employees").innerHTML = company9.Employees;
+        }
+
+        var company10 = {
+            CompanyName:"Tech Mahindra",
+            Founder:"Anand Mahindra",
+            Logo:"https://files.techmahindra.com/static/img/brandkit/logo/TechM-Tagline-original.png",
+            CEO:"C.P.Gurnani",
+            AboutCompany:"Tech Mahindra is an Indian multinational information technology services and consulting company. Part of the Mahindra Group, the company is headquartered in Pune and has its registered office in Mumbai.",
+            Employees:"141,193 (2021)"
+        }
+        function TechMahindra(){
+            document.getElementById("CompanyName").innerHTML = company10.CompanyName;
+            document.getElementById("Founders").innerHTML = company10.Founder;
+            document.getElementById("Logo").setAttribute("src", company10.Logo);
+            document.getElementById("CEO").innerHTML = company10.CEO;
+            document.getElementById("AboutCompany").innerHTML = company10.AboutCompany;
+            document.getElementById("Employees").innerHTML = company10.Employees;
+        }
+    </script>
+</body>
+
+</html>
