@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Details </title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            color: blue;
+            font-style: italic;
+            width: 1350px;
+        }
+
+        img {
+            text-align: center;
+            width: 250px;
+            border: 5px solid;
+            padding: 5px;
+            margin: 0 auto;
+
+        }
+
+        h1 {
+            color: maroon;
+        }
+
+        p {
+            color: purple;
+        }
+
+        button {
+            font-size: large;
+        }
+
+        button:hover {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Laptop Details</h1>
+    <p> Today, laptops are used in a variety of settings, such as at work, in education, for playing games, web
+        browsing,
+        for personal multimedia, and for general home computer use.</p>
+    <button onclick="Apple()" style="background-color: plum;">Apple Laptop</button>
+    <button onclick="HP()" style="background-color:aqua;">HP Laptop</button>
+    <button onclick="Lenovo()" style="background-color: yellow;">Lenovo Laptop</button>
+    <button onclick="Samsung()" style="background-color: skyblue;">Samsung Laptop</button>
+    <button onclick="Dell()" style="background-color: pink;">Dell Laptop</button>
+    <button onclick="Asus()" style="background-color: orange;">Asus Laptop</button>
+    <button onclick="Acer()" style="background-color: teal;">Acer Laptop</button>
+    <button onclick="RealMe()" style="background-color: lightgreen ;">RealMe Laptop</button>
+    <button onclick="MI()" style="background-color:salmon;">MI Laptop</button>
+    <button onclick="Sony ()" style="background-color: springgreen">Sony Laptop</button>
+    <hr>
+    <h3 id="Laptop Brand"></h3>
+    <img src="" id="LaptopIMG" alt="">
+    <h3 id="price"></h3>
+    <h3 id="color"></h3>
+    <script>
+        var appleBrand = {
+            laptopName: "Apple",
+            image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80",
+            price: 92900,
+            color: "White"
+
+        }
+        function Apple() {
+            document.getElementById("Laptop Brand").innerHTML = appleBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", appleBrand.image)
+            document.getElementById("price").innerHTML = appleBrand.price;
+            document.getElementById("color").innerHTML = appleBrand.color;
+
+        }
+
+        var hpBrand = {
+            laptopName: "HP",
+            image: "https://5.imimg.com/data5/NW/KV/MY-32712236/hp-laptop-500x500.jpg",
+            price: 32000,
+            color: "Black"
+
+        }
+
+        function HP() {
+            document.getElementById("Laptop Brand").innerHTML = hpBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", hpBrand.image)
+            document.getElementById("price").innerHTML = hpBrand.price;
+            document.getElementById("color").innerHTML = hpBrand.color;
+
+        }
+
+        var lenovoBrand = {
+            laptopName: "Lenovo",
+            image: "https://www.lenovo.com/medias/lenovo-laptops-ideapad-5-14-amd-hero.png?context=bWFzdGVyfHJvb3R8MjI2NTExfGltYWdlL3BuZ3xoNDQvaGU1LzE0Mjc4MDE2NTY1Mjc4LnBuZ3w0Y2Q0MDk5NzA1MTU4OWQ1NjMwMjc0MmUwMDkzYTRkMGFiMjUxYmEyN2M0ZGQwNTE3ZmY0MDM2MzJhYjZlNTli",
+            price: 56990,
+            color: "Grey"
+        }
+
+        function Lenovo() {
+            document.getElementById("Laptop Brand").innerHTML = lenovoBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", lenovoBrand.image)
+            document.getElementById("price").innerHTML = lenovoBrand.price;
+            document.getElementById("color").innerHTML = lenovoBrand.color;
+
+        }
+
+
+        var samsungBrand = {
+            laptopName: "Samsung Galaxy",
+            image: "https://i.gadgets360cdn.com/products/large/samsung-galaxy-book-2-pro-360-1100x800-1645987327.jpg?downsize=*:180",
+            price: 107990,
+            color: "Burgundy"
+        }
+
+
+        function Samsung() {
+            document.getElementById("Laptop Brand").innerHTML = samsungBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", samsungBrand.image)
+            document.getElementById("price").innerHTML = samsungBrand.price;
+            document.getElementById("color").innerHTML = samsungBrand.color;
+
+        }
+
+        var dellBrand = {
+            laptopName: "Dell  ",
+            image: "https://static.toiimg.com/thumb/resizemode-4,msid-72207604,imgsize-96766,width-720/72207604.jpg",
+            price: 69350,
+            color: "Grey"
+        }
+        function Dell() {
+            document.getElementById("Laptop Brand").innerHTML = dellBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", dellBrand.image)
+            document.getElementById("price").innerHTML = dellBrand.price;
+            document.getElementById("color").innerHTML = dellBrand.color;
+
+        }
+
+
+        var asusBrand = {
+            laptopName: "Asus  ",
+            image: "https://dlcdnwebimgs.asus.com/gain/8b3b6628-bd74-464a-9411-034ca820bda0/w800",
+            price: 36790,
+            color: "Blue"
+        }
+        function Asus() {
+            document.getElementById("Laptop Brand").innerHTML = asusBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", asusBrand.image)
+            document.getElementById("price").innerHTML = asusBrand.price;
+            document.getElementById("color").innerHTML = asusBrand.color;
+
+        }
+
+        var acerBrand = {
+            laptopName: "Acer  ",
+            image: "https://images-eu.ssl-images-amazon.com/images/I/41Ls3cKVwnL._SY300_SX300_QL70_FMwebp_.jpg",
+            price: 22990,
+            color: "Black"
+        }
+
+
+        function Acer() {
+            document.getElementById("Laptop Brand").innerHTML = acerBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", acerBrand.image)
+            document.getElementById("price").innerHTML = acerBrand.price;
+            document.getElementById("color").innerHTML = acerBrand.color;
+
+        }
+
+        var realmeBrand = {
+            laptopName: "RealMe ",
+            image: "https://rukminim1.flixcart.com/image/416/416/l1b1oy80/computer/x/r/s/book-prime-thin-and-light-laptop-realme-original-imagcwmcxdwr4rvh.jpeg?q=70",
+            price: 64990,
+            color: "Green"
+        }
+
+        function RealMe() {
+            document.getElementById("Laptop Brand").innerHTML = realmeBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", realmeBrand.image)
+            document.getElementById("price").innerHTML = realmeBrand.price;
+            document.getElementById("color").innerHTML = realmeBrand.color;
+
+        }
+
+
+        var miBrand = {
+            laptopName: "MI  ",
+            image: "https://m.media-amazon.com/images/I/81RHHnGydgL._SX522_.jpg",
+            price: 61990,
+            color: "Grey"
+        }
+
+        function MI() {
+            document.getElementById("Laptop Brand").innerHTML = miBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", miBrand.image)
+            document.getElementById("price").innerHTML = miBrand.price;
+            document.getElementById("color").innerHTML = miBrand.color;
+
+        }
+
+        var sonyBrand = {
+            laptopName: "Sony VAIO ",
+            image: "https://www.91-img.com/pictures/laptops/sony/sony-vpcsa35gg-core-i7-2nd-gen-6-gb-750-gb-windows-7-1-gb-59689-large-1.jpg",
+            price: 28500,
+            color: "Glossy Brown"
+        }
+
+        function Sony() {
+            document.getElementById("Laptop Brand").innerHTML = sonyBrand.laptopName;
+            document.getElementById("LaptopIMG").setAttribute("src", sonyBrand.image)
+            document.getElementById("price").innerHTML = sonyBrand.price;
+            document.getElementById("color").innerHTML = sonyBrand.color;
+
+        }
+
+    </script>
+</body>
