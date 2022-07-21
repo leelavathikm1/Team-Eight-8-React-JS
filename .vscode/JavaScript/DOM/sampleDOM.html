@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 1</title>
+</head>
+
+<body>
+    <script>
+        var datas = [
+            {
+                "fname": "Ana",
+                "lname": "Choate"
+            },
+            {
+                "fname": "Petr",
+                "lname": "Bouchard"
+            },
+            {
+                "fname": "Wyatra",
+                "lname": "Wyatt"
+            },
+            {
+                "fname": "Priscilla",
+                "lname": "Frets"
+            },
+            {
+                "fname": "Amatullah",
+                "lname": "Schatz"
+            },
+            {
+                "fname": "Tanya",
+                "lname": "Nimon"
+            },
+            {
+                "fname": "Johanan",
+                "lname": "Davis"
+            },
+            {
+                "fname": "Katie",
+                "lname": "Pilgrim"
+            },
+            {
+                "fname": "Rebecca",
+                "lname": "Spratt"
+            },
+            {
+                "fname": "Gerald",
+                "lname": "Tippit"
+            }
+        ];
+
+
+        for (i = 0; i < datas.length; i++) {
+            var myUl = document.createElement("ul");
+
+            var fname = document.createElement("li")
+            fname.innerHTML = datas[i].fname
+            var lname = document.createElement("li")
+            lname.innerHTML = datas[i].lname
+
+            myUl.appendChild(fname)
+            myUl.appendChild(lname)
+            document.body.appendChild(myUl)
+        }
+    </script>
+</body>
+
+</html>

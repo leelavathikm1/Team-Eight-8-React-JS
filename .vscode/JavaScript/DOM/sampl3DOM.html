@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        var person =
+            [
+                {
+                    "id": 1,
+                    "email": "BProia@tincidunt.com",
+                    "username": "CShay",
+                    "password": "2KejF"
+                },
+                {
+                    "id": 2,
+                    "email": "HClaudio@neque.io",
+                    "username": "THudgens",
+                    "password": "iB3yE"
+                },
+                {
+                    "id": 3,
+                    "email": "TPetitti@orci.ly",
+                    "username": "FKirk",
+                    "password": "hezIz"
+                },
+                {
+                    "id": 4,
+                    "email": "MWoodhouse@et.org",
+                    "username": "DHebert",
+                    "password": "lVSkk"
+                },
+                {
+                    "id": 5,
+                    "email": "LHenderson@elementum.net",
+                    "username": "DKimmel",
+                    "password": "xtIea"
+                },
+                {
+                    "id": 6,
+                    "email": "GBarrick@pharetra.io",
+                    "username": "CHaag",
+                    "password": "LHUjJ"
+                },
+                {
+                    "id": 7,
+                    "email": "CBliss@tortor.gov",
+                    "username": "EWagner",
+                    "password": "j3F0q"
+                },
+                {
+                    "id": 8,
+                    "email": "LPento@at.org",
+                    "username": "DShaw",
+                    "password": "2eTul"
+                },
+                {
+                    "id": 9,
+                    "email": "AKlapper@augue.io",
+                    "username": "LKoehn",
+                    "password": "CXlDv"
+                },
+                {
+                    "id": 10,
+                    "email": "CBorgford@dolor.org",
+                    "username": "LKahlig",
+                    "password": "Km8ZM"
+                }
+            ]
+
+
+        for (i = 0; i < person.length; i++) {
+            var myul = document.createElement("ul")
+
+            var id = document.createElement("li")
+            id.innerHTML = person[i].id
+            myul.appendChild(id)
+
+
+            var email = document.createElement("li")
+            email.innerHTML = person[i].email
+            myul.appendChild(email)
+
+
+            var username = document.createElement("li")
+            username.innerHTML = person[i].username
+            myul.appendChild(username)
+
+
+            var password = document.createElement("li")
+            password.innerHTML = person[i].password
+            myul.appendChild(password)
+
+
+            document.body.appendChild(myul)
+
+
+        }
+
+    </script>
+</body>
+
+</html>

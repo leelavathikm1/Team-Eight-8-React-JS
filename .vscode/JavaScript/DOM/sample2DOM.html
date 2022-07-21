@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+</head>
+
+<body>
+    <script>
+        var details = [
+            {
+                "fname": "Brooks",
+                "lname": "Mitchell",
+                "tel": "(382)379-8337",
+                "address": "5696 Tempor St",
+                "city": "Cumming",
+                "state": "IA",
+                "zip": 90281
+            },
+            {
+                "fname": "Cecilia",
+                "lname": "Stroll",
+                "tel": "(633)985-7918",
+                "address": "6146 Consequat Rd",
+                "city": "Granite Falls",
+                "state": "DE",
+                "zip": 55886
+            },
+            {
+                "fname": "Matina",
+                "lname": "Llewellyn",
+                "tel": "(611)828-7521",
+                "address": "3062 Aliquam Ave",
+                "city": "Stoneham",
+                "state": "WA",
+                "zip": 11496
+            },
+            {
+                "fname": "Lorraine",
+                "lname": "Dunlap",
+                "tel": "(907)368-6469",
+                "address": "7321 Malesuada Dr",
+                "city": "Rancho Cucamonga",
+                "state": "NY",
+                "zip": 41522
+            },
+            {
+                "fname": "Emir",
+                "lname": "Lewis",
+                "tel": "(509)131-5793",
+                "address": "2638 Tincidunt Ln",
+                "city": "Waco",
+                "state": "MI",
+                "zip": 76111
+            },
+            {
+                "fname": "Sonia",
+                "lname": "Harper",
+                "tel": "(950)633-0091",
+                "address": "8945 Lectus Rd",
+                "city": "Jersey Shore",
+                "state": "TX",
+                "zip": 63862
+            },
+            {
+                "fname": "Chunlei",
+                "lname": "Cobb",
+                "tel": "(715)228-1179",
+                "address": "8155 Porta Dr",
+                "city": "Rosenberg",
+                "state": "NJ",
+                "zip": 33321
+            },
+            {
+                "fname": "Ernesto",
+                "lname": "Tang",
+                "tel": "(712)051-0220",
+                "address": "8145 Magna Ln",
+                "city": "Cincinnati",
+                "state": "IL",
+                "zip": 19214
+            },
+            {
+                "fname": "Tim",
+                "lname": "Brunie",
+                "tel": "(973)621-7678",
+                "address": "2740 Ipsum Rd",
+                "city": "Lafayette",
+                "state": "AR",
+                "zip": 30977
+            },
+            {
+                "fname": "Freddy",
+                "lname": "Bunker",
+                "tel": "(229)902-0068",
+                "address": "3146 Eget Ct",
+                "city": "Tacloban City",
+                "state": "OK",
+                "zip": 16164
+            }
+        ]
+
+
+        for (i = 0; i < details.length; i++) {
+            var myDiv = document.createElement("div");
+
+            var fname = document.createElement("p")
+            fname.innerHTML = details[i].fname
+            myDiv.appendChild(fname)
+
+            var lname = document.createElement("p")
+            lname.innerHTML = details[i].lname
+            myDiv.appendChild(lname)
+
+            var tel = document.createElement("p")
+            tel.innerHTML = details[i].tel
+            myDiv.appendChild(tel)
+
+            var address = document.createElement("p")
+            address.innerHTML = details[i].address
+            myDiv.appendChild(address)
+
+
+            var city = document.createElement("p")
+            city.innerHTML = details[i].city
+            myDiv.appendChild(city)
+
+            var state = document.createElement("p")
+            state.innerHTML = details[i].state
+            myDiv.appendChild(state)
+
+
+            var zip = document.createElement("p")
+            zip.innerHTML = details[i].zip
+            myDiv.appendChild(zip)
+
+            document.body.appendChild(myDiv)
+        }
+    </script>
+</body>
+
+</html>
