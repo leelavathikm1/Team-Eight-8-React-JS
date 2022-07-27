@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+
+<body>
+    <script>
+        function GetPostsFromAPI() {
+            return new Promise((resolve, reject) => {
+                var getData = new XMLHttpRequest();
+                getData.onreadystatechange = function () {
+                    if (getData.status == 200 && getData.readyState == 4) {
+                        allPosts = JSON.parse(getData.response);
+                        resolve(allPosts);
+                    }
+                }
+
+                getData.open("GET", "http://localhost:3000/posts");
+                getData.send();
+            })
+        }
+
+        function displayPosts(allPosts) {
+            console.log(allPosts);
+        }
+        async function postsPromise() {
+            var allPosts = await GetPostsFromAPI();
+            displayPosts(allPosts);
+
+        }
+        postsPromise();
+
+    </script>
+</body>
+
+</html>
