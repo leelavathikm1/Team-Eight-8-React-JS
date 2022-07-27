@@ -1,0 +1,66 @@
+{
+    "users": [
+        [
+            {
+                "id": 1,
+                "email": "GAresti@odio.org",
+                "username": "YHaaf",
+                "password": "ibnWu"
+            },
+            {
+                "id": 2,
+                "email": "AOnatop@vitae.gov",
+                "username": "BFogle",
+                "password": "nCTjC"
+            },
+            {
+                "id": 3,
+                "email": "BHopson@sed.org",
+                "username": "KSmith",
+                "password": "YONu7"
+            },
+            {
+                "id": 4,
+                "email": "CKelliedugan@adipiscing.org",
+                "username": "jVanatta",
+                "password": "lmghp"
+            },
+            {
+                "id": 5,
+                "email": "VTurbeville@tempor.io",
+                "username": "YAsfour",
+                "password": "V1qYv"
+            },
+            {
+                "id": 6,
+                "email": "SReyes@vitae.gov",
+                "username": "JGann",
+                "password": "I63Ab"
+            },
+            {
+                "id": 7,
+                "email": "AJeffery@orci.net",
+                "username": "VLlc",
+                "password": "XIrZG"
+            },
+            {
+                "id": 8,
+                "email": "EHutchinson@lacus.org",
+                "username": "HBurgin",
+                "password": "AyHF2"
+            },
+            {
+                "id": 9,
+                "email": "MBodily@odio.gov",
+                "username": "AFuller",
+                "password": "1gnAx"
+            },
+            {
+                "id": 10,
+                "email": "RHaggerty@donec.ly",
+                "username": "LAngell",
+                "password": "ccomX"
+            }
+        ]
+    ]
+}
