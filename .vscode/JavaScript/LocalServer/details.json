@@ -1,0 +1,96 @@
+{
+    "details": [
+        [
+            {
+                "fname": "Vaibhavi",
+                "lname": "Ramirez",
+                "tel": "(680)983-5227",
+                "address": "4428 Ac Ln",
+                "city": "Macomb",
+                "state": "AZ",
+                "zip": 50229
+            },
+            {
+                "fname": "Alfonso",
+                "lname": "Forenda",
+                "tel": "(547)507-1757",
+                "address": "2689 Pulvinar Rd",
+                "city": "Edwards",
+                "state": "CT",
+                "zip": 75317
+            },
+            {
+                "fname": "Christina",
+                "lname": "Petitti",
+                "tel": "(429)413-2220",
+                "address": "6628 Sit Dr",
+                "city": "Cleveland",
+                "state": "MT",
+                "zip": 77053
+            },
+            {
+                "fname": "Maxime",
+                "lname": "Landosky",
+                "tel": "(787)357-3559",
+                "address": "8391 Etiam St",
+                "city": "Savannah",
+                "state": "MD",
+                "zip": 65348
+            },
+            {
+                "fname": "Susan",
+                "lname": "Cooper",
+                "tel": "(546)919-8252",
+                "address": "8424 Magna St",
+                "city": "Shrewsbury",
+                "state": "CO",
+                "zip": 92926
+            },
+            {
+                "fname": "Leslie",
+                "lname": "Tatum",
+                "tel": "(905)435-3475",
+                "address": "1597 Rutrum Ln",
+                "city": "Mooresville",
+                "state": "ME",
+                "zip": 72854
+            },
+            {
+                "fname": "Tariq",
+                "lname": "Meaney",
+                "tel": "(513)438-9206",
+                "address": "2287 Mattis Ct",
+                "city": "Hattiesburg",
+                "state": "WV",
+                "zip": 50085
+            },
+            {
+                "fname": "Chanel",
+                "lname": "Rote",
+                "tel": "(140)076-6997",
+                "address": "4641 Tincidunt Ave",
+                "city": "Rolling Meadows",
+                "state": "IN",
+                "zip": 43210
+            },
+            {
+                "fname": "Liang",
+                "lname": "Walley",
+                "tel": "(891)624-8746",
+                "address": "5467 Massa Dr",
+                "city": "Macomb",
+                "state": "WV",
+                "zip": 75574
+            },
+            {
+                "fname": "Dedun",
+                "lname": "Clark",
+                "tel": "(543)057-6306",
+                "address": "3800 Nec St",
+                "city": "Buffalo",
+                "state": "TN",
+                "zip": 26606
+            }
+        ]
+    ]
+}
