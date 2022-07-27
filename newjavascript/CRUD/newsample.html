@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <h2>Students Details</h2>
+    <form>
+      <label for="Name">Enter Name </label>
+      <input type="text" id="Name" onkeyup="validate()"> <br><br>
+  
+      <label for="FatherName">Enter FatherName</label>
+      <input type="text" id="FatherName" onkeyup="validate()"><br><br>
+  
+      <label for="Address">Enter Address</label>
+      <input type="text" id="Address" onkeyup="validate()"><br><br>
+      <label for="Pincode">Enter Pincode</label>
+      <input type="text" id="Pincode" onkeyup="validate()"><br><br>
+  
+      <label for="State">Enter State</label>
+      <input type="text" id="State" onkeyup="validate()"><br><br>
+  
+      <label for="Mobile">Enter Mobile</label>
+      <input type="text" id="Mobile" onkeyup="validate()"><br><br>
+
+      <button type="button" id="addUsers" onclick="addDetails()" disabled="true">Add <Details></Details></button>
+      <button type="button" id="addUsers" onclick="addDetails()" disabled>Add Details</button>
+
+      <button type="button" onclick="updatebutton()" id="update" style="display: none;">update button</button>
+    </form>
+  
+    <hr>
+  
+    <h2>Personal Details</h2>
+  
+    <table border="1" >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Father Name</th>
+          <th>Address</th>
+          <th>Pincode</th>
+          <th>State</th>
+          <th>Mobile</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="myTbody"></tbody>
+    </table>
+  
+    <script>
+      var UserDetails = JSON.parse(localStorage.getItem("UserDetails"));
+      var index = null;
+      if (UserDetails ==null) {
+        UserDetails = [];
+      }
+  
+      function addDetails() {
+        var user = {
+            Name: document.getElementById("Name").value,
+            FatherName: document.getElementById("FatherName").value,
+            Address: document.getElementById("Address").value,
+            Pincode: document.getElementById("Pincode").value,
+            State: document.getElementById("State").value,
+            Mobile: document.getElementById("Mobile").value,
+  
+        };
+  
+        UserDetails.push(user);
+        console.log(user); 
+        localStorage.setItem("UserDetails",JSON.stringify(UserDetails));
+        displayUser(UserDetails);
+        clear();
+      }
+  
+      function clear() {
+        document.getElementById("Name").value = "";
+        document.getElementById("FatherName").value = "";
+        document.getElementById("Address").value = "";
+        document.getElementById("Pincode").value = "";
+        document.getElementById("State").value = "";
+        document.getElementById("Mobile").value = "";
+  
+      }
+  
+      function displayUser(Data) {
+        document.getElementById("myTbody").innerHTML = "";
+        Data.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+  
+          }
+  
+          var editTd = document.createElement("td")
+          var editbtn = document.createElement("button")
+          editbtn.setAttribute("onclick","editUser(" + i + ")");
+          editbtn.innerHTML = "Edit"
+          editTd.appendChild(editbtn)
+          myTr.appendChild(editTd)
+  
+          var delTd = document.createElement("td");
+          var delbtn = document.createElement("button");
+          delbtn.setAttribute("onclick","deleteUser(" + i + ")");
+          delbtn.innerHTML = "Delete";
+          delTd.appendChild(delbtn);
+          myTr.appendChild(delTd);
+  
+          document.getElementById("myTbody").appendChild(myTr);
+        });
+  
+      }
+      
+      function editUser(i) {
+        console.log("this is Edit")
+        index = i;
+        document.getElementById("Name").value = UserDetails[i].SerialNumber;
+        document.getElementById("FatherName").value = UserDetails[i].RollNumber;
+        document.getElementById("Address").value = UserDetails[i].Name;
+        document.getElementById("Pincode").value = UserDetails[i].College;
+        document.getElementById("State").value = UserDetails[i].Group;
+        document.getElementById("Mobile").value = UserDetails[i].Percentage;
+        document.getElementById("addUsers").style.display = "none";
+        document.getElementById("update").style.display = "block";
+      }
+  
+      function deleteUser(i) {
+        console.log(UserDetails[i]);
+        UserDetails.splice(i , 1);
+        displayUser(UserDetails);
+      }
+      displayUser(allUserDetails);
+  
+      function validate() {
+        var User = {
+            Name: document.getElementById("Name").value,
+            FatherName: document.getElementById("FatherName").value,
+            Address: document.getElementById("Address").value,
+            Pincode: document.getElementById("Pincode").value,
+            State: document.getElementById("State").value,
+            Mobile: document.getElementById("Mobile").value,
+        };
+  
+        var check = false;
+        for (a in User) {
+          if (User[a] == "") {
+            check = true;
+          }
+        }
+        if (check == true) {
+          document.getElementById("addUsers").setAttribute("disabled", true);
+        }
+        else {
+          document.getElementById("addUsers").removeAttribute("disabled");
+        }
+      }
+      function updatebutton() {
+        console.log("from Update");
+        var User = {
+            Name: document.getElementById("Name").value,
+            FatherName: document.getElementById("FatherName").value,
+            Address: document.getElementById("Address").value,
+            Pincode: document.getElementById("Pincode").value,
+            State: document.getElementById("State").value,
+            Mobile: document.getElementById("Mobile").value,
+        };
+        UserDetails[index] = User;
+        localStorage.setItem("UserDetails",JSON.stringify(UserDetails))
+  
+  
+        displayUser(UserDetails);
+        clear();
+        document.getElementById("addUsers").style.display = "block";
+        document.getElementById("update").style.display = "none"
+      }
+        </script>
+  </body>
+</html>
