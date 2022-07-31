@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <script>
         function GetPostsFromAPI() {
             return new Promise((resolve, reject) => {
@@ -23,15 +24,17 @@
                 getData.open("GET", "http://localhost:3000/posts");
                 getData.send();
             })
+
         }
 
         function displayPosts(allPosts) {
+
             console.log(allPosts);
         }
         async function postsPromise() {
             var allPosts = await GetPostsFromAPI();
-            displayPosts(allPosts);
 
+            displayPosts(allPosts);
         }
         postsPromise();
 

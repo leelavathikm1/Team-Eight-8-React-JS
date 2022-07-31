@@ -34,7 +34,6 @@
         function GetDataFromAPI() {
             var getData = new XMLHttpRequest();
 
-
             getData.onreadystatechange = function () {
                 if (getData.status == 200 && getData.readyState == 4) {
                     console.log(this.response);
@@ -43,16 +42,13 @@
 
                 }
             };
-
             getData.open("GET", "https://jsonplaceholder.typicode.com/albums");
             getData.send();
         }
-
         function displayData(allData) {
             allData.forEach((Data) => {
                 var myDiv = document.createElement("Div");
                 myDiv.setAttribute("class", "Data")
-
 
                 var UserId = document.createElement("p");
                 UserId.innerHtml = Data.UserId;
@@ -69,7 +65,6 @@
                 document.getElementById("albumDetails").appendChild(myDiv);
 
             })
-
 
         }
     </script>

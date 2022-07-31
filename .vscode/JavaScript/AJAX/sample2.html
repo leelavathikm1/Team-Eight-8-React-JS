@@ -59,16 +59,13 @@
                 title.innerHTML = photos.title;
                 myPhotosDiv.appendChild(title);
 
-
                 var url = document.createElement("p");
                 url.innerHTML = photos.url;
                 myPhotosDiv.appendChild(url);
 
-
                 var thumbnailUrl = document.createElement("p");
                 thumbnailUrl.innerHTML = photos.thumbnailUrl;
                 myPhotosDiv.appendChild(thumbnailUrl);
-
 
                 document.getElementById("allPhotos").appendChild(myPhotosDiv);
             })
