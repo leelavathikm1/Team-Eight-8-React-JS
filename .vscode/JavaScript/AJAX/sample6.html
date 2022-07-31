@@ -5,65 +5,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comments</title>
+    <title>Users</title>
     <style>
-        table {
-            background-color: skyblue;
+        body {
+            background-color: black;
             text-align: center;
+            text-decoration: solid;
         }
 
-        button {
-            background-color: midnightblue;
-            color: azure;
+        table {
+            text-align: center;
+            background-color: powderblue;
+            color: indigo;
+            width: 1335px;
         }
     </style>
-
 </head>
 
 <body>
-    <button type="button" onclick="GetDataFromAPI()">Get Data From API </button>
+    <button type="button" onclick="GetDataFromAPI()"> Get Data From API</button>
     <table border="1">
         <thead>
             <tr>
-                <th style="background-color: orange ;">postId</th>
-                <th style="background-color: orange ;">Id</th>
-                <th style="background-color: orange ;">Name</th>
-                <th style="background-color: orange ;">Email </th>
-                <th style="background-color: orange ;">Body</th>
-            </tr>
+                <th>Address</th>
 
+                <th>Id</th>
+                <th>Email</th>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>V</th>
+            </tr>
         </thead>
         <tbody id="myTable"></tbody>
     </table>
     <script>
         function GetDataFromAPI() {
             var getData = new XMLHttpRequest();
+
             getData.onreadystatechange = function () {
                 if (getData.status == 200 && getData.readyState == 4) {
                     console.log(this.response);
-                    var CommentDetails = JSON.parse(this.response);
-                    displayCommentDetails(CommentDetails);
+                    var UserDetails = JSON.parse(this.response);
+                    displayUserDetails(UserDetails);
                 }
-            };
-            getData.open("GET", "https://jsonplaceholder.typicode.com/comments");
-            getData.send();
-        }
 
-        function displayCommentDetails(CommentDetails) {
-            CommentDetails.forEach((dispComments) => {
+            }
+            getData.open("GET", "https://fakestoreapi.com/users");
+            getData.send();
+
+        };
+
+
+        function displayUserDetails(UserDetails) {
+            UserDetails.forEach((dispUsers) => {
                 var myTr = document.createElement("tr");
-                for (a in dispComments) {
+                for (a in dispUsers) {
                     var myTd = document.createElement("td");
-                    myTd.innerHTML = dispComments[a];
+                    if (a !== "address" && a !== "name") {
+                        myTd.innerHTML = dispUsers[a];
+
+                    }
+
+                    // else if {
+                    //     var details1 = ""
+                    //     for(c in dispUsers[a]) {
+                    //         details1 = details1 + c + ":" + dispUsers[a][c] + "<br>"
+                    //     }
+                    // }
+
+                    else {
+                        var details = ""
+                        for (b in dispUsers[a]) {
+                            details = details + b + ":" + dispUsers[a][b] + "<br>"
+                        }
+                        myTd.innerHTML = details
+                    }
                     myTr.appendChild(myTd);
+
                 }
-                document.getElementById("myTable").appendChild(myTr)
+                document.getElementById("myTable").appendChild(myTr);
             })
 
         }
-
-
-
     </script>
 </body>
 

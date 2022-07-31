@@ -5,67 +5,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Details</title>
+    <style>
+        table {
+            background-color: plum;
+            text-align: center;
+            width: 1120px;
+        }
+
+        button {
+            background-color: skyblue;
+            float: right;
+
+        }
+    </style>
 </head>
 
 <body>
-
 
     <button type="button" onclick="GetDataFromAPI()">GetDataFromAPI</button>
     <table border="1">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>User Name</th>
-                <th>email</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Website </th>
-                <th>Company</th>
+                <th style="background-color:teal;">User Id</th>
+                <th style="background-color: teal; ;">Id</th>
+                <th style="background-color: teal;;">Title</th>
+                <th style="background-color: teal;;">Completed</th>
             </tr>
-
-
         </thead>
         <tbody id="myTable"></tbody>
     </table>
-
     <script>
-
-
         function GetDataFromAPI() {
+
             var getData = new XMLHttpRequest();
             getData.onreadystatechange = function () {
                 if (getData.status == 200 && getData.readyState == 4) {
                     console.log(this.response);
-                    var personDetails = JSON.parse(this.response);
-                    displaypersonDetails(personDetails);
+                    var projectDetails = JSON.parse(this.response);
+                    displayprojectDetails(projectDetails);
                 }
             };
-            getData.open("GET", "https://jsonplaceholder.typicode.com/users");
+            getData.open("GET", "https://jsonplaceholder.typicode.com/todos");
             getData.send();
+
         }
-        function displaypersonDetails(personDetails) {
+        function displayprojectDetails(projectDetails) {
 
-            personDetails.forEach((dispPerson) => {
+
+            projectDetails.forEach((dispProject) => {
                 var myTr = document.createElement("tr");
-                for (a in dispPerson) {
+                for (a in dispProject) {
                     var myTd = document.createElement("td");
-                    if (a !== "address" && a !== "company") {
-                        myTd.innerHTML = dispPerson[a];
-                    } else {
-                        var details = ""
-                        for (b in dispPerson[a]) {
-                            details = details + b + ":" + dispPerson[a][b] + "<br>"
 
-                        }
-                        myTd.innerHTML = details
-                    }
-
+                    myTd.innerHTML = dispProject[a];
                     myTr.appendChild(myTd);
                 }
-                document.getElementById("myTable").appendChild(myTr);
 
+                document.getElementById("myTable").appendChild(myTr);
             })
 
         }
