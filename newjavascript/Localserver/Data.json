@@ -1,0 +1,94 @@
+{
+    "Data": [
+      {
+        "fname": "Theodore",
+        "lname": "Bowling",
+        "tel": "(618)170-7478",
+        "address": "6254 Pulvinar Dr",
+        "city": "Grand Forks",
+        "state": "NV",
+        "zip": 43198
+      },
+      {
+        "fname": "Lilia",
+        "lname": "Mueske",
+        "tel": "(746)243-4588",
+        "address": "987 Nullam Ct",
+        "city": "Sin City",
+        "state": "RI",
+        "zip": 70281
+      },
+      {
+        "fname": "Noor",
+        "lname": "Reddick",
+        "tel": "(633)406-1746",
+        "address": "8643 Nunc Ave",
+        "city": "Hudsonville",
+        "state": "SD",
+        "zip": 12844
+      },
+      {
+        "fname": "Barbara",
+        "lname": "Ramirez",
+        "tel": "(844)172-7198",
+        "address": "5250 Eros Rd",
+        "city": "Brodhead",
+        "state": "IA",
+        "zip": 51995
+      },
+      {
+        "fname": "Jawdat",
+        "lname": "Jackson",
+        "tel": "(503)988-3634",
+        "address": "6 Egestas Ave",
+        "city": "Brighton",
+        "state": "SC",
+        "zip": 46626
+      },
+      {
+        "fname": "Shaneka",
+        "lname": "Boynton",
+        "tel": "(450)555-8836",
+        "address": "7952 Et Rd",
+        "city": "Bradenton",
+        "state": "NE",
+        "zip": 97915
+      },
+      {
+        "fname": "Hurley",
+        "lname": "Anderes",
+        "tel": "(767)248-0776",
+        "address": "5066 Curabitur Dr",
+        "city": "San Diego",
+        "state": "UT",
+        "zip": 39952
+      },
+      {
+        "fname": "Forest",
+        "lname": "Duerksen",
+        "tel": "(243)296-6033",
+        "address": "8241 Sollicitudin Rd",
+        "city": "Westwood",
+        "state": "KS",
+        "zip": 95546
+      },
+      {
+        "fname": "Danella",
+        "lname": "Coleman",
+        "tel": "(746)135-5342",
+        "address": "9685 Mattis Rd",
+        "city": "Santa Clarita",
+        "state": "DC",
+        "zip": 73876
+      },
+      {
+        "fname": "Arnisa",
+        "lname": "Dupont",
+        "tel": "(212)681-0438",
+        "address": "98 Placerat St",
+        "city": "Hampstead",
+        "state": "DC",
+        "zip": 20201
+      }
+    ]
+  }
