@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <button onclick="stopInterval()">stop Interval</button>
+    <script>
+        // var todaysDate= new Date();
+        // console.log(todaysDate)
+
+       
+//Thu Aug 04 2022 18:09:07 GMT+0530 (India Standard Time)
+// todaysDate.getDate();
+// 4
+// todaysDate.getMonth();
+// 7
+// todaysDate.getFullYear()
+// 2022
+// todaysDate.toLocaleDateString()
+// '8/4/2022'
+// todaysDate.toLocaleTimeString()
+// '6:09:07 PM'
+            
+        // setTimeout(function(){
+        //     console.log("hello")
+        // },5000)
+
+        var handleTime =   setInterval(()=>{
+            console.log("hii hello")
+        },5000)
+    function stopInterval() {
+            clearInterval(handleTime)
+        }
+    </script>
+</body>
+
+</html>
