@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="stopFunction()">Stop Function</button>
+    <script>
+        // var todaysDate = new Date();
+        // console.log(todaysDate)
+
+        // setTimeout(function () {
+        //     console.log("im from setTimeout function")
+        // },000)
+
+        // setInterval(()=>{
+        //     console.log("im from setinterval function ..Data display in every 3 seconds")
+        // },3000)
+
+        var handeltime = setInterval(()=>{
+            console.log("Data display in every 5sec")
+        },5000)
+
+        function stopFunction(){
+            clearInterval(handeltime)
+        }
+    </script>
+</body>
+
+</html>
