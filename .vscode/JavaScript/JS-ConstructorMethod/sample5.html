@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+
+<body>
+    <script>
+        class Details {
+            constructor() {
+                this.school = "GM ";
+                this.group = "Computer Science"
+                this.Grade = "Higher Secondary"
+            }
+        }
+        class Student extends Details {
+            constructor(fname, lname, age) {
+                super();
+                this.fname = fname;
+                this.lname = lname;
+                this.age = age;
+            }
+        }
+
+        var Student1 = new Student("Sruthi", "Gnanasekkar", 16);
+        var Student2 = new Student("Magi", "Gnanasekkar", 16);
+
+
+
+        console.log(Student1);
+        console.log(Student2);
+    </script>
+</body>
+
+</html>
