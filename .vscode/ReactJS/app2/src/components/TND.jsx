@@ -17,4 +17,4 @@ export default class TamilNaduDistricts extends Component {
             })}
         </div>
     }
-}
+} 
