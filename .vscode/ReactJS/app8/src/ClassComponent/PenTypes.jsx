@@ -5,11 +5,11 @@ export default class Pens extends Component {
         super()
         this.state = {
             PensTypes: {
-                "PenTop1": "Parker",
-                "penTop2": "Renolds",
-                "penTop3": "Cello",
-                "penTop4": "Flair",
-                "penTop5": "Hero"
+                PenTop1: "Parker",
+                penTop2: "Renolds",
+                penTop3: "Cello",
+                penTop4: "Flair",
+                penTop5: "Hero"
             }
         }
     }

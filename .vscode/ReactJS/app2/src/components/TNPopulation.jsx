@@ -5,8 +5,8 @@ export default class TamilNaduPopulation extends Component {
         super()
         this.state = {
             Population: {
-                "FemalePopulation": 72147039,
-                "MalePopulation": 36137975,
+                FemalePopulation: 72147039,
+                MalePopulation: 36137975,
             }
         }
     }

@@ -5,8 +5,8 @@ export default class BestLaps extends Component {
         super()
         this.state = {
             BestLaptopInd: {
-                "BestLaptop1": "Dell",
-                "BestLaptop2": "Mac",
+                BestLaptop1: "Dell",
+                BestLaptop2: "Mac",
             }
         }
     }
