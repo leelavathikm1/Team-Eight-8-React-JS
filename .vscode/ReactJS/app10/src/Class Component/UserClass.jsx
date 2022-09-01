@@ -27,6 +27,16 @@ export default class UserClass extends Component {
     handleSubmit = () => {
         console.log(this.state.person)
     }
+    handleReset = () => {
+        this.setState({
+            person: {
+                Fname: "",
+                Lname: "",
+                Email: "",
+
+            }
+        })
+    }
     render() {
         return (
             <div>
@@ -45,6 +55,8 @@ export default class UserClass extends Component {
                     <br />
 
                     <button onClick={this.handleSubmit} type="button">Add User</button>
+                    <button onClick={this.handleReset} type="button">Reset</button>
+
 
                 </form>
             </div>
