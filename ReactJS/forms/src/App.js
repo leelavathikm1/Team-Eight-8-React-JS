@@ -13,11 +13,11 @@ function App() {
     <div className="App">
       {/* <UserFunComp/> */}
       {/* <UserClassComp/> */}
-      {/* <FunctionalForm/> */}
+      <FunctionalForm/>
       {/* <Sample3Fun/> */}
       {/* <Sample3Class/> */}
       {/* <Form4Fun/> */}
-      <Form4Class/>
+      {/* <Form4Class/> */}
     </div>
   );
 }
