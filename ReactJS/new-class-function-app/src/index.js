@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Tables from './Tables';
+import Tables2 from './Tables2';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Tables/>
+    <Tables2/>
   </React.StrictMode>
 );
 
